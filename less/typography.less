@@ -1,0 +1,179 @@
+/*
+    gethifi.com - CSS Type Boilerplate
+    2010-11-12
+    v. 0.9
+    Author:Joel Sutherland (@JoelSutherland)
+    Liscenced under the MIT license
+
+    Type and Type Baseline
+    This stylesheet is designed to set up all text elements on a type baseline.
+    Using it ensures element coverage and ideally, clean type.
+
+     Setup Instructions
+      *  "" is in front of all declarations.  This is so that it can
+         target only elements in a  container.  Search/Replace to
+         change or eliminate.  It's probably best to eliminate so that you can
+         ensure this is used globally.
+      *  The default baseline is 20px.  Search/Replace 20px to adjust.
+      *  Once this is adjusted, it's also important to check the headers
+*/
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+}
+i, em {
+  font-style: italic;
+}
+b, strong {
+  font-weight: 900;
+}
+
+
+
+/* Standard Text */
+input,  button,  textarea {
+    font: normal 12px/20px arial,sans-serif;
+    color: #555;
+}
+
+time {
+  color: #ccc;
+}
+
+/* Block Baselines */
+ h1,  h2,  h3,  h4,  h5,  h6,
+ p,  ul,  ol,  pre,  blockquote,
+ textarea,  button {
+    margin-bottom: 20px;
+}
+img { display: block; }
+
+
+
+/* Headers */
+ h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizeLegibility; /* optional - helps kerning in some browsers */
+    font-weight: normal;
+    font-weight: 900;
+}
+ h1,  h1 a {
+    font-size: 30px;
+    line-height: 40px;
+}
+ h2 {
+    font-size: 24px;
+    line-height: 20px;
+}
+ h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+ h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+ h5 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+ h6 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+
+
+/* Paragraph Elements */
+a {
+    color: blue;
+    text-decoration: underline;
+}
+ a:active {
+
+}
+ a:hover {
+
+}
+ a:visited {
+
+}
+ sup,  sub {
+    font-size: 80%;
+    line-height: 0;
+}
+ sup {
+    vertical-align: super;
+}
+ sub {
+    vertical-align: sub;
+}
+ code {
+    font-family: Consolas, "Courier New", Courier, mono;
+}
+
+
+
+/* Block Elements */
+
+ pre {
+    font-family: Consolas, "Courier New", Courier, mono;
+    background: black;
+    background: rgba(0,0,0,.8);
+    color: #eee;
+    padding: 10px 20px;
+}
+
+
+
+/* Forms */
+ form {
+}
+     form p {
+        margin: 0;
+    }
+ label {
+    display: block;
+    margin-bottom: 0;
+}
+ input,  textarea,  select {
+    display: block;
+    margin: 4px 0 24px 0;
+}
+ input[type=text],  input[type=email],  input[type=url],  textarea {
+    width: 400px;
+    border: 1px solid;
+    border-color: #ccc;
+    border-color: rgba(0,0,0,.1);
+    height: 30px;
+    background: #fff;
+    background: rgba(255,255,255,.8);
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+ textarea {
+    height: 150px;
+    width: 450px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+ label.error {
+    width: 400px;
+    text-align: right;
+    color: #aa0000;
+}
+ label.error:before {
+    content: "▲ ";
+}
+ input.error,  textarea.error {
+    border-color: #aa0000;
+}
