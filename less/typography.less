@@ -1,28 +1,9 @@
-/*
-    gethifi.com - CSS Type Boilerplate
-    2010-11-12
-    v. 0.9
-    Author:Joel Sutherland (@JoelSutherland)
-    Liscenced under the MIT license
-
-    Type and Type Baseline
-    This stylesheet is designed to set up all text elements on a type baseline.
-    Using it ensures element coverage and ideally, clean type.
-
-     Setup Instructions
-      *  "" is in front of all declarations.  This is so that it can
-         target only elements in a  container.  Search/Replace to
-         change or eliminate.  It's probably best to eliminate so that you can
-         ensure this is used globally.
-      *  The default baseline is 20px.  Search/Replace 20px to adjust.
-      *  Once this is adjusted, it's also important to check the headers
-*/
-
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #333;
+  font-size: 16px;
 }
 i, em {
   font-style: italic;
@@ -115,7 +96,9 @@ a {
  code {
     font-family: Consolas, "Courier New", Courier, mono;
 }
-
+p, li {
+  line-height: 1.5;
+}
 
 
 /* Block Elements */
