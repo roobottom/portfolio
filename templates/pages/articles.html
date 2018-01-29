@@ -1,13 +1,15 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-  <h1>Articles</h1>
-  <div class="textfiller">
-    An itroduction to the articles section
-  </div>
+  <h1>{{page.title}}</h1>
+  {{content}}
   <h2>Topics</h2>
-  <ul class="tags">
-    <li><a href="#">Leadership</a> (10)</li>
-    <li><a href="#">Design Process</a> (6)</li>
-    <li><a href="#">Front-end Development</a> (8)</li>
+  {% for blog in site.blogs %}
+  {% if blog.name == 'articles' %}
+  <ul>
+    {% for tag in blog.tags.items %}
+    <li>{{tag.name}} ({{tag.count}})</li>
+    {% endfor %}
   </ul>
+  {% endif %}
+  {% endfor %}
 {% endblock %}

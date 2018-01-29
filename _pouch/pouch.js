@@ -7,6 +7,9 @@ const path = require('path')
 const glob = require('glob')
 const fs = require('fs-extra')
 
+//utils
+const _ = require('lodash')
+
 //frontmatter
 const frontmatter = require('front-matter')
 
@@ -20,18 +23,15 @@ const nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader(setti
 )
 
 //markdown
-var Remarkable = require('remarkable');
+var Remarkable = require('remarkable')
 const md = new Remarkable('full',{
   html: true,
   typographer: true,
   enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
-});
+})
 
 //time
 const moment = require('moment')
-
-
-const site = {}
 
 function getObjectsFromSource(source) {
 
@@ -83,21 +83,83 @@ function readFileContents(file) {
 }
 
 function renderFileWithTemplate(template,data) {
-  return nunjucksEnv.render(template,data);
+  return nunjucksEnv.render(template,data)
+}
+
+function sortItems(items,sortby) {
+  return items.sort((a,b) => {
+    return b[sortby] - a[sortby]
+  })
+}
+
+function getTags(items) {
+  let tags = []
+  for(let item of items) {
+    if(item.attributes.tags) {
+      tags.push(item.attributes.tags)
+    }
+  }
+
+  //clean tags list
+  tags = _.flatten(tags)
+  for(let tag of tags) {
+    tag = tag.toLowerCase()
+  }
+
+  //count unique tags
+  let uniqueTagCount = []
+  tags.forEach(function(n) {
+    uniqueTagCount[n] = (uniqueTagCount[n] || 0)+1
+  })
+
+  //create tagsObject
+  let tagsObject = []
+  for(let key in uniqueTagCount) {
+    tagsObject.push({
+      name: key,
+      count: uniqueTagCount[key]
+    })
+  }
+
+  return tagsObject
 }
 
 let pouchGo = function() {
-  let pageList = getObjectsFromSource('pages')
-  let blogsList = getObjectsFromSource('blogs')
 
-  //pages
-  for(let items of pageList) {
+  let site = {
+    pages: getObjectsFromSource('pages'),
+    blogs: getObjectsFromSource('blogs')
+  }
+
+  //update the site object with meta from blogs
+  for(let key in site.blogs) {
+
+    //if blog has a sort by key
+    if(site.blogs[key].sortBy) {
+      site.blogs[key].items = sortItems(site.blogs[key].items,site.blogs[key].sortBy)
+    }
+
+    //if blog tags, get tags:
+    if(site.blogs[key].tags) {
+      site.blogs[key].tags.items = getTags(site.blogs[key].items)
+    }
+
+  }
+
+  //render pages
+  for(let items of site.pages) {
 
     for(let item of items.items) {
 
+      //attach meta
+      if(items.tags) {
+        item.attributes.tags = items.tags
+      }
+
       let renderedFile = renderFileWithTemplate(items.template,{
         content: item.content,
-        page: item.attributes
+        page: item.attributes,
+        site: site
       })
 
       fs.ensureFileSync(items.output)
@@ -107,19 +169,20 @@ let pouchGo = function() {
 
   }
 
-  //blogs
-  for(let items of blogsList) {
 
-    for(let item of items.items) {
 
-      let renderedFile = renderFileWithTemplate(items.template,{
+  //render blogs
+  for(let blog of site.blogs) {
+
+    //for each item in this blog
+    for(let item of blog.items) {
+
+      let renderedFile = renderFileWithTemplate(blog.template,{
         content: item.content,
         page: item.attributes
       })
 
-      console.log(item)
-
-      let output = items.output + '/' + item.id + '/index.html'
+      let output = blog.output + '/' + item.id + '/index.html'
 
       fs.ensureFileSync(output)
       fs.writeFileSync(output,renderedFile)
@@ -128,7 +191,7 @@ let pouchGo = function() {
 
   }
 
-  return true;
+  return true
 }
 
 //async wrapper
