@@ -5,16 +5,17 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pouch": "node ./_pouch/pouch.js"
+    "pouch": "node ./_pouch/pouchGo.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "front-matter": "^2.3.0",
+    "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
     "gulp": "^4.0.0",
     "gulp-less": "^3.4.0",
-    "gulp-nunjucks-render": "^2.2.2",
+    "moment": "^2.20.1",
     "nunjucks": "^3.0.1",
     "remarkable": "^1.7.1",
     "through2": "^2.0.3"

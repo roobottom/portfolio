@@ -2,16 +2,17 @@
 
 const settings = require('./_settings.js')
 
+//filesystem
 const path = require('path')
 const glob = require('glob')
+const fs = require('fs-extra')
+
+//frontmatter
 const frontmatter = require('front-matter')
-const fs = require('fs')
 
 //nunjucks
 const nunjucks = require('nunjucks')
-
-
-const nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader('./templates'),
+const nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader(settings.nunjucksPath),
   {
     autoescape: false,
     noCache:true
@@ -26,35 +27,32 @@ const md = new Remarkable('full',{
   enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
 });
 
-
+//time
+const moment = require('moment')
 
 
 const site = {}
 
-//SHOULD this be a more general function??
-function blogs() {
-  let blogs = []
-  for(let blog of settings.blogs) {
+function getObjectsFromSource(source) {
 
-    //get list of file from this blog's input glob
-    let files = glob.sync(blog.input);
+  //loop through each item in this source
+  for(let item of settings[source]) {
+    //get list of files from this item's input glob
+    let files = glob.sync(item.input)
 
-    //build local list of blog contents
-    let blogObjects = []
+    //build local object of item contents
+    let objects = []
     for(let file of files) {
-      blogObjects.push(readFileContents(file))
+      objects.push(readFileContents(file))
     }
 
-    //update the blog object with the local list of blog contents
-    blog.items = blogObjects
-
-    //push the blog object into the global blog object
-    blogs.push(blog)
+    //attach the source's items to the item object
+    item.items = objects
 
   }
 
-  //return the global blogs object
-  return blogs
+  //return the updated source
+  return settings[source]
 }
 
 //returns an object containing `attributes` and `content` objects
@@ -71,8 +69,13 @@ function readFileContents(file) {
   //render md -> html
   renderedContent = md.render(renderedContent)
 
+  //get filename
+  let filePath = path.parse(file)
+
+
   let returnObj = {}
   returnObj.attributes = fm.attributes
+  returnObj.id = filePath.name
   returnObj.content = renderedContent
 
   return returnObj
@@ -83,15 +86,56 @@ function renderFileWithTemplate(template,data) {
   return nunjucksEnv.render(template,data);
 }
 
-let blogsList = blogs();
+let pouchGo = function() {
+  let pageList = getObjectsFromSource('pages')
+  let blogsList = getObjectsFromSource('blogs')
 
-
-  for(let items of blogsList) {
+  //pages
+  for(let items of pageList) {
 
     for(let item of items.items) {
 
-      console.log(renderFileWithTemplate(items.template,{content: item.content}))
+      let renderedFile = renderFileWithTemplate(items.template,{
+        content: item.content,
+        page: item.attributes
+      })
+
+      fs.ensureFileSync(items.output)
+      fs.writeFileSync(items.output,renderedFile)
 
     }
 
   }
+
+  //blogs
+  for(let items of blogsList) {
+
+    for(let item of items.items) {
+
+      let renderedFile = renderFileWithTemplate(items.template,{
+        content: item.content,
+        page: item.attributes
+      })
+
+      console.log(item)
+
+      let output = items.output + '/' + item.id + '/index.html'
+
+      fs.ensureFileSync(output)
+      fs.writeFileSync(output,renderedFile)
+
+    }
+
+  }
+
+  return true;
+}
+
+//async wrapper
+let pouchAsync = function(cb) {
+  pouchGo()
+  cb()
+}
+
+exports.pouchGo = pouchGo
+exports.pouchAsync = pouchAsync
