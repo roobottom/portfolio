@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pouch": "node ./_pouch/pouchGo.js"
+    "pouch": "node ./_pouch/pouch.js"
   },
   "author": "",
   "license": "ISC",
