@@ -136,9 +136,65 @@ function paginateCollections(collections) {
 
 }
 
+function addTagsToCollections(collections) {
+  for(let collectionName of collections) {
+    for(let collection of site[collectionName]) {
+      if(collection.tags) {
+
+        //build collection.tags.items
+        let tags = []
+        for(let item of collection.items) {
+          if(item.attributes.tags) {
+            tags.push(item.attributes.tags)
+          }
+        }
+
+        //clean tags list
+        tags = _.flatten(tags)
+        for(let tag of tags) {
+          tag = tag.toLowerCase()
+        }
+
+        //count unique tags
+        let uniqueTagCount = []
+        tags.forEach(function(n) {
+          uniqueTagCount[n] = (uniqueTagCount[n] || 0)+1
+        })
+
+        //create object for each tag
+        let tagsObject = []
+        for(let key in uniqueTagCount) {
+
+          //get all items with this tag
+          let itemsWithTag = []
+          for(let item of collection.items) {
+            if(item.attributes.tags) {
+              for(let tag of item.attributes.tags) {
+                if(tag == key) {
+                  itemsWithTag.push(item)
+                }
+              }
+            }
+          }
+
+          tagsObject.push({
+            name: key,
+            count: uniqueTagCount[key],
+            items: itemsWithTag
+          })
+        }
+
+        collection.tags.items = tagsObject
+
+      }
+    }
+  }
+}
+
 let collections = ['blogs','pages']
 addItemsToCollections(collections)
 sortCollections(collections)
 paginateCollections(collections)
+addTagsToCollections(collections)
 
 fs.writeJsonSync('./output.json',site)
