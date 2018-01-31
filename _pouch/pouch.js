@@ -35,18 +35,15 @@ const md = new Remarkable('full',{
 const moment = require('moment')
 
 
-
-
-
 function addItemsToCollections(collections) {
-  for(let collection of collections) {
+  for(let collectionName of collections) {
 
-    for(let item of site[collection]) {
+    for(let collection of site[collectionName]) {
 
       //get list of files from this item's input glob
-      let files = glob.sync(item.input)
+      let files = glob.sync(collection.input)
 
-      //build local object of item contents
+      //build local object of collection contents
       let objects = []
       for(let file of files) {
 
@@ -74,7 +71,7 @@ function addItemsToCollections(collections) {
       }
 
       //push local objects back into site
-      item.items = objects
+      collection.items = objects
 
     }
 
@@ -85,16 +82,63 @@ function sortCollections(collections) {
   for(let collectionName of collections) {
     for(let collection of site[collectionName]) {
       if(collection.sortBy) {
-        collection.items.sort((a,b) => {
-          return b.attributes[collection.sortBy] - a.attributes[collection.sortBy]
-        })
+
+        //is the first item to be sorted a string or an object/number?
+        let firstSortItem = collection.items[0].attributes[collection.sortBy]
+        if(typeof firstSortItem === 'string') { //if a string
+          collection.items.sort(function(a, b) {
+            var stringA = a.attributes[collection.sortBy].toUpperCase();
+            var stringB = b.attributes[collection.sortBy].toUpperCase();
+            if (stringA < stringB) {
+              return -1;
+            }
+            if (stringA > stringB) {
+              return 1;
+            }
+            return 0;
+          })
+        } else { //if not a string sorting is easier
+          collection.items.sort((a,b) => {
+            return b.attributes[collection.sortBy] - a.attributes[collection.sortBy]
+          })
+        }
+
+
       }
     }
   }
 }
 
+function paginateCollections(collections) {
+
+  for(let collectionName of collections) {
+    for(let collection of site[collectionName]) {
+
+      if(collection.pagination) {
+
+        collection.pagination.pages = []
+        collection.items.forEach((item, index) => {
+          if(index%collection.pagination.limit == 0) {
+            var uri =  collection.pagination.uri + (collection.pagination.pages.length + 1)
+            collection.pagination.pages.push({
+              items: [],
+              uri: uri
+            })
+          }
+          collection.pagination.pages[collection.pagination.pages.length-1].items.push(item)
+        })
+
+      }
+
+    }
+  }
+
+
+}
+
 let collections = ['blogs','pages']
 addItemsToCollections(collections)
 sortCollections(collections)
+paginateCollections(collections)
 
-console.log(util.inspect(site, false, null))
+fs.writeJsonSync('./output.json',site)

@@ -39,14 +39,15 @@ module.exports = {
       input: "./source/articles/*.md",
       output: "./docs/articles",
       template: "blogs/article.html",
-      sortBy: "date",
+      sortBy: "title",
       tags: {
         output: "./docs/articles/tags",
         template: "pages/articles.html"
       },
       pagination: {
         limit: 5,
-        output: "./docs/articles/page-",
+        uri: "page-",
+        output: "./docs/articles",
         template: "./source/articles.md"
       }
     },
