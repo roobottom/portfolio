@@ -1,5 +1,6 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-  <h1>Article Output:</h1>
+  <h1>{{page.title}}</h1>
+  <time>{{page.humanDate.date}}</time>
   {{ page.content }}
 {% endblock %}

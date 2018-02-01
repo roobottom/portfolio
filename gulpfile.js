@@ -4,7 +4,10 @@ const connect = require('gulp-connect');
 const less = require('gulp-less');
 const pouch = require('./_pouch/pouch.js')
 
-gulp.task('default', gulp.parallel(server,runPouch))
+gulp.task('default', gulp.parallel(server,runPouch,function(done) {
+  watch()
+  done()
+}))
 
 function server(done) {
   connect.server({
@@ -14,7 +17,11 @@ function server(done) {
 }
 
 function runPouch(done) {
-  pouch.pouchAsync(function() {
+  pouch(function() {
     done();
   });
+}
+
+function watch() {
+  gulp.watch(['./source/**/*.md','./templates/**/*.html'], gulp.parallel(runPouch))
 }

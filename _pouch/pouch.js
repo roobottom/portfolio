@@ -16,12 +16,11 @@ const frontmatter = require('front-matter')
 
 //nunjucks
 const nunjucks = require('nunjucks')
-const nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader(site.nunjucksPath),
-  {
-    autoescape: false,
-    noCache:true
-  }
-)
+nunjucks.configure('./templates', {
+  noCache: true,
+  autoescape: false
+})
+
 
 //markdown
 var Remarkable = require('remarkable')
@@ -53,7 +52,7 @@ function addItemsToCollections(collections) {
         let fm = frontmatter(data)
 
         //render nunjcuks tags
-        let renderedContent = nunjucksEnv.renderString(fm.body,fm.attributes)
+        let renderedContent = nunjucks.renderString(fm.body,fm.attributes)
 
         //render md -> html
         renderedContent = md.render(renderedContent)
@@ -64,8 +63,15 @@ function addItemsToCollections(collections) {
 
         let returnObj = {}
         returnObj = fm.attributes
-        returnObj.filename = filePath.name
+        returnObj.url = filePath.name
         returnObj.content = renderedContent
+
+        //add human readable dates
+        returnObj.humanDate = {}
+        returnObj.humanDate.day = moment(fm.attributes.date).format('Do');
+        returnObj.humanDate.month = moment(fm.attributes.date).format('MMM');
+        returnObj.humanDate.year = moment(fm.attributes.date).format('YYYY');
+        returnObj.humanDate.date = moment(fm.attributes.date).format('dddd, MMMM Do YYYY')
 
         objects.push(returnObj)
       }
@@ -82,7 +88,6 @@ function sortCollections(collections) {
   for(let collectionName of collections) {
     for(let collection of site[collectionName]) {
       if(collection.sortBy) {
-
         //is the first item to be sorted a string or an object/number?
         let firstSortItem = collection.items[0][collection.sortBy]
         if(typeof firstSortItem === 'string') { //if a string
@@ -102,8 +107,6 @@ function sortCollections(collections) {
             return b[collection.sortBy] - a[collection.sortBy]
           })
         }
-
-
       }
     }
   }
@@ -116,17 +119,31 @@ function paginateCollections(collections) {
 
       if(collection.pagination) {
 
-        collection.pagination.pages = []
+        collection.pagination.pages = [] //array to store pages of items
+        collection.pagination.links = [] //array to store links to pages
+
         collection.items.forEach((item, index) => {
           if(index%collection.pagination.limit == 0) {
-            var uri =  collection.pagination.uri + (collection.pagination.pages.length + 1)
+            let url = collection.pagination.url + (collection.pagination.pages.length + 1)
+            if(collection.pagination.homepage && collection.pagination.pages.length == 0) {
+              url = ''
+            }
             collection.pagination.pages.push({
               items: [],
-              uri: uri
+              url: url,
+              currentPage: collection.pagination.pages.length + 1
+            })
+            collection.pagination.links.push({
+              url: url,
+              currentPage: collection.pagination.links.length + 1
             })
           }
           collection.pagination.pages[collection.pagination.pages.length-1].items.push(item)
         })
+
+        //push total total
+        collection.pagination.totalPages = collection.pagination.pages.length
+
 
       }
 
@@ -203,7 +220,7 @@ function renderCollections() {
       page.content = item.content
 
       fs.ensureFileSync(output)
-      fs.writeFileSync(output,nunjucksEnv.render(template,{
+      fs.writeFileSync(output,nunjucks.render(template,{
         page: page,
         site: site
       }))
@@ -217,14 +234,14 @@ function renderCollections() {
     let template = collection.template
     for(let item of collection.items) {
 
-      let output = collection.output + '/' + item.filename + '/index.html'
+      let output = collection.output + '/' + item.url + '/index.html'
 
       //define page object
       let page = item
       page.content = item.content
 
       fs.ensureFileSync(output)
-      fs.writeFileSync(output,nunjucksEnv.render(template,{
+      fs.writeFileSync(output,nunjucks.render(template,{
         page: page,
         site: site
       }))
@@ -245,7 +262,7 @@ function renderCollections() {
         page.items = item.items
 
         fs.ensureFileSync(output)
-        fs.writeFileSync(output,nunjucksEnv.render(template,{
+        fs.writeFileSync(output,nunjucks.render(template,{
           page: page,
           site: site
         }))
@@ -253,10 +270,36 @@ function renderCollections() {
 
     }
 
-    //TODO
     //render pagination pages
     if(collection.pagination) {
-      let template = collection.pagination.template
+
+
+      for(let paginationPage of collection.pagination.pages) {
+
+        //set output and template
+        let template = collection.pagination.template
+        let output = collection.pagination.output + '/' + paginationPage.url + '/index.html'
+
+        if(collection.pagination.homepage && paginationPage.currentPage == 1) { //if homepage for this blog
+          template = collection.pagination.homepage.template
+          output = collection.pagination.homepage.output
+        }
+
+        //define page object
+        let page = {}
+        page.totalPages = collection.pagination.totalPages
+        page.currentPage = paginationPage.currentPage
+        page.pagination = collection.pagination.links
+        page.items = paginationPage.items
+
+        fs.ensureFileSync(output)
+        fs.writeFileSync(output,nunjucks.render(template,{
+          page: page,
+          site: site
+        }))
+
+      }
+
     }
 
   }
@@ -266,12 +309,14 @@ function renderCollections() {
 }
 
 
-
-let collections = ['blogs','pages']
-addItemsToCollections(collections)
-sortCollections(collections)
-paginateCollections(collections)
-addTagsToCollections(collections)
-renderCollections()
-
-fs.writeJsonSync('./output.json',site)
+module.exports = function(cb) {
+  let collections = ['blogs','pages']
+  addItemsToCollections(collections)
+  sortCollections(collections)
+  paginateCollections(collections)
+  addTagsToCollections(collections)
+  renderCollections()
+  //debug
+  //fs.writeJsonSync('./output.json',site)
+  cb()
+}

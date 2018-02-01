@@ -21,13 +21,13 @@ module.exports = {
       name: "work",
       input: "./source/work.md",
       output: "./docs/work/index.html",
-      template: "pages/about.html"
+      template: "pages/work.html"
     },
     {
-      name: "articles",
-      input: "./source/articles.md",
-      output: "./docs/articles/index.html",
-      template: "pages/articles.html"
+      name: "styleguide",
+      input: "./source/styleguide.md",
+      output: "./docs/styleguide/index.html",
+      template: "pages/styleguide.html"
     }
   ],
   /*
@@ -39,33 +39,20 @@ module.exports = {
       input: "./source/articles/*.md",
       output: "./docs/articles",
       template: "blogs/article.html",
-      sortBy: "title",
-      tags: {
-        output: "./docs/articles/tags",
-        template: "blogs/article-tags.html"
-      },
-      pagination: {
-        limit: 5,
-        uri: "page-",
-        output: "./docs/articles",
-        template: "./source/articles.md"
-      }
-    },
-    {
-      name: "posts",
-      input: "./source/posts/*.md",
-      output: "./docs/posts",
-      template: "blogs/article.html",
       sortBy: "date",
       tags: {
-        output: "./docs/posts/tags",
-        template: "blogs/article-tags.html"
+        output: "./docs/articles/tags",
+        template: "blogs/articles-tags.html"
       },
       pagination: {
         limit: 5,
-        uri: "page-",
-        output: "./docs/posts",
-        template: "./source/articles.md"
+        url: "page-",
+        output: "./docs/articles",
+        template: "blogs/articles-page.html",
+        homepage: {
+          output: "./docs/articles/index.html",
+          template: "blogs/articles-page.html"
+        }
       }
     },
     {
