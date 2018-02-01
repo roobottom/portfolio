@@ -1,0 +1,11 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+  <h1>{{page.count}} articles tagged {{page.title}}</h1>
+  {% for item in page.items %}
+  <article>
+    <h2>{{item.title}}</h2>
+    {{item.content}}
+  </article>
+  {% endfor %}
+  {{ page.content }}
+{% endblock %}

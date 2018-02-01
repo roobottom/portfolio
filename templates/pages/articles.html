@@ -1,7 +1,7 @@
 {% extends "layouts/default.html" %}
 {% block content %}
   <h1>{{page.title}}</h1>
-  {{content}}
+  {{page.content}}
   <h2>Topics</h2>
   {% for blog in site.blogs %}
   {% if blog.name == 'articles' %}

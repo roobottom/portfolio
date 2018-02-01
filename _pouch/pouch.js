@@ -63,7 +63,7 @@ function addItemsToCollections(collections) {
 
 
         let returnObj = {}
-        returnObj.attributes = fm.attributes
+        returnObj = fm.attributes
         returnObj.filename = filePath.name
         returnObj.content = renderedContent
 
@@ -84,11 +84,11 @@ function sortCollections(collections) {
       if(collection.sortBy) {
 
         //is the first item to be sorted a string or an object/number?
-        let firstSortItem = collection.items[0].attributes[collection.sortBy]
+        let firstSortItem = collection.items[0][collection.sortBy]
         if(typeof firstSortItem === 'string') { //if a string
           collection.items.sort(function(a, b) {
-            var stringA = a.attributes[collection.sortBy].toUpperCase();
-            var stringB = b.attributes[collection.sortBy].toUpperCase();
+            var stringA = a[collection.sortBy].toUpperCase();
+            var stringB = b[collection.sortBy].toUpperCase();
             if (stringA < stringB) {
               return -1;
             }
@@ -99,7 +99,7 @@ function sortCollections(collections) {
           })
         } else { //if not a string sorting is easier
           collection.items.sort((a,b) => {
-            return b.attributes[collection.sortBy] - a.attributes[collection.sortBy]
+            return b[collection.sortBy] - a[collection.sortBy]
           })
         }
 
@@ -144,8 +144,8 @@ function addTagsToCollections(collections) {
         //build collection.tags.items
         let tags = []
         for(let item of collection.items) {
-          if(item.attributes.tags) {
-            tags.push(item.attributes.tags)
+          if(item.tags) {
+            tags.push(item.tags)
           }
         }
 
@@ -168,22 +168,21 @@ function addTagsToCollections(collections) {
           //get all items with this tag
           let itemsWithTag = []
           for(let item of collection.items) {
-            if(item.attributes.tags) {
-              for(let tag of item.attributes.tags) {
+            if(item.tags) {
+              for(let tag of item.tags) {
                 if(tag == key) {
                   itemsWithTag.push(item)
                 }
               }
             }
           }
-
           tagsObject.push({
             name: key,
             count: uniqueTagCount[key],
             items: itemsWithTag
           })
         }
-
+        //push tag items back into site ob
         collection.tags.items = tagsObject
 
       }
@@ -191,10 +190,88 @@ function addTagsToCollections(collections) {
   }
 }
 
+function renderCollections() {
+
+  //render each page
+  for (let collection of site['pages']) {
+    let output = collection.output
+    let template = collection.template
+    for(let item of collection.items) {
+
+      //define page object
+      let page = item
+      page.content = item.content
+
+      fs.ensureFileSync(output)
+      fs.writeFileSync(output,nunjucksEnv.render(template,{
+        page: page,
+        site: site
+      }))
+
+    }
+  }
+
+  //render blogs
+  for (let collection of site['blogs']) {
+
+    let template = collection.template
+    for(let item of collection.items) {
+
+      let output = collection.output + '/' + item.filename + '/index.html'
+
+      //define page object
+      let page = item
+      page.content = item.content
+
+      fs.ensureFileSync(output)
+      fs.writeFileSync(output,nunjucksEnv.render(template,{
+        page: page,
+        site: site
+      }))
+
+    }
+
+    //render tags pages
+    if(collection.tags) {
+      let template = collection.tags.template
+
+      for(let item of collection.tags.items) {
+        let output = collection.tags.output + '/' + item.name + '/index.html'
+
+        //define page object
+        let page = {}
+        page.title = item.name
+        page.count = item.count
+        page.items = item.items
+
+        fs.ensureFileSync(output)
+        fs.writeFileSync(output,nunjucksEnv.render(template,{
+          page: page,
+          site: site
+        }))
+      }
+
+    }
+
+    //TODO
+    //render pagination pages
+    if(collection.pagination) {
+      let template = collection.pagination.template
+    }
+
+  }
+
+
+
+}
+
+
+
 let collections = ['blogs','pages']
 addItemsToCollections(collections)
 sortCollections(collections)
 paginateCollections(collections)
 addTagsToCollections(collections)
+renderCollections()
 
 fs.writeJsonSync('./output.json',site)

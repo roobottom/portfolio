@@ -42,12 +42,29 @@ module.exports = {
       sortBy: "title",
       tags: {
         output: "./docs/articles/tags",
-        template: "pages/articles.html"
+        template: "blogs/article-tags.html"
       },
       pagination: {
         limit: 5,
         uri: "page-",
         output: "./docs/articles",
+        template: "./source/articles.md"
+      }
+    },
+    {
+      name: "posts",
+      input: "./source/posts/*.md",
+      output: "./docs/posts",
+      template: "blogs/article.html",
+      sortBy: "date",
+      tags: {
+        output: "./docs/posts/tags",
+        template: "blogs/article-tags.html"
+      },
+      pagination: {
+        limit: 5,
+        uri: "page-",
+        output: "./docs/posts",
         template: "./source/articles.md"
       }
     },
