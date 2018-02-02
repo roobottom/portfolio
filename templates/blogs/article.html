@@ -3,4 +3,12 @@
   <h1>{{page.title}}</h1>
   <time>{{page.humanDate.date}}</time>
   {{ page.content }}
+  <nav>
+    {% if page.prev %}
+    <p>Previous article: <a href="/articles/{{page.prev.url}}">{{page.prev.title}}</a></p>
+    {% endif %}
+    {% if page.next %}
+    <p>Next article: <a href="/articles/{{page.next.url}}">{{page.next.title}}</a></p>
+    {% endif %}
+  </nav>
 {% endblock %}

@@ -33,6 +33,11 @@ const md = new Remarkable('full',{
 //time
 const moment = require('moment')
 
+//local util functions
+function toURL(str) {
+    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']').replace(/%20/g, '-');
+}
+
 
 function addItemsToCollections(collections) {
   for(let collectionName of collections) {
@@ -86,8 +91,13 @@ function addItemsToCollections(collections) {
 
 function sortCollections(collections) {
   for(let collectionName of collections) {
+
+    // --- sort collection
+
     for(let collection of site[collectionName]) {
       if(collection.sortBy) {
+
+
         //is the first item to be sorted a string or an object/number?
         let firstSortItem = collection.items[0][collection.sortBy]
         if(typeof firstSortItem === 'string') { //if a string
@@ -107,8 +117,36 @@ function sortCollections(collections) {
             return b[collection.sortBy] - a[collection.sortBy]
           })
         }
+
       }
     }
+
+    // --- update each collection with prev / next object
+    // --- (even if collection hasn't been sorted)
+
+    for(let collection of site[collectionName]) {
+
+      for(let key in collection.items) {
+        let next = parseInt(key)-1;
+        let prev = parseInt(key)+1;
+
+        if(next in collection.items) {
+          collection.items[key].next = {};
+          collection.items[key].next.title = collection.items[next].title;
+          collection.items[key].next.url = collection.items[next].url;
+          collection.items[key].next.date = collection.items[next].date;
+        }
+        if(prev in collection.items) {
+          collection.items[key].prev = {};
+          collection.items[key].prev.title = collection.items[prev].title;
+          collection.items[key].prev.url = collection.items[prev].url;
+          collection.items[key].prev.date = collection.items[prev].date;
+        }
+      }
+
+
+    }
+
   }
 }
 
@@ -196,7 +234,8 @@ function addTagsToCollections(collections) {
           tagsObject.push({
             name: key,
             count: uniqueTagCount[key],
-            items: itemsWithTag
+            items: itemsWithTag,
+            url: toURL(key)
           })
         }
         //push tag items back into site ob
@@ -253,7 +292,7 @@ function renderCollections() {
       let template = collection.tags.template
 
       for(let item of collection.tags.items) {
-        let output = collection.tags.output + '/' + item.name + '/index.html'
+        let output = collection.tags.output + '/' + item.url + '/index.html'
 
         //define page object
         let page = {}
@@ -317,6 +356,6 @@ module.exports = function(cb) {
   addTagsToCollections(collections)
   renderCollections()
   //debug
-  //fs.writeJsonSync('./output.json',site)
+  fs.writeJsonSync('./output.json',site)
   cb()
 }

@@ -7,7 +7,7 @@
     {% if blog.name == 'articles' %}
     <ul>
       {% for tag in blog.tags.items %}
-      <li>{{tag.name}} ({{tag.count}})</li>
+      <li><a href="/articles/tags/{{tag.url}}">{{tag.name}} ({{tag.count}})</a></li>
       {% endfor %}
     </ul>
     {% endif %}
