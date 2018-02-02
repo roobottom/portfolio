@@ -38,6 +38,15 @@ function toURL(str) {
     return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']').replace(/%20/g, '-');
 }
 
+function createPatternsString() {
+  let files = glob.sync(site.patterns.input)
+  let string = ''
+  for(let file of files) {
+    let data = fs.readFileSync(file,'utf8')
+    string += data
+  }
+  console.log(string)
+}
 
 function addItemsToCollections(collections) {
   for(let collectionName of collections) {
@@ -246,115 +255,121 @@ function addTagsToCollections(collections) {
   }
 }
 
-function renderCollections() {
+function renderCollections(collections) {
 
   //render each page
-  for (let collection of site['pages']) {
-    let output = collection.output
-    let template = collection.template
-    for(let item of collection.items) {
+  if(collections.includes('pages')) {
+    for (let collection of site['pages']) {
+      let output = collection.output
+      let template = collection.template
+      for(let item of collection.items) {
 
-      //define page object
-      let page = item
-      page.content = item.content
+        //define page object
+        let page = item
+        page.content = item.content
 
-      fs.ensureFileSync(output)
-      fs.writeFileSync(output,nunjucks.render(template,{
-        page: page,
-        site: site
-      }))
+        fs.ensureFileSync(output)
+        fs.writeFileSync(output,nunjucks.render(template,{
+          page: page,
+          site: site
+        }))
 
+      }
     }
   }
+
 
   //render blogs
-  for (let collection of site['blogs']) {
+  if(collections.includes('blogs')) {
+    for (let collection of site['blogs']) {
 
-    let template = collection.template
-    for(let item of collection.items) {
+      let template = collection.template
+      for(let item of collection.items) {
 
-      let output = collection.output + '/' + item.url + '/index.html'
-
-      //define page object
-      let page = item
-      page.content = item.content
-
-      fs.ensureFileSync(output)
-      fs.writeFileSync(output,nunjucks.render(template,{
-        page: page,
-        site: site
-      }))
-
-    }
-
-    //render tags pages
-    if(collection.tags) {
-      let template = collection.tags.template
-
-      for(let item of collection.tags.items) {
-        let output = collection.tags.output + '/' + item.url + '/index.html'
+        let output = collection.output + '/' + item.url + '/index.html'
 
         //define page object
-        let page = {}
-        page.title = item.name
-        page.count = item.count
-        page.items = item.items
+        let page = item
+        page.content = item.content
 
         fs.ensureFileSync(output)
         fs.writeFileSync(output,nunjucks.render(template,{
           page: page,
           site: site
         }))
+
       }
 
-    }
+      //render tags pages
+      if(collection.tags) {
+        let template = collection.tags.template
 
-    //render pagination pages
-    if(collection.pagination) {
+        for(let item of collection.tags.items) {
+          let output = collection.tags.output + '/' + item.url + '/index.html'
 
+          //define page object
+          let page = {}
+          page.title = item.name
+          page.count = item.count
+          page.items = item.items
 
-      for(let paginationPage of collection.pagination.pages) {
-
-        //set output and template
-        let template = collection.pagination.template
-        let output = collection.pagination.output + '/' + paginationPage.url + '/index.html'
-
-        if(collection.pagination.homepage && paginationPage.currentPage == 1) { //if homepage for this blog
-          template = collection.pagination.homepage.template
-          output = collection.pagination.homepage.output
+          fs.ensureFileSync(output)
+          fs.writeFileSync(output,nunjucks.render(template,{
+            page: page,
+            site: site
+          }))
         }
 
-        //define page object
-        let page = {}
-        page.totalPages = collection.pagination.totalPages
-        page.currentPage = paginationPage.currentPage
-        page.pagination = collection.pagination.links
-        page.items = paginationPage.items
+      }
 
-        fs.ensureFileSync(output)
-        fs.writeFileSync(output,nunjucks.render(template,{
-          page: page,
-          site: site
-        }))
+      //render pagination pages
+      if(collection.pagination) {
+
+
+        for(let paginationPage of collection.pagination.pages) {
+
+          //set output and template
+          let template = collection.pagination.template
+          let output = collection.pagination.output + '/' + paginationPage.url + '/index.html'
+
+          if(collection.pagination.homepage && paginationPage.currentPage == 1) { //if homepage for this blog
+            template = collection.pagination.homepage.template
+            output = collection.pagination.homepage.output
+          }
+
+          //define page object
+          let page = {}
+          page.totalPages = collection.pagination.totalPages
+          page.currentPage = paginationPage.currentPage
+          page.pagination = collection.pagination.links
+          page.items = paginationPage.items
+
+          fs.ensureFileSync(output)
+          fs.writeFileSync(output,nunjucks.render(template,{
+            page: page,
+            site: site
+          }))
+
+        }
 
       }
 
     }
 
   }
-
-
 
 }
 
 
 module.exports = function(cb) {
-  let collections = ['blogs','pages']
+  createPatternsString()
+
+  let collections = ['pages','blogs']
   addItemsToCollections(collections)
   sortCollections(collections)
   paginateCollections(collections)
   addTagsToCollections(collections)
-  renderCollections()
+  renderCollections(collections)
   //debug
   fs.writeJsonSync('./output.json',site)
   cb()

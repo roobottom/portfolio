@@ -1,0 +1,10 @@
+{% macro figure(images) %}
+  <figure>
+    {% for img in images %}
+      <img src="{{img.url}}"/>
+      <figcaption>
+        {{img.caption}}
+      </figcaption>
+    {% endfor %}
+  </figure>
+{% endmacro %}

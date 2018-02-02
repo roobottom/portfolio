@@ -1,5 +1,8 @@
 module.exports = {
   nunjucksPath: "./templates",
+  patterns: {
+    input: "./patterns/**/*.html"
+  },
   /*
     Content pages
     template: relative to nunjucksPath
@@ -62,7 +65,5 @@ module.exports = {
       template: "blogs/work.html"
     }
   ]
-  /*
-    patterns are used to build patterns pages
-  */
+
 };

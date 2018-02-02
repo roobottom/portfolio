@@ -22,6 +22,8 @@ function runPouch(done) {
   });
 }
 
+gulp.task('build',gulp.parallel(runPouch))
+
 function watch() {
   gulp.watch(['./source/**/*.md','./templates/**/*.html'], gulp.parallel(runPouch))
 }
