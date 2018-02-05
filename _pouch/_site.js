@@ -1,7 +1,7 @@
 module.exports = {
-  nunjucksPath: "./templates",
+  nunjucksPath: "./templates/",
   patterns: {
-    input: "./patterns/**/*.html"
+    input: "./templates/patterns/**/*.html"
   },
   /*
     Content pages
@@ -62,7 +62,14 @@ module.exports = {
       name: "work",
       input: "./source/work/*.md",
       output: "./docs/work",
-      template: "blogs/work.html"
+      template: "blogs/work.html",
+      sortBy: "date"
+    },
+    {
+      name: "components",
+      input: "./source/styleguide/components/*.md",
+      output: "./docs/styleguide/components",
+      template: "blogs/component.html"
     }
   ]
 

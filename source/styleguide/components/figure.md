@@ -11,4 +11,4 @@ This is a Figure
 
 It's _great_ isn't it?
 
-{% figure(images) %}
+{{ figure(images) }}

@@ -16,7 +16,7 @@ const frontmatter = require('front-matter')
 
 //nunjucks
 const nunjucks = require('nunjucks')
-nunjucks.configure('./templates', {
+nunjucks.configure(site.nunjucksPath, {
   noCache: true,
   autoescape: false
 })
@@ -26,6 +26,7 @@ nunjucks.configure('./templates', {
 var Remarkable = require('remarkable')
 const md = new Remarkable('full',{
   html: true,
+  xhtmlOut: true,
   typographer: true,
   enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
 })
@@ -40,12 +41,14 @@ function toURL(str) {
 
 function createPatternsString() {
   let files = glob.sync(site.patterns.input)
-  let string = ''
+  site.patterns.string = ''
   for(let file of files) {
     let data = fs.readFileSync(file,'utf8')
-    string += data
+    site.patterns.string += data
   }
-  console.log(string)
+}
+function removeWhitespace(str) {
+  return str.replace(/(\r\n|\n|\r|\t)/gm,"")
 }
 
 function addItemsToCollections(collections) {
@@ -66,7 +69,8 @@ function addItemsToCollections(collections) {
         let fm = frontmatter(data)
 
         //render nunjcuks tags
-        let renderedContent = nunjucks.renderString(fm.body,fm.attributes)
+        let renderString = removeWhitespace(site.patterns.string) + fm.body
+        let renderedContent = nunjucks.renderString(renderString,fm.attributes)
 
         //render md -> html
         renderedContent = md.render(renderedContent)
@@ -278,6 +282,9 @@ function renderCollections(collections) {
     }
   }
 
+
+//TODO
+//incorperate patterns into render string
 
   //render blogs
   if(collections.includes('blogs')) {

@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,900,900i');
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+audio,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+mark,
+menu,
+meter,
+nav,
+output,
+progress,
+section,
+summary,
+time,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+  max-width: 45em;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+footer {
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+}
+nav ul {
+  list-style: none;
+}
+ol {
+  list-style: decimal;
+}
+ul {
+  list-style: disc;
+}
+ul ul {
+  list-style: circle;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+q:before,
+blockquote:after,
+q:after {
+  content: '';
+  content: none;
+}
+ins {
+  text-decoration: underline;
+}
+del {
+  text-decoration: line-through;
+}
+mark {
+  background: none;
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption,
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+input[type="submit"],
+input[type="button"],
+button {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+input,
+select,
+a img {
+  vertical-align: middle;
+}
+a img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+  font-size: 16px;
+}
+i,
+em {
+  font-style: italic;
+}
+b,
+strong {
+  font-weight: 900;
+}
+/* Standard Text */
+input,
+button,
+textarea {
+  font: normal 12px/20px arial, sans-serif;
+  color: #555;
+}
+time {
+  color: #ccc;
+}
+/* Block Baselines */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+pre,
+blockquote,
+textarea,
+button {
+  margin-bottom: 20px;
+}
+img {
+  display: block;
+}
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-rendering: optimizeLegibility;
+  /* optional - helps kerning in some browsers */
+  font-weight: normal;
+  font-weight: 900;
+}
+h1,
+h1 a {
+  font-size: 30px;
+  line-height: 40px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 20px;
+}
+h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+h5 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+h6 {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+/* Paragraph Elements */
+a {
+  color: blue;
+  text-decoration: underline;
+}
+sup,
+sub {
+  font-size: 80%;
+  line-height: 0;
+}
+sup {
+  vertical-align: super;
+}
+sub {
+  vertical-align: sub;
+}
+code {
+  font-family: Consolas, "Courier New", Courier, mono;
+}
+p,
+li {
+  line-height: 1.5;
+}
+/* Block Elements */
+pre {
+  font-family: Consolas, "Courier New", Courier, mono;
+  background: black;
+  background: rgba(0, 0, 0, 0.8);
+  color: #eee;
+  padding: 10px 20px;
+}
+/* Forms */
+form p {
+  margin: 0;
+}
+label {
+  display: block;
+  margin-bottom: 0;
+}
+input,
+textarea,
+select {
+  display: block;
+  margin: 4px 0 24px 0;
+}
+input[type=text],
+input[type=email],
+input[type=url],
+textarea {
+  width: 400px;
+  border: 1px solid;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.1);
+  height: 30px;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  line-height: 30px;
+  padding: 0;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+textarea {
+  height: 150px;
+  width: 450px;
+  font-size: 14px;
+  line-height: 16px;
+}
+label.error {
+  width: 400px;
+  text-align: right;
+  color: #aa0000;
+}
+label.error:before {
+  content: "▲ ";
+}
+input.error,
+textarea.error {
+  border-color: #aa0000;
+}
+.block {
+  border: 1px solid #ccc;
+  background-color: #F7F7F7;
+  padding: 20px;
+  color: #333;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.block p:last-child {
+  margin-bottom: 0;
+}
+.block--inline {
+  display: inline-block;
+}
+.block--text {
+  font-style: italic;
+  text-align: center;
+}
+.nav a {
+  display: block;
+}
+.nav--inline ul {
+  display: flex;
+}
+.nav--inline li {
+  margin-right: 20px;
+}
+.textfiller {
+  border: 1px dashed #ccc;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-style: italic;
+}

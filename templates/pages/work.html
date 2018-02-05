@@ -1,17 +1,32 @@
+{% macro workItems(org) %}
+  {% for blog in site.blogs -%}
+    {% if blog.name == 'work' %}
+      {% for item in blog.items %}
+        {% if item.org == org %}
+          <div class="block">
+            <h3><a href="/work/{{item.url}}">{{item.title}}</a></h3>
+            <time datetime="{{item.date}}">{{item.humanDate.month}} {{item.humanDate.year}}</time>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {%- endfor %}
+{% endmacro %}
+
 {% extends "layouts/default.html" %}
 {% block content %}
 <h1>Work</h1>
 <div class="textfiller">Intro to this section</div>
 <h2>Firefly Learning</h2>
 <div class="textfiller">About Firefly and my role</div>
-<div class="block">
-  <h3><a href="work-firefly-essence.html">Uncovering Firefly's essence</a></h3>
-  <p><time>Winter 2017/18</time></p>
-  <p>Workshopping Firefly's unique offering story to accelerate our sale cycle.</p>
-</div>
-<div class="block">
-  <h3><a href="work-sketch-pattern-library.html">Sketch pattern library</a></h3>
-  <p><time>Winter 2017/18</time></p>
-  <p>Workshopping Firefly's unique offering story to accelerate our sale cycle.</p>
-</div>
+{{workItems('firefly')}}
+<h2>Onalytica</h2>
+<div class="textfiller">About Onalytica and my role</div>
+{{workItems('onalytica')}}
+<h2>Glaxstar</h2>
+<div class="textfiller">About Glaxstar and my role</div>
+{{workItems('glaxstar')}}
+<h2>Other work</h2>
+<div class="textfiller">About other work</div>
+{{workItems('other')}}
 {% endblock %}
