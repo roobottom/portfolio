@@ -31,14 +31,16 @@
 }
 
 .nav {
+  margin: 0 20px 0 0;
   a {display: block;}
 
-  &--inline ul {
+  &--inline {
     display: flex;
+    flex-wrap: wrap;
   }
 
-  &--inline li {
-    margin-right: 20px;
+  &--inline > * {
+    margin: 0 20px 20px 0;
   }
 
 }
@@ -49,4 +51,11 @@
   margin-bottom: 20px;
   padding: 10px;
   font-style: italic;
+}
+
+.tag {
+  border: 1px solid @c_border;
+  background: @c_bg;
+  border-radius: 15px;
+  padding: 5px 10px;
 }

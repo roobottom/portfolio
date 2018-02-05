@@ -366,18 +366,28 @@ textarea.error {
   font-style: italic;
   text-align: center;
 }
+.nav {
+  margin: 0 20px 0 0;
+}
 .nav a {
   display: block;
 }
-.nav--inline ul {
+.nav--inline {
   display: flex;
+  flex-wrap: wrap;
 }
-.nav--inline li {
-  margin-right: 20px;
+.nav--inline > * {
+  margin: 0 20px 20px 0;
 }
 .textfiller {
   border: 1px dashed #ccc;
   margin-bottom: 20px;
   padding: 10px;
   font-style: italic;
+}
+.tag {
+  border: 1px solid #ccc;
+  background: #F7F7F7;
+  border-radius: 15px;
+  padding: 5px 10px;
 }

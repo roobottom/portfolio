@@ -2,18 +2,8 @@
 {% block content %}
   <h1>Articles, page {{page.currentPage}} of {{page.totalPages}}</h1>
   {{ page.content }}
-  <h2>Topics</h2>
-  {% for blog in site.blogs %}
-    {% if blog.name == 'articles' %}
-    <ul>
-      {% for tag in blog.tags.items %}
-      <li><a href="/articles/tags/{{tag.url}}">{{tag.name}} ({{tag.count}})</a></li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-  {% endfor %}
   {% for item in page.items %}
-  <article>
+  <article class="block">
     <h2><a href="/articles/{{item.url}}">{{item.title}}</a></h2>
     <time>{{item.humanDate.date}}</time>
   </article>

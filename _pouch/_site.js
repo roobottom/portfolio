@@ -21,6 +21,12 @@ module.exports = {
       template: "pages/about.html"
     },
     {
+      name: "articles",
+      input: "./source/articles.md",
+      output: "./docs/articles/index.html",
+      template: "pages/articles.html"
+    },
+    {
       name: "work",
       input: "./source/work.md",
       output: "./docs/work/index.html",
@@ -51,11 +57,11 @@ module.exports = {
         limit: 5,
         url: "page-",
         output: "./docs/articles",
-        template: "blogs/articles-page.html",
-        homepage: {
-          output: "./docs/articles/index.html",
-          template: "blogs/articles-page.html"
-        }
+        template: "blogs/articles-page.html"
+        // homepage: {
+        //   output: "./docs/articles/index.html",
+        //   template: "blogs/articles-page.html"
+        // }
       }
     },
     {
