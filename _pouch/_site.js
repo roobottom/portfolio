@@ -9,10 +9,10 @@ module.exports = {
   */
   pages: [
     {
-      name: "home",
-      input: "./source/home.md",
+      name: "homepage",
+      input: "./source/homepage.md",
       output: "./docs/index.html",
-      template: "pages/home.html"
+      template: "pages/homepage.html"
     },
     {
       name: "about",
@@ -37,6 +37,12 @@ module.exports = {
       input: "./source/styleguide.md",
       output: "./docs/styleguide/index.html",
       template: "pages/styleguide.html"
+    },
+    {
+      name: "styleguide-principals",
+      input: "./source/styleguide/principals.md",
+      output: "./docs/styleguide/principals/index.html",
+      template: "pages/styleguide-principals.html"
     }
   ],
   /*
@@ -51,13 +57,13 @@ module.exports = {
       sortBy: "date",
       tags: {
         output: "./docs/articles/tags",
-        template: "blogs/articles-tags.html"
+        template: "blogs/articles-tag.html"
       },
       pagination: {
         limit: 5,
         url: "page-",
         output: "./docs/articles",
-        template: "blogs/articles-page.html"
+        template: "blogs/articles-pagination.html"
         // homepage: {
         //   output: "./docs/articles/index.html",
         //   template: "blogs/articles-page.html"
@@ -68,7 +74,7 @@ module.exports = {
       name: "work",
       input: "./source/work/*.md",
       output: "./docs/work",
-      template: "blogs/work.html",
+      template: "blogs/work-item.html",
       sortBy: "date"
     },
     {

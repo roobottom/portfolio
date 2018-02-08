@@ -24,6 +24,7 @@ nunjucks.configure(site.nunjucksPath, {
 
 //markdown
 var Remarkable = require('remarkable')
+const remarkableFigure = require('./remarkable.figure.js')
 const md = new Remarkable('full',{
   html: true,
   xhtmlOut: true,
@@ -31,12 +32,17 @@ const md = new Remarkable('full',{
   enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
 })
 
+md.use(remarkableFigure)
+
 //time
 const moment = require('moment')
 
 //local util functions
 function toURL(str) {
     return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']').replace(/%20/g, '-');
+}
+function removeWhitespace(str) {
+  return str.replace(/(\r\n|\n|\r|\t)/gm,"")
 }
 
 function createPatternsString() {
@@ -47,9 +53,7 @@ function createPatternsString() {
     site.patterns.string += data
   }
 }
-function removeWhitespace(str) {
-  return str.replace(/(\r\n|\n|\r|\t)/gm,"")
-}
+
 
 function addItemsToCollections(collections) {
   for(let collectionName of collections) {
@@ -75,6 +79,9 @@ function addItemsToCollections(collections) {
         //render md -> html
         renderedContent = md.render(renderedContent)
 
+        //get first paragraph for intro
+        let intro = renderedContent.substring(renderedContent.indexOf('<p>'), renderedContent.indexOf('</p>'))
+
         //get filename
         let filePath = path.parse(file)
 
@@ -83,6 +90,7 @@ function addItemsToCollections(collections) {
         returnObj = fm.attributes
         returnObj.url = filePath.name
         returnObj.content = renderedContent
+        returnObj.intro = intro
 
         //add human readable dates
         returnObj.humanDate = {}

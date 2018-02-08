@@ -1,10 +1,10 @@
-{% macro figure(images) %}
-  <figure>
-    {% for img in images %}
-      <img src="{{img.url}}"/>
+{% macro figure(img) %}
+  <figure data-width="{{img.width}}" data-height="{{img.height}}">
+      <img src="{{img.src}}"/>
+      {% if img.caption %}
       <figcaption>
         {{img.caption}}
       </figcaption>
-    {% endfor %}
+      {% endif %}
   </figure>
 {% endmacro %}

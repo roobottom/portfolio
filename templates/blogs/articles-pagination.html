@@ -1,0 +1,18 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+  <h1>Articles, page {{page.currentPage}} of {{page.totalPages}}</h1>
+  <p><strong>You are here:</strong> <a href="/articles">Articles</a> &rarr; All articles ({{page.currentPage}} of {{page.totalPages}})</p>
+  {{ page.content }}
+  {% for item in page.items %}
+  <article class="block">
+    <h2><a href="/articles/{{item.url}}">{{item.title}}</a></h2>
+    <p><time>{{item.humanDate.date}}</time></p>
+    <p>{{item.intro}}</p>
+  </article>
+  {% endfor %}
+  <ul>
+    {% for link in page.pagination %}
+      <li><a href="/articles/{{link.url}}">Page {{link.currentPage}}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

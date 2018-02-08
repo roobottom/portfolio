@@ -23,7 +23,12 @@ gulp.task('less', function() {
   .pipe(gulp.dest('./docs'))
 })
 
-gulp.task('default', gulp.parallel(server,runPouch,'less',function(done) {
+gulp.task('static',function() {
+  return gulp.src('./static/**/*')
+  .pipe(gulp.dest('./docs'))
+})
+
+gulp.task('default', gulp.parallel(server,runPouch,'less','static',function(done) {
   watch()
   done()
 }))
@@ -33,4 +38,5 @@ gulp.task('build',gulp.parallel(runPouch))
 function watch() {
   gulp.watch(['./source/**/*.md','./templates/**/*.html'], gulp.parallel(runPouch))
   gulp.watch('./less/**/*.less', gulp.parallel('less'))
+  gulp.watch('./static/**/*', gulp.parallel('static'))
 }

@@ -20,11 +20,12 @@
   <article class="block">
     <h2><a href="/articles/{{item.url}}">{{item.title}}</a></h2>
     <p><time>{{item.humanDate.date}}</time></p>
+    <p>{{item.intro}}</p>
   </article>
   {% endif %}
   {% endfor %}
 
-  <p><a href="{{blog.pagination.items[0].pages.url}}">See all articles</a></p>
+  <p><a href="/articles/{{blog.pagination.links[0].url}}">See all articles</a></p>
 
   {% endif %}
   {% endfor %}

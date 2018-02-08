@@ -366,6 +366,24 @@ textarea.error {
   font-style: italic;
   text-align: center;
 }
+figure {
+  margin-bottom: 20px;
+}
+figcaption {
+  margin-top: 20px;
+  text-align: center;
+  color: #ccc;
+}
+img {
+  max-width: 100%;
+}
+small {
+  font-size: 80%;
+}
+footer p,
+footer a {
+  color: #ccc;
+}
 .nav {
   margin: 0 20px 0 0;
 }

@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Portfolio</title>
+    <title>{% if page.seoTitle %}{{page.seoTitle}}{% else %}{{page.title}}{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles.css" type="text/css" media="all"/>
   </head>
