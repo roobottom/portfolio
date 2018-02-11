@@ -1,6 +1,6 @@
 ---
 title: About Me
-seoTitle: "Jon Roobottom: Building things for the web since 2001"
+seoTitle: "Jon Roobottom: Creating things for the web since 2001"
 ---
 Hello, my name is Jon, and I've been designing and building things for the web [since 2001](https://web.archive.org/web/20010101*/roobottom.com). Yes, I've been at this quite a while now but don't worry: I still sport a reassuringly wankerish beard and finely quaffed hair-do.
 
@@ -12,24 +12,28 @@ I'm the Head of Design for Firefly Learning. I lead a team of UX, visual and com
 
 ## What I value
 
-Having values is good. They help me decide what work is vital and what can I can ignore. My values are like the pruning sheers of my professional life.
-
-(How can these needs be met? I.e., movement: being given the time to go for a run at lunchtime)
-
+I've thought long and hard about what I value at work. Acknowledging why I enjoy some roles and not others enable me to identify where I'll thrive and where I'll give my best. My values are the pruning sheers of my professional life.
 
 ### Storytelling
 
-I believe in the power of stories and pictures to communicate complicated ideas. 
+I believe in the persuasive power of carefully considered words for productive communication. I value time to hone ideas through writing and drawing.
 
 ### Code
 
-I believe in the importance of the logical, systems thinking that comes with learning how to program a computer
+I believe in the importance of logical, systematic thinking and how I can apply this beyond code into all areas of work. I value regular time to grow my skills as a programmer.
+
+### Building things
+
+I believe I find delight in the flow-state achieved when building things. I value roles that enable me to create as well as lead.
+
+### Automation
+
+I believe in creating systems to minimise grunt-work. I value the freedom to build these systems where they don't exist. 
+
+### Learning
+
+I believe that breakthrough ideas often come from outside my area of expertise. I value indulging my lifelong love of learning.
 
 ### Movement
 
-I believe that great work happens when both body and mind are fit and healthy
-
-### Never being satisfied
-
-I believe in continually striving to better myself
-
+I believe that great work happens when both body and mind are fit and healthy. I value time away from my desk to exercise.
