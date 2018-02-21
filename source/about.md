@@ -16,7 +16,7 @@ I've thought long and hard about what I value at work. Acknowledging why I enjoy
 
 ### Storytelling
 
-I believe in the persuasive power of carefully considered words for productive communication. I value time to hone ideas through writing and drawing.
+I believe in the persuasive power of carefully considered words and hardworking pictures for productive communication. I value time to collaboratively hone ideas through writing and drawing.
 
 ### Code
 
@@ -24,11 +24,13 @@ I believe in the importance of logical, systematic thinking and how I can apply 
 
 ### Building things
 
-I believe I find delight in the flow-state achieved when building things. I value roles that enable me to create as well as lead.
+I find delight in the flow-state achieved when building things. I value roles that enable me to create as well as lead.
 
 ### Automation
 
 I believe in creating systems to minimise grunt-work. I value the freedom to build these systems where they don't exist. 
+
+Case in point is the (extremely fast) [flat-file publishing system](#) I built to run this site.
 
 ### Learning
 

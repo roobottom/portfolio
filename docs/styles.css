@@ -347,6 +347,9 @@ input.error,
 textarea.error {
   border-color: #aa0000;
 }
+.result {
+  color: #2a2823;
+}
 .block {
   border: 1px solid #ccc;
   background-color: #F7F7F7;

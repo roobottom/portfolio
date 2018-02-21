@@ -5,7 +5,7 @@
         {% if item.org == org %}
           <div class="block">
             <h3><a href="/work/{{item.url}}">{{item.title}}</a></h3>
-            <time datetime="{{item.date}}">{{item.humanDate.month}} {{item.humanDate.year}}</time>
+            <time datetime="{{item.date}}">{{item.humanDate.season}} {{item.humanDate.year}}</time>
           </div>
         {% endif %}
       {% endfor %}

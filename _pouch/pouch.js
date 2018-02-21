@@ -9,7 +9,6 @@ const fs = require('fs-extra')
 
 //utils
 const _ = require('lodash')
-const util = require('util')
 
 //frontmatter
 const frontmatter = require('front-matter')
@@ -43,6 +42,17 @@ function toURL(str) {
 }
 function removeWhitespace(str) {
   return str.replace(/(\r\n|\n|\r|\t)/gm,"")
+}
+function getSeason(datetime) {
+  let month = moment(datetime).format('M')
+
+  //12,1,2 = winter | 3,4,5 = spring | 6,7,8 = summer | 9,10,11 = autumn
+  if(['12','1','2'].indexOf(month) != -1) { return "Winter" }
+  if(['3','4','5'].indexOf(month) != -1) { return "Spring" }
+  if(['6','7','8'].indexOf(month) != -1) { return "Summer" }
+  if(['9','10','11'].indexOf(month) != -1) { return "Autumn" }
+  
+  return datetime
 }
 
 function createPatternsString() {
@@ -80,7 +90,7 @@ function addItemsToCollections(collections) {
         renderedContent = md.render(renderedContent)
 
         //get first paragraph for intro
-        let intro = renderedContent.substring(renderedContent.indexOf('<p>'), renderedContent.indexOf('</p>'))
+        let intro = renderedContent.substring(renderedContent.indexOf('<p>'), renderedContent.indexOf('</p>')).replace(/(<([^>]+)>)/ig,"")
 
         //get filename
         let filePath = path.parse(file)
@@ -94,11 +104,12 @@ function addItemsToCollections(collections) {
 
         //add human readable dates
         returnObj.humanDate = {}
+        returnObj.humanDate.dayName = moment(fm.attributes.date).format('dddd');
         returnObj.humanDate.day = moment(fm.attributes.date).format('Do');
-        returnObj.humanDate.month = moment(fm.attributes.date).format('MMM');
+        returnObj.humanDate.month = moment(fm.attributes.date).format('MMMM');
         returnObj.humanDate.year = moment(fm.attributes.date).format('YYYY');
         returnObj.humanDate.date = moment(fm.attributes.date).format('dddd, MMMM Do YYYY')
-
+        returnObj.humanDate.season = getSeason(fm.attributes.date)
         objects.push(returnObj)
       }
 
