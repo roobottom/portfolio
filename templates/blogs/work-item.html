@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-  <h1>{{page.title}}</h1>
+  {{ title(page.title)}}
   <p><strong>You are here:</strong> <a href="/work">Work</a> &rarr; {{page.title}}</p>
-  {{ page.content }}
+  {{ prose(page.content) }}
 {% endblock %}

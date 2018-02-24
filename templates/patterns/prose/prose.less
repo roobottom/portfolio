@@ -1,0 +1,79 @@
+.prose {
+
+  p, >ul, >ol,
+  h2, h3, h4, h5, h6,
+  table {
+    max-width: 43rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  >p, >ol, >ul {
+    #type > #size > .p;
+    line-height: 1.4;
+  }
+  >* {
+    margin-top: 1em;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  >p:first-child {
+    #type > #size > .h3;
+    line-height: 1;
+    font-weight: bold;
+    #type > #font > .sans;
+  }
+
+  h1 {
+    #type > #size > .h1;
+  }
+  h2 {
+    #type > #size > .h2;
+  }
+  h3 {
+    #type > #size > .h3;
+  }
+  h4, h5, h5 {
+    #type > #size > .h4;
+  }
+
+  abbr {
+    #type > #font > .serif-sc;
+    border-bottom: 1px dotted;
+  }
+
+  //lists
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin-left: 1em;
+  }
+  li {
+    margin-top: 0.5em;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  //tables
+  table {
+    #type > #font > .sans;
+    border-collapse: collapse;
+    #type > #size > .p;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  td, th {
+    padding: 0.125em 0.5em 0.25em 0.5em;
+    line-height: 1;
+  }
+
+  td {
+    text-align: "." center;
+  }
+
+
+
+}

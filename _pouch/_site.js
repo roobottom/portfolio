@@ -43,6 +43,12 @@ module.exports = {
       input: "./source/styleguide/principals.md",
       output: "./docs/styleguide/principals/index.html",
       template: "pages/styleguide-principals.html"
+    },
+    {
+      name: "styleguide-components",
+      input: "./source/styleguide/components.md",
+      output: "./docs/styleguide/components/index.html",
+      template: "pages/styleguide-components.html"
     }
   ],
   /*

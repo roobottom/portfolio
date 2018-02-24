@@ -1,4 +1,6 @@
 {% from "patterns/figure/figure.html" import "figure" %}
+{% from "patterns/prose/prose.html" import "prose" %}
+{% from "patterns/title/title.html" import "title" %}
 
 <!doctype html>
 <html lang="en">
@@ -9,7 +11,7 @@
     <meta name="description" content="{% if page.intro %}{{ page.intro }}{% else %}The portfolio of Jon Roobottom a design leader and developer based in Brighton, UK.{% endif %}">
     <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
   </head>
-  <body>
+  <body class="page__{{page.name}}">
     {% include "partials/header.html" %}
     {% block content %}
     {% endblock %}

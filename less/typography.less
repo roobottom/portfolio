@@ -1,162 +1,206 @@
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #333;
-  font-size: 16px;
+/* sitewide typography settings */
+
+// alegreya
+@font-face {
+    font-family: 'alegreya';
+    src: url('/fonts/alegreya-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: 'alegreya';
+    src: url('/fonts/alegreya-italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'alegreya';
+    src: url('/fonts/alegreya-black.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'alegreya';
+    src: url('/fonts/alegreya-blackitalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+//alegreya small caps
+@font-face {
+  font-family: 'alegreya sc';
+  src: url('/fonts/alegreyasc-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'alegreya sc';
+  src: url('/fonts/alegreyasc-italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'alegreya sc';
+  src: url('/fonts/alegreyasc-black.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'alegreya sc';
+  src: url('/fonts/alegreyasc-blackitalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+//alegreya sans
+@font-face {
+    font-family: 'alegreya-sans';
+    src: url('/fonts/alegreyasans-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'alegreya-sans';
+    src: url('/fonts/alegreyasans-italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'alegreya-sans';
+    src: url('/fonts/alegreyasans-black.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'alegreya-sans';
+    src: url('/fonts/alegreyasans-blackitalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* typographic mixins */
+
+/*
+=== SCALE ====
+
+sizes:  11 | 13 | 16 | 19 | 23 | 32 | 45 | 64 | 91 | 128
+small:  sm |    | p  | h4 | h3 | h2 |    | h1 |    |
+med:       | sm |    | p  | h4 | h3 | h2 |    | h1 |
+large:     |    | sm |    | p  | h4 | h3 | h2 |    | h1
+
+(sm: small p)
+*/
+
+#type {
+  .size(@s,@m,@l) {
+    font-size: unit(@s/@base,rem);
+    .break-m({font-size: unit(@m/@base,rem);});
+    .break-l({font-size: unit(@l/@base,rem);});
+  }
+
+  #size {
+    .sm() {
+      #type > .size(11,13,16);
+    }
+    .p() {
+      #type > .size(16,19,23);
+    }
+    .h1() {
+      #type > .size(64,91,128);
+    }
+    .h2() {
+      #type > .size(32,45,64);
+    }
+    .h3() {
+      #type > .size(23,32,45);
+    }
+    .h4() {
+      #type > .size(19,23,32);
+    }
+  }
+
+  #font {
+    .sans() {
+      font-family: 'alegreya-sans';
+    }
+    .sans-sc() {
+      font-family: 'alegreya-sans sc';
+      text-transform: lowercase;
+    }
+    .serif() {
+      font-family: 'alegreya';
+    }
+    .serif-sc() {
+      font-family: 'alegreya sc';
+      text-transform: lowercase;
+    }
+  }
+
+}
+
+/* global text settings */
+body {
+  #type > #font > .serif;
+  color: #333;
+  font-size: 1rem;
+  font-feature-settings: "liga" 1;
+  font-variant: normal;
+  font-kerning: normal;
+}
+@supports (font-variant-ligatures: common-ligatures) {
+  body {
+    font-feature-settings: normal;
+    font-variant-ligatures: common-ligatures;
+  }
+}
+
+
+
 i, em {
   font-style: italic;
 }
 b, strong {
-  font-weight: 900;
+  font-weight: bold;
 }
 
-
-
-/* Standard Text */
-input,  button,  textarea {
-    font: normal 12px/20px arial,sans-serif;
-    color: #555;
+sup, sub {
+  position: relative;
 }
 
-time {
-  color: #ccc;
+sup {
+  top: -0.3em;
+}
+sub {
+  bottom: -0.3em;
 }
 
-/* Block Baselines */
- h1,  h2,  h3,  h4,  h5,  h6,
- p,  ul,  ol,  pre,  blockquote,
- textarea,  button {
-    margin-bottom: 20px;
-}
-img { display: block; }
-
-
-
-/* Headers */
- h1, h2, h3, h4, h5, h6 {
-    text-rendering: optimizeLegibility; /* optional - helps kerning in some browsers */
-    font-weight: normal;
-    font-weight: 900;
-}
- h1,  h1 a {
-    font-size: 30px;
-    line-height: 40px;
-}
- h2 {
-    font-size: 24px;
-    line-height: 20px;
-}
- h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
- h4 {
-    font-size: 16px;
-    font-weight: bold;
-}
- h5 {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 0;
-}
- h6 {
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 0;
+@supports (font-variant-position: sub) {
+  sub,sup {
+    position: inherit;
+    top: auto;
+    bottom: auto;
+  }
+  sub {
+    font-variant-position: sub;
+  }
+  sup {
+    font-variant-position: super;
+  }
 }
 
-
-
-/* Paragraph Elements */
-a {
-    color: blue;
-    text-decoration: underline;
-}
- a:active {
-
-}
- a:hover {
-
-}
- a:visited {
-
-}
- sup,  sub {
-    font-size: 80%;
-    line-height: 0;
-}
- sup {
-    vertical-align: super;
-}
- sub {
-    vertical-align: sub;
-}
- code {
-    font-family: Consolas, "Courier New", Courier, mono;
-}
-p, li {
-  line-height: 1.5;
+h1,h2,h3,h4,h5,h6 {
+  #type > #font > .serif;
+  font-weight: bold;
+  line-height: 1;
 }
 
-
-/* Block Elements */
-
- pre {
-    font-family: Consolas, "Courier New", Courier, mono;
-    background: black;
-    background: rgba(0,0,0,.8);
-    color: #eee;
-    padding: 10px 20px;
-}
-
-
-
-/* Forms */
- form {
-}
-form p {
-  margin: 0;
-}
- label {
-    display: block;
-    margin-bottom: 0;
-}
- input,  textarea,  select {
-    display: block;
-    margin: 4px 0 24px 0;
-}
- input[type=text],  input[type=email],  input[type=url],  textarea {
-    width: 400px;
-    border: 1px solid;
-    border-color: #ccc;
-    border-color: rgba(0,0,0,.1);
-    height: 30px;
-    background: #fff;
-    background: rgba(255,255,255,.8);
-    font-size: 16px;
-    line-height: 30px;
-    padding: 0;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-}
- textarea {
-    height: 150px;
-    width: 450px;
-    font-size: 14px;
-    line-height: 16px;
-}
-
- label.error {
-    width: 400px;
-    text-align: right;
-    color: #aa0000;
-}
- label.error:before {
-    content: "▲ ";
-}
- input.error,  textarea.error {
-    border-color: #aa0000;
+h1,h2,h3,h4 {
+  letter-spacing: -0.02em;
+  font-variant-ligatures: discretionary-ligatures;
 }

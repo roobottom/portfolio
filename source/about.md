@@ -28,9 +28,9 @@ I find delight in the flow-state achieved when building things. I value roles th
 
 ### Automation
 
-I believe in creating systems to minimise grunt-work. I value the freedom to build these systems where they don't exist. 
+I believe in creating systems to minimise grunt-work. I value the freedom to create these processes where they don't exist. 
 
-Case in point is the (extremely fast) [flat-file publishing system](#) I built to run this site.
+For example: the (extremely fast) [flat-file publishing system](#) I built to run this site.
 
 ### Learning
 

@@ -1,91 +1,26 @@
+@base: 16;
+
+@type-s: 16;
+@type-m: 19;
+@type-l: 23;
+
+.break-m(@rule) {
+  @media screen and (min-width: (unit(960/@base,em)) ) {
+    @rule();
+  }
+}
+.break-l(@rule) {
+  @media screen and (min-width: (unit(1440/@base,em)) ) {
+    @rule();
+  }
+}
+
 @import 'reset';
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,900,900i');
 @import 'typography';
 
-@c_bg: #F7F7F7;
-@c_border: #ccc;
-@c_text: #333;
-
-@c_main: #C2BCA9;
-
-.result {
-  color: hsl(hue(@c_main), saturation(@c_main * 0.8), 15%);
+body {
+  padding: 0 20px;
 }
 
-.block {
-  border: 1px solid @c_border;
-  background-color: @c_bg;
-  padding: 20px;
-  color: @c_text;
-  display: block;
-  text-decoration: none;
-  margin-bottom: 20px;
-
-  p:last-child {
-    margin-bottom: 0;
-  }
-
-  &--inline {
-    display: inline-block;
-  }
-
-  &--text {
-    font-style: italic;
-    text-align: center;
-  }
-
-}
-
-figure {
-  margin-bottom: 20px;
-}
-
-figcaption {
-  margin-top: 20px;
-  text-align: center;
-  color: @c_border;
-}
-
-img {
-  max-width: 100%;
-}
-
-small {
-  font-size: 80%;
-}
-
-footer {
-  p, a {
-    color: #ccc;
-  }
-}
-
-.nav {
-  margin: 0 20px 0 0;
-  a {display: block;}
-
-  &--inline {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &--inline > * {
-    margin: 0 20px 20px 0;
-  }
-
-}
-
-.textfiller {
-  border: 1px dashed @c_border;
-  //background: @c_bg;
-  margin-bottom: 20px;
-  padding: 10px;
-  font-style: italic;
-}
-
-.tag {
-  border: 1px solid @c_border;
-  background: @c_bg;
-  border-radius: 15px;
-  padding: 5px 10px;
-}
+@import '../templates/patterns/prose/prose.less';
+@import '../templates/patterns/title/title.less';

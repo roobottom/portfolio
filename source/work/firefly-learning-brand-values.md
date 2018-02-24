@@ -3,6 +3,9 @@ title: Uncovering Firefly Learning’s brand values
 date: 2018-02-01
 org: firefly
 ---
+We knew what we didI lead a project to uncover Firefly's essence. 
+---
+
 Over the last five years, Firefly Learning has enjoyed tremendous success; we have grown from fifty schools to over five hundred. We now have offices in London, Sydney and Singapore. Our dream to transform learning by empowering all students, teachers and parents is a lot closer today than it was when I joined in September 2011.
 
 However, the schools we've helped so far are just a drop in the ocean compared to the vast number of school-age children around the world. We want to improve learning for all students, not just some.

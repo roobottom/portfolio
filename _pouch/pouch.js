@@ -51,7 +51,7 @@ function getSeason(datetime) {
   if(['3','4','5'].indexOf(month) != -1) { return "Spring" }
   if(['6','7','8'].indexOf(month) != -1) { return "Summer" }
   if(['9','10','11'].indexOf(month) != -1) { return "Autumn" }
-  
+
   return datetime
 }
 
@@ -82,6 +82,23 @@ function addItemsToCollections(collections) {
         //read frontmatter
         let fm = frontmatter(data)
 
+        //proccess data attributes
+        if(fm.attributes.data) {
+          for(let data of fm.attributes.data) {
+            try {
+              //open the file for this testData
+              let file = fs.readFileSync(data.file,'utf8')
+              if(data.markdown) {
+                file = md.render(file)
+              }
+              fm.attributes[data.key] = file
+            }
+            catch(err) {
+              console.log('missing file or key attributes from testData', err)
+            }
+          }
+        }
+
         //render nunjcuks tags
         let renderString = removeWhitespace(site.patterns.string) + fm.body
         let renderedContent = nunjucks.renderString(renderString,fm.attributes)
@@ -95,7 +112,7 @@ function addItemsToCollections(collections) {
         //get filename
         let filePath = path.parse(file)
 
-
+        //return data to the page
         let returnObj = {}
         returnObj = fm.attributes
         returnObj.url = filePath.name
@@ -302,8 +319,6 @@ function renderCollections(collections) {
   }
 
 
-//TODO
-//incorperate patterns into render string
 
   //render blogs
   if(collections.includes('blogs')) {
