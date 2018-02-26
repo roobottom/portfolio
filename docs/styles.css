@@ -85,6 +85,9 @@ video {
   vertical-align: baseline;
   background: transparent;
 }
+body {
+  margin: 0;
+}
 article,
 aside,
 canvas,
@@ -300,9 +303,6 @@ h4 {
   letter-spacing: -0.02em;
   font-variant-ligatures: discretionary-ligatures;
 }
-body {
-  padding: 0 20px;
-}
 .prose p,
 .prose > ul,
 .prose > ol,
@@ -473,4 +473,10 @@ body {
   .title {
     font-size: 8rem;
   }
+}
+.sea {
+  width: 100vw;
+  position: relative;
+  top: 0;
+  left: 0;
 }
