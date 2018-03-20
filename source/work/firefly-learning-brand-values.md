@@ -3,7 +3,8 @@ title: Uncovering Firefly Learning’s brand values
 date: 2018-02-01
 org: firefly
 ---
-We knew what we didI lead a project to uncover Firefly's essence. 
+
+We knew *what* we did, less clear was *why* we did it. I lead a project to uncover Firefly's brand values.
 ---
 
 Over the last five years, Firefly Learning has enjoyed tremendous success; we have grown from fifty schools to over five hundred. We now have offices in London, Sydney and Singapore. Our dream to transform learning by empowering all students, teachers and parents is a lot closer today than it was when I joined in September 2011.

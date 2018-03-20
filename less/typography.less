@@ -100,8 +100,8 @@ large:     |    | sm |    | p  | h4 | h3 | h2 |    | h1
 #type {
   .size(@s,@m,@l) {
     font-size: unit(@s/@base,rem);
-    .break-m({font-size: unit(@m/@base,rem);});
-    .break-l({font-size: unit(@l/@base,rem);});
+    .break-min({font-size: unit(@m/@base,rem);});
+    .break-mid({font-size: unit(@l/@base,rem);});
   }
 
   #size {

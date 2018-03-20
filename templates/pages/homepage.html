@@ -1,37 +1,4 @@
 {% extends "layouts/default.html" %}
 {% block content %}
   {{ page.content }}
-  <hr/>
-  <h3>My work</h3>
-  {% for blog in site.blogs %}
-    {% if blog.name == 'work' %}
-      {% for item in blog.items %}
-        {% if loop.index < 3 %}
-        <article class="block">
-          <h4><a href="/work/{{item.url}}">{{item.title}}</a></h4>
-          <p><time datetime="{{item.date}}">{{item.humanDate.month}} {{item.humanDate.year}}</time></p>
-          <p>{{item.intro}}</p>
-        </article>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
-  <p><a href="/work">See all my work</a></p>
-
-  <hr/>
-  <h3>Recent articles</h3>
-
-  {% for blog in site.blogs %}
-    {% if blog.name == 'articles' %}
-      {% for item in blog.items %}
-        {% if loop.index < 5 %}
-        <article class="block">
-          <h4><a href="/articles/{{item.url}}">{{item.title}}</a></h4>
-          <p><time datetime="{{item.date}}">{{item.humanDate.month}} {{item.humanDate.year}}</time></p>
-          <p>{{item.intro}}</p>
-        </article>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
 {% endblock %}

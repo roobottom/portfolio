@@ -1,0 +1,9 @@
+{% macro grid(blocks,class) %}
+  <div class="grid grid--{{class}}">
+  {% for block in blocks %}
+    <div class="grid__item">
+      {{block}}
+    </div>
+  {% endfor %}
+  </div>
+{% endmacro %}
