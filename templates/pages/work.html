@@ -3,10 +3,22 @@
     {% if blog.name == 'work' %}
       {% for item in blog.items %}
         {% if item.org == org %}
-          <div class="block">
-            <h3><a href="/work/{{item.url}}">{{item.title}}</a></h3>
-            <time datetime="{{item.date}}">{{item.humanDate.season}} {{item.humanDate.year}}</time>
-          </div>
+
+          <li class="timeline__item">
+
+            {% if item.type == 'event' %}
+              <div class="timeline__event">
+                {{timemarker(item.humanDate.season + ' ' + item.humanDate.year,item.title,isodate=item.date)}}
+              </div>
+            {% else %}
+              <div class="timeline__marker">{{timemarker(item.humanDate.season + ' ' + item.humanDate.year,isodate=item.date)}}</div>
+              <div class="timeline__content">
+                {{teaser(item.title,item.intro,'/work/'+item.url,'Read the case study')}}
+              </div>
+            {% endif %}
+
+          </li>
+
         {% endif %}
       {% endfor %}
     {% endif %}
@@ -15,17 +27,11 @@
 
 {% extends "layouts/default.html" %}
 {% block content %}
-<h1>Work</h1>
-<h2>Firefly Learning</h2>
-<div class="textfiller">I've been a part of Firefly's design and development teams since 2011. First as a designer/developer, then as senior designer and most recently as head of design.</div>
-{{workItems('firefly')}}
-<h2>Onalytica</h2>
-<div class="textfiller">About Onalytica and my role</div>
-{{workItems('onalytica')}}
-<h2>Glaxstar</h2>
-<div class="textfiller">About Glaxstar and my role</div>
-{{workItems('glaxstar')}}
-<h2>Other work</h2>
-<div class="textfiller">About other work</div>
-{{workItems('other')}}
+  {{title('My work')}}
+  <ol class="timeline">
+  {{workItems('firefly')}}
+  {{workItems('onalytica')}}
+  {{workItems('glaxstar')}}
+  {{workItems('other')}}
+  </ol>
 {% endblock %}

@@ -1,0 +1,50 @@
+{% from "_patterns/icon/icon.html" import "icon" %}
+
+{% macro navigation(modifier) %}
+  <div class="navigation">
+
+    <a href="#navigation" class="navigation__trigger">{{ icon('menu') }}</a>
+
+    <nav class="navigation__list" id="navigation" aria-labelledby="navigation__label">
+      <h2 id="navigation__label">Main naigation</h2>
+      <ol class="navigation__items">
+
+        <li class="navigation__item">
+          <a href="/" class="navigation__link">
+            <h3 class="navigation__title">Home</h3>
+            <p class="navigation__description">Is where the heart is</p>
+          </a>
+        </li>
+
+        <li class="navigation__item">
+          <a href="/work" class="navigation__link">
+            <h3 class="navigation__title">My work</h3>
+            <p class="navigation__description">What <em>have</em> I been doing with my life?‍</p>
+          </a>
+        </li>
+
+        <li class="navigation__item">
+          <a href="/articles" class="navigation__link">
+            <h3 class="navigation__title">Articles</h3>
+            <p class="navigation__description">Where I write about design, development 'n stuff</p>
+          </a>
+        </li>
+
+        <li class="navigation__item">
+          <a href="/about" class="navigation__link">
+            <h3 class="navigation__title">About me</h3>
+            <p class="navigation__description">Getting to know you 🎤</p>
+          </a>
+        </li>
+
+        <li class="navigation__item">
+          <a href="/styleguide" class="navigation__link">
+            <h3 class="navigation__title">Styleguide</h3>
+            <p class="navigation__description">Design guidelines and patterns used on this site</p>
+          </a>
+        </li>
+
+      </ol>
+    </nav>
+  </div>
+{% endmacro %}

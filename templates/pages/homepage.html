@@ -1,4 +1,11 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-  {{ page.content }}
+  <section class="homepage__intro">
+    <h1><strong>Clear and thoughtful</strong> <em>design</em> leadership</h1>
+    {{button('Oh la la! Tell me more&hellip;','#tell-me-more')}}
+  </section>
+  <section class="homepage__content" id="tell-me-more">
+    <h2><strong>Design thinking;</strong><br/><em>developer</em> know-how</h2>
+    {{ prose(page.content) }}
+  </section>
 {% endblock %}

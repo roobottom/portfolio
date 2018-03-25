@@ -1,7 +1,10 @@
 module.exports = {
   nunjucksPath: "./templates/",
   patterns: {
-    input: "./templates/patterns/**/*.html"
+    input: "./templates/_patterns/**/*.html"
+  },
+  components: {
+    input: "./templates/_components/**/*.html"
   },
   /*
     Content pages

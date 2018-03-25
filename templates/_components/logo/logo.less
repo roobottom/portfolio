@@ -1,0 +1,32 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__mark {
+    width: unit(30/@base,rem);
+    height: unit(38/@base,rem);
+
+    .break-min({
+      .space(margin,2,0);
+    });
+
+  }
+
+  &__type {
+    width: unit(111/@base,rem);
+    height: unit(24/@base,rem);
+    .space(margin-left);
+    fill: white;
+
+    .break-min({
+      fill: @c_primary-light;
+      mix-blend-mode: luminosity;
+      position: fixed;
+      .space(left,17);
+      .space(margin,0);
+      z-index: 2;
+    });
+
+  }
+
+}

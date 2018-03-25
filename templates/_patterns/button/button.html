@@ -1,0 +1,3 @@
+{% macro button(title,url,modifier) %}
+  <a href="{{url}}" class="button{% if modifier %} button--{{modifier}}{% endif %}">{{title}}</a>
+{% endmacro %}

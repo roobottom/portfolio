@@ -84,57 +84,112 @@
     font-style: italic;
 }
 
+//alegreya sans small caps
+@font-face {
+  font-family: 'alegreya-sans sc';
+  src: url('/fonts/alegreyasanssc-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'alegreya-sans sc';
+  src: url('/fonts/alegreyasanssc-italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'alegreya-sans sc';
+  src: url('/fonts/alegreyasanssc-black.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'alegreya-sans sc';
+  src: url('/fonts/alegreyasanssc-blackitalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
 /* typographic mixins */
 
 /*
-=== SCALE ====
+=== TYPOGRAHIC SCALES ====
 
-sizes:  11 | 13 | 16 | 19 | 23 | 32 | 45 | 64 | 91 | 128
-small:  sm |    | p  | h4 | h3 | h2 |    | h1 |    |
-med:       | sm |    | p  | h4 | h3 | h2 |    | h1 |
-large:     |    | sm |    | p  | h4 | h3 | h2 |    | h1
+     base |   min |   mid |   max
+sm: 15.00 | 17.25 | 19.00 | 19.00
+p:  17.00 | 19.00 | 23.00 | 23.00
+h4: 22.66 | 22.66 | 25.33 | 30.66 (& .intro)
+h3: 30.21 | 30.21 | 33.76 | 40.87
+h2: 40.27 | 40.27 | 45.00 | 54.48
+h1: 71.55 | 71.55 |106.59 |129.04
 
-(sm: small p)
 */
 
 #type {
-  .size(@s,@m,@l) {
-    font-size: unit(@s/@base,rem);
-    .break-min({font-size: unit(@m/@base,rem);});
-    .break-mid({font-size: unit(@l/@base,rem);});
+  .size(@sm,@min,@mid,@max,@lh-sm:@sm,@lh-min:@min,@lh-mid:@mid,@lh-max:@max) {
+    font-size: unit(@sm/@base,rem);
+    line-height: @lh-sm/@sm;
+    .break-min({
+      font-size: unit(@min/@base,rem);
+      line-height: @lh-min/@min;
+    });
+    .break-mid({
+      font-size: unit(@mid/@base,rem);
+      line-height: @lh-mid/@mid;
+    });
+    .break-max({
+      font-size: unit(@max/@base,rem);
+      line-height: @lh-max/@max;
+    });
   }
 
   #size {
     .sm() {
-      #type > .size(11,13,16);
+      #type > .size(
+        15,17.25,19,19, //type sizes
+        16,24,24,24 //line-height (base-8)
+      );
     }
     .p() {
-      #type > .size(16,19,23);
+      #type > .size(
+        17,19,23,23, //type sizes
+        24,24,32,32 //line-height (base-8)
+      );
+    }
+    .lg() {
+      #type > .size(
+        22.66,22.66,25.33,30.66, //type sizes
+        32,32,32,40 //line-height (base-8)
+      )
     }
     .h1() {
-      #type > .size(64,91,128);
+      #type > .size(71.55,71.55,106.59,129.04);
     }
     .h2() {
-      #type > .size(32,45,64);
+      #type > .size(40.27,40.27,45,54,48);
     }
     .h3() {
-      #type > .size(23,32,45);
+      #type > .size(30.21,30.21,33.76,40.87);
     }
     .h4() {
-      #type > .size(19,23,32);
+      #type > .size(22.66,22.66,25.33,30.66);
     }
   }
 
   #font {
     .sans() {
       font-family: 'alegreya-sans';
+      font-feature-settings:"lnum" 1;
     }
     .sans-sc() {
       font-family: 'alegreya-sans sc';
       text-transform: lowercase;
+      font-weight: bold;
+      .break-min({ font-weight: normal; });
     }
     .serif() {
       font-family: 'alegreya';
+      font-feature-settings:"lnum" 1;
     }
     .serif-sc() {
       font-family: 'alegreya sc';
@@ -146,8 +201,8 @@ large:     |    | sm |    | p  | h4 | h3 | h2 |    | h1
 
 /* global text settings */
 body {
-  #type > #font > .serif;
-  color: #333;
+  #type > #font > .sans;
+  color: @c_text;
   font-size: 1rem;
   font-feature-settings: "liga" 1;
   font-variant: normal;
@@ -197,10 +252,9 @@ sub {
 h1,h2,h3,h4,h5,h6 {
   #type > #font > .serif;
   font-weight: bold;
-  line-height: 1;
 }
 
 h1,h2,h3,h4 {
   letter-spacing: -0.02em;
-  font-variant-ligatures: discretionary-ligatures;
+  //font-variant-ligatures: discretionary-ligatures;
 }

@@ -1,0 +1,6 @@
+{% macro title(title,date,isodate,level=1) %}
+  <div class="title">
+    <h{{level}} class="title__text title__text--{{level}}">{{title}}</h{{level}}>
+    {% if date %}<time{% if isodate %} datetime="{{isodate}}"{% endif %} class="title__date">{{date}}</time>{% endif %}
+  </div>
+{% endmacro %}

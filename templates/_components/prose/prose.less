@@ -3,14 +3,11 @@
   p, >ul, >ol,
   h2, h3, h4, h5, h6,
   table {
-    max-width: 43rem;
-    margin-left: auto;
-    margin-right: auto;
+    #grid > .text;
   }
 
   >p, >ol, >ul {
     #type > #size > .p;
-    line-height: 1.4;
   }
   >* {
     margin-top: 1em;
@@ -19,10 +16,7 @@
     }
   }
   >p:first-child {
-    #type > #size > .h3;
-    line-height: 1;
-    font-weight: bold;
-    #type > #font > .sans;
+    #type > #size > .lg;
   }
 
   h1 {
@@ -39,7 +33,7 @@
   }
 
   abbr {
-    #type > #font > .serif-sc;
+    #type > #font > .sans-sc;
     border-bottom: 1px dotted;
   }
 
@@ -74,6 +68,10 @@
     text-align: "." center;
   }
 
+  //links
+  a:not([class]) {
+    color: @c_primary-light;
+  }
 
 
 }

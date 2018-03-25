@@ -63,6 +63,14 @@ function createPatternsString() {
     site.patterns.string += data
   }
 }
+function createComponentsString() {
+  let files = glob.sync(site.components.input)
+  site.components.string = ''
+  for(let file of files) {
+    let data = fs.readFileSync(file,'utf8')
+    site.components.string += data
+  }
+}
 
 
 function addItemsToCollections(collections) {
@@ -100,7 +108,7 @@ function addItemsToCollections(collections) {
         }
 
         //render nunjcuks tags
-        let renderString = removeWhitespace(site.patterns.string) + fm.body
+        let renderString = removeWhitespace(site.patterns.string) + removeWhitespace(site.components.string) + fm.body
         let renderedContent = nunjucks.renderString(renderString,fm.attributes)
 
         //render md -> html
@@ -404,6 +412,7 @@ function renderCollections(collections) {
 
 module.exports = function(cb) {
   createPatternsString()
+  createComponentsString()
 
   let collections = ['pages','blogs']
   addItemsToCollections(collections)

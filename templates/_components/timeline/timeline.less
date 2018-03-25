@@ -1,0 +1,35 @@
+.timeline {
+  .break-min({
+    border-left: 1px solid #ccc;
+  });
+
+
+  &__item {
+    list-style: none;
+    .space(margin-bottom,4);
+
+    .break-min({
+      display: flex;
+      .space(margin-bottom,8);
+    });
+  }
+
+  &__marker {
+    #grid > .pull;
+
+    .break-min({
+      margin-left: unit(-14/@base,rem);
+    });
+  }
+
+  &__content {
+    #grid > .text;
+  }
+
+  &__event {
+    .break-min({
+      margin-left: unit(-18/@base,rem);
+    });
+  }
+
+}

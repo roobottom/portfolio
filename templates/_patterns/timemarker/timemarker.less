@@ -1,0 +1,39 @@
+.timemarker {
+
+  display: inline-flex;
+  align-items: center;
+
+  &__label {
+    #type > #size > .sm;
+    #type > #font > .sans-sc;
+    color: @c_secondary-light;
+  }
+
+  &__event {
+    #type > #size > .p;
+    .space(margin-left,1);
+  }
+
+  >.icon {
+    align-self: center;
+    display: none;
+
+    .break-min({
+      display: block;
+    });
+  }
+
+  &--event {
+    .space(padding,.5,2);
+    border:1px solid @c_secondary-light;
+    .space(border-radius,3);
+    box-shadow: 0 0 0 6px white;
+    background-color: white;
+
+    .break-min({
+      .space(padding,.5,2,.5,.5);
+    });
+
+  }
+
+}

@@ -1,0 +1,56 @@
+#grid {
+
+  //breakpoint reminder:
+  //min: 906, mid: 1134, max: 1300
+
+  @grid-text-min: 598;
+  @grid-text-mid: @grid-text-min;
+  @grid-text-max: 770;
+
+  @grid-pull-min: 140;
+  @grid-pull-mid: 200;
+  @grid-pull-max: 240;
+
+  @grid-full-min: 140;
+  @grid-full-mid: @grid-full-min;
+  @grid-full-max: @grid-full-min;
+
+  .g(@min,@mid,@max) {
+    .break-min({
+      width: unit(@min/@base,rem);
+    });
+    .break-mid({
+      width: unit(@mid/@base,rem);
+    });
+    .break-max({
+      width: unit(@max/@base,rem);
+    });
+  }
+
+  .text() {
+    .g(@grid-text-min,@grid-text-mid,@grid-text-max);
+  }
+  .pull() {
+    .g(@grid-pull-min,@grid-pull-mid,@grid-pull-max);
+  }
+  .full() { //only available beyond mid breakpoint
+    .g(@grid-full-min,@grid-full-mid,@grid-full-max);
+  }
+
+  .text-pull() {
+    .g(
+      @grid-text-min + @grid-pull-min,
+      @grid-text-mid + @grid-pull-mid,
+      @grid-text-max + @grid-pull-max
+    );
+  }
+
+  .text-full() {
+    .g(
+      @grid-text-min  + @grid-full-min,
+      @grid-text-mid + @grid-pull-mid + @grid-full-min,
+      @grid-text-max + @grid-pull-max + @grid-full-min
+    );
+  }
+
+}

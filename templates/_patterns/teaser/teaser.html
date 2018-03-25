@@ -1,0 +1,9 @@
+{% from "_patterns/button/button.html" import "button" %}
+
+{% macro teaser(title,content,url,cta,level=2) %}
+  <div class="teaser">
+    <h{{level}} class="teaser__title teaser__title--{{level}}">{{title}}</h{{level}}>
+    <p class="teaser__content">{{content}}</p>
+    {% if url %}{{button(cta,url)}}{% endif %}
+  </div>
+{% endmacro %}
