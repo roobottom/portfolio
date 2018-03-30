@@ -1,6 +1,7 @@
 {% extends "layouts/default.html" %}
 {% block content %}
+  <p class="breadcrumb">You're here: <a href="/work" class="breadcrumb__link">Work</a> <span class="breadcrumb__seperator">/</span></p>
   {{ title(page.title)}}
-  <p><strong>You are here:</strong> <a href="/work">Work</a> &rarr; {{page.title}}</p>
+  {{ timemarker(page.humanDate.season + ' ' + page.humanDate.year,page.date,'simple') }}
   {{ prose(page.content) }}
 {% endblock %}

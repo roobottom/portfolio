@@ -4,10 +4,12 @@
 {% from "_patterns/button/button.html" import "button" %}
 {% from "_patterns/timemarker/timemarker.html" import "timemarker" %}
 {% from "_patterns/teaser/teaser.html" import "teaser" %}
+{% from "_patterns/card/card.html" import "card" %}
 
 {% from "_components/prose/prose.html" import "prose" %}
 {% from "_components/logo/logo.html" import "logo" %}
 {% from "_components/navigation/navigation.html" import "navigation" %}
+{% from "_components/timeline/timeline.html" import "timeline" %}
 
 <!doctype html>
 <html lang="en">
@@ -31,5 +33,6 @@
       {% block content %}
       {% endblock %}
     </main>
+    <script src="/js/functionality.js" type="text/javascript"></script>
   </body>
 </html>

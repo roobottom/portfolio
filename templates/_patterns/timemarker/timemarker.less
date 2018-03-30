@@ -6,34 +6,43 @@
   &__label {
     #type > #size > .sm;
     #type > #font > .sans-sc;
-    color: @c_secondary-light;
-  }
-
-  &__event {
-    #type > #size > .p;
-    .space(margin-left,1);
+    color: ligten(@c_text,30%);
   }
 
   >.icon {
     align-self: center;
+  }
+  &--simple >.icon {
     display: none;
-
-    .break-min({
-      display: block;
-    });
   }
 
-  &--event {
-    .space(padding,.5,2);
-    border:1px solid @c_secondary-light;
-    .space(border-radius,3);
-    box-shadow: 0 0 0 6px white;
-    background-color: white;
-
-    .break-min({
-      .space(padding,.5,2,.5,.5);
-    });
-
+  &--firefly &__label {
+    color: @c_firefly;
   }
+  &--firefly .icon--coin {
+    fill: @c_firefly;
+  }
+
+  &--onalytica &__label {
+    color: @c_onalytica;
+  }
+  &--onalytica .icon--coin {
+    fill: @c_onalytica;
+  }
+
+  &--glaxstar &__label {
+    color: @c_glaxstar;
+  }
+  &--glaxstar .icon--coin {
+    fill: @c_glaxstar;
+  }
+
+  &--other &__label {
+    color: @c_other;
+  }
+  &--other .icon--coin {
+    fill: @c_other;
+  }
+
 
 }

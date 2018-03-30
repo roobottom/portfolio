@@ -1,0 +1,9 @@
+{% macro card(data) %}
+  <div class="card">
+    <h3 class="card__title">{{data.title}}</h3>
+    <p class="card__content">{{data.content}}</p>
+    {% if data.image %}
+    <img src="{{data.img}}" class="card__image"/>
+    {% endif %}
+  </div>
+{% endmacro %}

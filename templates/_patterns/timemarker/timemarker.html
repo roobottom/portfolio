@@ -1,9 +1,8 @@
 {% from "_patterns/icon/icon.html" import "icon" %}
 
-{% macro timemarker(label,event,isodate) %}
-  <div class="timemarker{% if event %} timemarker--event{% endif %}">
+{% macro timemarker(label,isodate,modifier) %}
+  <div class="timemarker{% if modifier %} timemarker--{{modifier}}{% endif %}">
     {{ icon('coin') }}
     <time{% if isodate %} datetime="{{isodate}}"{% endif %} class="timemarker__label">{{label}}</time>
-    {% if event %}<p class="timemarker__event">{{event}}</p>{% endif %}
   </div>
 {% endmacro %}

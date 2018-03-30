@@ -27,9 +27,37 @@
   }
 
   &__event {
+
+    display: inline-flex;
+    border: 2px dashed @c_secondary-light;
+    align-items: center;
+    .space(border-radius,3);
+    .space(padding,2);
+    background-color: white;
+    margin-left: unit(-18/@base,rem);
+    box-shadow: 0 0 0 6px white;
+
     .break-min({
-      margin-left: unit(-18/@base,rem);
+      .space(padding,2,2,2,0.25);
     });
+  }
+
+  &__item--firefly &__event {
+    border-color: @c_firefly;
+  }
+  &__item--onalytica &__event {
+    border-color: @c_onalytica;
+  }
+  &__item--glaxstar &__event {
+    border-color: @c_glaxstar;
+  }
+  &__item--other &__event {
+    border-color: @c_other;
+  }
+
+  &__eventName {
+    #type > #size > .p;
+    .space(margin-left,2);
   }
 
 }

@@ -1,37 +1,9 @@
-{% macro workItems(org) %}
-  {% for blog in site.blogs -%}
-    {% if blog.name == 'work' %}
-      {% for item in blog.items %}
-        {% if item.org == org %}
-
-          <li class="timeline__item">
-
-            {% if item.type == 'event' %}
-              <div class="timeline__event">
-                {{timemarker(item.humanDate.season + ' ' + item.humanDate.year,item.title,isodate=item.date)}}
-              </div>
-            {% else %}
-              <div class="timeline__marker">{{timemarker(item.humanDate.season + ' ' + item.humanDate.year,isodate=item.date)}}</div>
-              <div class="timeline__content">
-                {{teaser(item.title,item.intro,'/work/'+item.url,'Read the case study')}}
-              </div>
-            {% endif %}
-
-          </li>
-
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {%- endfor %}
-{% endmacro %}
-
 {% extends "layouts/default.html" %}
 {% block content %}
   {{title('My work')}}
-  <ol class="timeline">
-  {{workItems('firefly')}}
-  {{workItems('onalytica')}}
-  {{workItems('glaxstar')}}
-  {{workItems('other')}}
-  </ol>
+  {% for blog in site.blogs -%}
+    {% if blog.name == 'work' %}
+      {{timeline(blog.items)}}
+    {% endif %}
+  {% endfor %}
 {% endblock %}

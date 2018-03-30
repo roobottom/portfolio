@@ -4,19 +4,16 @@
   h2, h3, h4, h5, h6,
   table {
     #grid > .text;
+    margin-top: 1em;
   }
 
   >p, >ol, >ul {
     #type > #size > .p;
   }
-  >* {
-    margin-top: 1em;
-    &:first-child {
-      margin-top: 0;
-    }
-  }
+
   >p:first-child {
     #type > #size > .lg;
+    //color: @c_secondary-light;
   }
 
   h1 {
@@ -70,7 +67,21 @@
 
   //links
   a:not([class]) {
-    color: @c_primary-light;
+    color: @c_text;
+    font-weight: bold;
+    text-decoration: underline mix(@c_text,white,10%);
+    &:hover {
+      background-color: mix(@c_text,white,10%);
+    }
+  }
+
+  hr {
+    .space(width,16);
+    border: none;
+    .space(margin,3,0);
+    .space(border-bottom-width,.5);
+    border-bottom-color: @c_secondary-light;
+    border-bottom-style: solid;
   }
 
 

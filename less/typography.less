@@ -17,14 +17,14 @@
 
 @font-face {
     font-family: 'alegreya';
-    src: url('/fonts/alegreya-black.woff2') format('woff2');
+    src: url('/fonts/alegreya-extrabold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'alegreya';
-    src: url('/fonts/alegreya-blackitalic.woff2') format('woff2');
+    src: url('/fonts/alegreya-extrabolditalic.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
 }
@@ -116,6 +116,7 @@
 === TYPOGRAHIC SCALES ====
 
      base |   min |   mid |   max
+xsm:14.00 | 15.00 | 16.00 | 17.00
 sm: 15.00 | 17.25 | 19.00 | 19.00
 p:  17.00 | 19.00 | 23.00 | 23.00
 h4: 22.66 | 22.66 | 25.33 | 30.66 (& .intro)
@@ -144,6 +145,12 @@ h1: 71.55 | 71.55 |106.59 |129.04
   }
 
   #size {
+    .xsm() {
+      #type > .size(
+        15,15,16,17, //type sizes
+        16,16,24,24 //line-height (base-8)
+      );
+    }
     .sm() {
       #type > .size(
         15,17.25,19,19, //type sizes
@@ -257,4 +264,8 @@ h1,h2,h3,h4,h5,h6 {
 h1,h2,h3,h4 {
   letter-spacing: -0.02em;
   //font-variant-ligatures: discretionary-ligatures;
+}
+
+a:focus {
+  outline: 1px solid @c_secondary-light;
 }

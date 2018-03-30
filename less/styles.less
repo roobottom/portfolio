@@ -34,6 +34,12 @@
 @c_text: #05131F;
 @c_link: @c_primary;
 
+//org specific colours
+@c_firefly: @c_primary-light;
+@c_onalytica: @c_secondary-light;
+@c_glaxstar: @c_tertiary;
+@c_other: @c_text;
+
 @bp-min: 906;
 @bp-mid: 1134;
 @bp-max: 1300;
@@ -63,6 +69,7 @@
 @import '../templates/_patterns/button/button';
 @import '../templates/_patterns/timemarker/timemarker';
 @import '../templates/_patterns/teaser/teaser';
+@import '../templates/_patterns/figure/figure';
 
 @import '../templates/_components/logo/logo';
 @import '../templates/_components/navigation/navigation';
@@ -107,9 +114,9 @@
 
   .break-min({
     overflow: auto;
-    .space(padding,7,0,0,7);
-    @top-padding: unit((@spacing * 7)/@base,rem);
-    height: ~"calc(100vh - @{top-padding})";
+    .space(padding,2,0,7,7);
+    @vertical-padding: unit((@spacing * 9)/@base,rem);
+    height: ~"calc(100vh - @{vertical-padding})";
   });
 
   .page--home & {
@@ -172,4 +179,19 @@
 
   }
 
+}
+
+.breadcrumb {
+  #type > #size > .sm;
+  .space(margin-bottom,3);
+  &__link {
+    color: @c_primary-light;
+    text-decoration: none;
+    &:hover {
+      background-color: #F1F1F1;
+    }
+  }
+  &__seperator {
+    color: #ccc;
+  }
 }

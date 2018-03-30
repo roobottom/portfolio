@@ -9,6 +9,8 @@
 
 
 
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,9 +26,10 @@
 
     <header class="section--navigation">
       
-  <a href="/" class="logo">
+  <a href="/" class="logo logo--">
+    
     <svg class="logo__mark"><use xlink:href="/images/site-graphics.svg#logo__mark"></use></svg>
-    <svg class="logo__type"><use xlink:href="/images/site-graphics.svg#logo__type"></use></svg>
+    
   </a>
 
       
@@ -83,13 +86,21 @@
     </header>
     <main class="section--content">
       
+  <p class="breadcrumb">You're here: <a href="/work" class="breadcrumb__link">Work</a> <span class="breadcrumb__seperator">/</span></p>
   
   <div class="title">
     <h1 class="title__text title__text--1">Promoted to senior designer 🎨</h1>
     
   </div>
 
-  <p><strong>You are here:</strong> <a href="/work">Work</a> &rarr; Promoted to senior designer 🎨</p>
+  
+  <div class="timemarker timemarker--simple">
+    
+  <svg class="icon icon--coin"><use xlink:href="/images/site-graphics.svg#coin"></use></svg>
+
+    <time datetime="Thu Apr 03 2014 01:00:00 GMT+0100 (BST)" class="timemarker__label">Spring 2014</time>
+  </div>
+
   
   <article class="prose">
     
@@ -97,5 +108,6 @@
 
 
     </main>
+    <script src="/js/functionality.js" type="text/javascript"></script>
   </body>
 </html>

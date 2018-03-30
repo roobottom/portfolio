@@ -1,9 +1,9 @@
 {% from "_patterns/button/button.html" import "button" %}
 
-{% macro teaser(title,content,url,cta,level=2) %}
-  <div class="teaser">
-    <h{{level}} class="teaser__title teaser__title--{{level}}">{{title}}</h{{level}}>
+{% macro teaser(title,content,url,cta,level=2,modifier) %}
+  <div class="teaser{% if modifier %} teaser--{{modifier}}{% endif %}">
+    <h{{level}} class="teaser__title teaser__title--{{level}}">{% if url %}<a href="{{url}}" class="teaser__link">{{title}}</a>{% else %}{{title}}{% endif %}</h{{level}}>
     <p class="teaser__content">{{content}}</p>
-    {% if url %}{{button(cta,url)}}{% endif %}
+    {% if url %}{{button(cta,url,modifier=modifier)}}{% endif %}
   </div>
 {% endmacro %}

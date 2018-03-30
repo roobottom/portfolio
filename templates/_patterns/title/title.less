@@ -1,5 +1,7 @@
 .title {
 
+  #grid > .text;
+
   &__text {
     #type > #size > .h1;
     &--2 {
@@ -10,5 +12,8 @@
     }
 
   }
-  .space(margin-bottom,4);
+  .space(margin-bottom,2);
+  .break-mid({
+    .space(margin-bottom,2);
+  });
 }
