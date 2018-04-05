@@ -1,6 +1,6 @@
 'use strict'
 
-const site = require('./_site.js')
+const site = require('../_site.js')
 
 //filesystem
 const path = require('path')

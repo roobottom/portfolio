@@ -3,7 +3,7 @@ const nunjucks = require('gulp-nunjucks-render');
 const connect = require('gulp-connect');
 const less = require('gulp-less');
 const pouch = require('./_pouch/pouch.js')
-const site = require('./_pouch/_site.js')
+const site = require('./_site.js')
 
 console.log(site.baseurl)
 

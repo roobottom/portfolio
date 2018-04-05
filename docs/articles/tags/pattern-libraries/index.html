@@ -21,7 +21,7 @@
     <title>pattern libraries - Jon Roobottom</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The portfolio of Jon Roobottom a design leader and developer based in Brighton, UK.">
-    <link rel="stylesheet" href="/portfolio/styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
   </head>
   <body class="page">
 
@@ -29,7 +29,7 @@
 
     <header class="section--navigation">
       
-  <a href="/portfolio/" class="logo logo--">
+  <a href="/" class="logo logo--">
     
     <svg class="logo__mark"><use xlink:href="/images/site-graphics.svg#logo__mark"></use></svg>
     
@@ -38,8 +38,8 @@
       
   <div class="navigation">
 
-    <a href="/portfolio#navigation" class="navigation__trigger">
-  <svg class="icon icon--menu"><use xlink:href="/portfolio/images/site-graphics.svg#menu"></use></svg>
+    <a href="#navigation" class="navigation__trigger">
+  <svg class="icon icon--menu"><use xlink:href="/images/site-graphics.svg#menu"></use></svg>
 </a>
 
     <nav class="navigation__list" id="navigation" aria-labelledby="navigation__label">
@@ -47,35 +47,35 @@
       <ol class="navigation__items">
 
         <li class="navigation__item">
-          <a href="/portfolio/" class="navigation__link">
+          <a href="/" class="navigation__link">
             <h3 class="navigation__title">Home</h3>
             <p class="navigation__description">Is where the heart is</p>
           </a>
         </li>
 
         <li class="navigation__item">
-          <a href="/portfolio/work" class="navigation__link">
+          <a href="/work" class="navigation__link">
             <h3 class="navigation__title">My work</h3>
             <p class="navigation__description">What <em>have</em> I been doing with my life?‍</p>
           </a>
         </li>
 
         <li class="navigation__item">
-          <a href="/portfolio/articles" class="navigation__link">
+          <a href="/articles" class="navigation__link">
             <h3 class="navigation__title">Articles</h3>
             <p class="navigation__description">Where I write about design, development 'n stuff</p>
           </a>
         </li>
 
         <li class="navigation__item">
-          <a href="/portfolio/about" class="navigation__link">
+          <a href="/about" class="navigation__link">
             <h3 class="navigation__title">About me</h3>
             <p class="navigation__description">Getting to know you 🎤</p>
           </a>
         </li>
 
         <li class="navigation__item">
-          <a href="/portfolio/styleguide" class="navigation__link">
+          <a href="/styleguide" class="navigation__link">
             <h3 class="navigation__title">Styleguide</h3>
             <p class="navigation__description">Design guidelines and patterns used on this site</p>
           </a>
@@ -96,7 +96,7 @@
     <p>Last week I gave a short talk at <a href="https://www.meetup.com/Design-Club/">Design Club</a> about what my team is currently doing with pattern libraries in Sketch.</p>
 <p>It was great to hear that people had lots of questions. Its obvious that were all thinking about patterns, and particularly how Sketch symbols have enabled a new workflow.</p>
 <p>Later, we moved on to a workshop session where we mapped out our design process and made a (long) list of all the tools we were currently using day-to-day.</p>
-  <figure class="figure side-by-side">    <div class="figure__images">      <img src="/portfolio/images/articles/66/design-club-chapter-2.jpg" class="" />    </div>    <figcaption class="figure__caption">    Listing the tuna, members of the Design Club taking part in the workshop  </figcaption>  </figure>
+  <figure class="figure side-by-side">    <div class="figure__images">      <img src="/images/articles/66/design-club-chapter-2.jpg" class="" />    </div>    <figcaption class="figure__caption">    Listing the tuna, members of the Design Club taking part in the workshop  </figcaption>  </figure>
 <p>What was clear is that there are a <em>lot</em> of design tools out there. Sketch is ubiquitous, having quickly proved its value against creaky Adobe tools. However, there’s a whole ecosystem of other tools that are designed to fill gaps in the designers workflow.</p>
 <p>Having both a design and front-end development background I feel like I’ve seen this all before. There have been several “revolutions” in web — <abbr title="Cascading Style Sheets">CSS</abbr>, Responsiveness, <abbr title="Hyper Text Markup Language">HTML</abbr> <em>in</em> <abbr title="JavaScript">JS</abbr>, etc —  that all gave rise to any number of tools that promised “more time doing what you love.”</p>
 <p>Some of these tools were flash in the pan: When they didn’t find traction amongst enough developers, they died. However, they each added their voices to the shared knowledge amongst developers on <em>how</em> to develop for the web.</p>
@@ -117,7 +117,7 @@
 <p>We studied the structure of the existing pattern libraries and created a map that included all patterns, their modifiers and states. This gave us the structure for our patterns, and a place to start from when translating programatic patterns into something that would be useable in Sketch.</p>
 <p>In simple terms, our pattern library is a number of Sketch files containing — as symbols — all the elements in the Firefly interface. We divide these into separate files, one for each platform. We’ve also broken web into web-core and one file for each of our <a href="http://themes.fireflylearning.com">four core themes</a>.</p>
 <p>In each of the files, we’ve categorised our symbols into areas. This helps massively with your mental model when browsing the symbols page. This also allows us to print a visual style-guide of all our patterns.</p>
-  <figure class="figure side-by-side">    <div class="figure__images">      <img src="/portfolio/images/articles/5/categorising-symbols.png" class="" />    </div>    <figcaption class="figure__caption">    An example of how were using layout and labels to categorise symbols in Sketch  </figcaption>  </figure>
+  <figure class="figure side-by-side">    <div class="figure__images">      <img src="/images/articles/5/categorising-symbols.png" class="" />    </div>    <figcaption class="figure__caption">    An example of how were using layout and labels to categorise symbols in Sketch  </figcaption>  </figure>
 <h2>Symbols</h2>
 <p>Sketch supports symbol nesting and overrides. This makes symbols extremely powerful. This allows you to create a pattern element by combining symbols together.</p>
 <p>However, organisation is everything. If you don’t follow a systematic approach to creating patterns, they’re extremely difficult to use in the wild. We know from experience that confusion arises about which symbols are patterns, and which are simply the building blocks of patterns. Let me explain…</p>
@@ -169,6 +169,6 @@
   
 
     </main>
-    <script src="/portfolio/js/functionality.js" type="text/javascript"></script>
+    <script src="/js/functionality.js" type="text/javascript"></script>
   </body>
 </html>

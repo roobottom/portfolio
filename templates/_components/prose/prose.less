@@ -2,7 +2,7 @@
 
   >p, >ul, >ol,
   h2, h3, h4, h5, h6,
-  table {
+  table, pre {
     #grid > .text;
     margin-top: 1em;
   }
@@ -31,7 +31,7 @@
 
   abbr {
     #type > #font > .sans-sc;
-    border-bottom: 1px dotted;
+    text-decoration: underline dotted;
   }
 
   //lists
@@ -57,6 +57,10 @@
   td, th {
     padding: 0.125em 0.5em 0.25em 0.5em;
     line-height: 1;
+  }
+
+  th {
+    font-weight: bold;
   }
 
   td {
@@ -87,6 +91,7 @@
       .space(border-radius,2);
       .space(top,1);
       .space(left,1);
+      z-index: -1; //enable clicks and selecting content
     }
     &:after {
       content: '';
@@ -116,8 +121,33 @@
 
 
   //code
+  code {
+    #type > #font > .code;
+    font-size: 81%;
+  }
+
+
   p>code {
-    //use FIRA code
+    padding: unit(3/@base,rem);
+    margin: 0 unit(-3/@base,rem);
+    background-color: fade(@c_text,5%);
+    border-radius: unit(6/@base,rem);
+  }
+
+  //code blocks
+  pre {
+    #type > #size > .p;
+    background-color: fade(@c_text,5%);
+    overflow: auto;
+    .space(padding,2);
+  }
+
+  //mark
+  mark {
+    background-image: linear-gradient(-100deg,hsla(58,92%,75%,.3),hsla(58,92%,75%,.7) 95%,hsla(58,92%,75%,.1));
+    padding: 0 .35em;
+    margin: 0 -.35em;
+    border-radius: 1em 0;
   }
 
 }

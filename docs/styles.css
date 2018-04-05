@@ -158,99 +158,111 @@ a img {
 /* sitewide typography settings */
 @font-face {
   font-family: 'alegreya';
-  src: url('/portfolio/fonts/alegreya-regular.woff2') format('woff2');
+  src: url('/fonts/Alegreya-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya';
-  src: url('/portfolio/fonts/alegreya-italic.woff2') format('woff2');
+  src: url('/fonts/Alegreya-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya';
-  src: url('/portfolio/fonts/alegreya-extrabold.woff2') format('woff2');
+  src: url('/fonts/Alegreya-ExtraBold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya';
-  src: url('/portfolio/fonts/alegreya-extrabolditalic.woff2') format('woff2');
+  src: url('/fonts/Alegreya-ExtraBoldItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/portfolio/fonts/alegreyasc-regular.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSC-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/portfolio/fonts/alegreyasc-italic.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSC-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/portfolio/fonts/alegreyasc-black.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSC-black.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/portfolio/fonts/alegreyasc-blackitalic.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSC-BlackItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/portfolio/fonts/alegreyasans-regular.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSans-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/portfolio/fonts/alegreyasans-italic.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSans-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/portfolio/fonts/alegreyasans-black.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSans-Black.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/portfolio/fonts/alegreyasans-blackitalic.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSans-BlackItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/portfolio/fonts/alegreyasanssc-regular.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSansSC-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/portfolio/fonts/alegreyasanssc-italic.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSansSC-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/portfolio/fonts/alegreyasanssc-black.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSansSC-Black.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/portfolio/fonts/alegreyasanssc-blackitalic.woff2') format('woff2');
+  src: url('/fonts/AlegreyaSansSC-BlackItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
+}
+@font-face {
+  font-family: 'code';
+  src: url('/fonts/FiraCode-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'code';
+  src: url('/fonts/FiraCode-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: bold;
 }
 /* typographic mixins */
 /*
@@ -284,7 +296,7 @@ body {
 }
 i,
 em {
-  font-style: italic;
+  font-style: Italic;
 }
 b,
 strong {
@@ -323,6 +335,19 @@ h6 {
   font-family: 'alegreya';
   font-feature-settings: "lnum" 1;
   font-weight: bold;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+@media screen and (min-width: 56.625em) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: normal;
+    hyphens: manual;
+  }
 }
 h1,
 h2,
@@ -480,7 +505,6 @@ a:focus {
   line-height: 1.06666667;
   font-family: 'alegreya-sans sc';
   text-transform: lowercase;
-  font-weight: bold;
   color: ligten(#05131F, 30%);
 }
 @media screen and (min-width: 56.625em) {
@@ -499,11 +523,6 @@ a:focus {
   .timemarker__label {
     font-size: 1.1875rem;
     line-height: 1.26315789;
-  }
-}
-@media screen and (min-width: 56.625em) {
-  .timemarker__label {
-    font-weight: normal;
   }
 }
 .timemarker > .icon {
@@ -1023,11 +1042,12 @@ a:focus {
 }
 .pagination a {
   color: #05131F;
-  font-weight: bold;
-  text-decoration: underline #e6e7e9;
+  text-decoration: underline;
+  text-decoration-color: #5C14FF;
+  transition: color 0.7s ease-out;
 }
 .pagination a:hover {
-  background-color: #e6e7e9;
+  color: #5C14FF;
 }
 .pagination__prev {
   width: 50%;
@@ -1063,11 +1083,12 @@ a:focus {
 }
 .breadcrumb__link {
   color: #05131F;
-  font-weight: bold;
-  text-decoration: underline #e6e7e9;
+  text-decoration: underline;
+  text-decoration-color: #5C14FF;
+  transition: color 0.7s ease-out;
 }
 .breadcrumb__link:hover {
-  background-color: #e6e7e9;
+  color: #5C14FF;
 }
 .breadcrumb__seperator {
   color: #ccc;
@@ -1180,7 +1201,8 @@ a:focus {
 .prose h4,
 .prose h5,
 .prose h6,
-.prose table {
+.prose table,
+.prose pre {
   margin-top: 1em;
 }
 @media screen and (min-width: 56.625em) {
@@ -1192,7 +1214,8 @@ a:focus {
   .prose h4,
   .prose h5,
   .prose h6,
-  .prose table {
+  .prose table,
+  .prose pre {
     width: 37.375rem;
   }
 }
@@ -1205,7 +1228,8 @@ a:focus {
   .prose h4,
   .prose h5,
   .prose h6,
-  .prose table {
+  .prose table,
+  .prose pre {
     width: 37.375rem;
   }
 }
@@ -1218,7 +1242,8 @@ a:focus {
   .prose h4,
   .prose h5,
   .prose h6,
-  .prose table {
+  .prose table,
+  .prose pre {
     width: 48.125rem;
   }
 }
@@ -1373,13 +1398,7 @@ a:focus {
 .prose abbr {
   font-family: 'alegreya-sans sc';
   text-transform: lowercase;
-  font-weight: bold;
-  border-bottom: 1px dotted;
-}
-@media screen and (min-width: 56.625em) {
-  .prose abbr {
-    font-weight: normal;
-  }
+  text-decoration: underline dotted;
 }
 .prose ul,
 .prose ol {
@@ -1423,16 +1442,20 @@ a:focus {
   padding: 0.125em 0.5em 0.25em 0.5em;
   line-height: 1;
 }
+.prose th {
+  font-weight: bold;
+}
 .prose td {
   text-align: "." center;
 }
 .prose a:not([class]) {
   color: #05131F;
-  font-weight: bold;
-  text-decoration: underline #e6e7e9;
+  text-decoration: underline;
+  text-decoration-color: #5C14FF;
+  transition: color 0.7s ease-out;
 }
 .prose a:not([class]):hover {
-  background-color: #e6e7e9;
+  color: #5C14FF;
 }
 .prose blockquote {
   display: block;
@@ -1466,10 +1489,11 @@ a:focus {
   border-radius: 1rem;
   top: 0.5rem;
   left: 0.5rem;
+  z-index: -1;
 }
 .prose blockquote:after {
   content: '';
-  background: url('/portfolio/images/quote.svg');
+  background: url('/images/quote.svg');
   height: 3.875rem;
   width: 3.875rem;
   position: absolute;
@@ -1508,6 +1532,47 @@ a:focus {
   border-bottom-width: 0.25rem;
   border-bottom-color: #FF147E;
   border-bottom-style: solid;
+}
+.prose code {
+  font-family: 'code';
+  font-size: 81%;
+}
+.prose p > code {
+  padding: 0.1875rem;
+  margin: 0 -0.1875rem;
+  background-color: rgba(5, 19, 31, 0.05);
+  border-radius: 0.375rem;
+}
+.prose pre {
+  font-size: 1.0625rem;
+  line-height: 1.41176471;
+  background-color: rgba(5, 19, 31, 0.05);
+  overflow: auto;
+  padding: 1rem;
+}
+@media screen and (min-width: 56.625em) {
+  .prose pre {
+    font-size: 1.1875rem;
+    line-height: 1.26315789;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .prose pre {
+    font-size: 1.4375rem;
+    line-height: 1.39130435;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .prose pre {
+    font-size: 1.4375rem;
+    line-height: 1.39130435;
+  }
+}
+.prose mark {
+  background-image: linear-gradient(-100deg, rgba(250, 246, 133, 0.3), rgba(250, 246, 133, 0.7) 95%, rgba(250, 246, 133, 0.1));
+  padding: 0 .35em;
+  margin: 0 -0.35em;
+  border-radius: 1em 0;
 }
 @media screen and (min-width: 56.625em) {
   .timeline {

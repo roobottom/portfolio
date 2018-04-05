@@ -30,7 +30,7 @@ Early version of the logo were a little too on-the-nose for Claire's tastes; too
 
 {{ figure({src:'/images/claire-jones/early-logos.jpg',caption:"Early versions of Claire's logo",class:'side-by-side'}) }}
 
-We spent time exploring what her products meant to her, and how her simple, bold style should be reflected in the brand. We also coined the tag-line _**handmade with love**_ that reflected the care that Claire took when crafting each of her products by hand. 
+We spent time exploring what her products meant to her, and how her simple, bold style should be reflected in the brand. We also coined the tag-line ==_handmade with love_== that reflected the care that Claire took when crafting each of her products by hand. 
 
 {{ figure({src:'/images/claire-jones/logo.png',caption:"The bold, simple style of the final logo did a much better job of reflecting Claire's style",class:'side-by-side'}) }}
 {{ figure(photos) }}
