@@ -1,9 +1,9 @@
 {% macro logo(url,type=mark) %}
   <a href="{{baseurl}}{{url}}" class="logo logo--{{type}}">
     {% if type == 'type' %}
-    <svg class="logo__type"><use xlink:href="/images/site-graphics.svg#logo__type"></use></svg>
+    <svg class="logo__type"><use xlink:href="{{baseurl}}/images/site-graphics.svg#logo__type"></use></svg>
     {% else %}
-    <svg class="logo__mark"><use xlink:href="/images/site-graphics.svg#logo__mark"></use></svg>
+    <svg class="logo__mark"><use xlink:href="{{baseurl}}/images/site-graphics.svg#logo__mark"></use></svg>
     {% endif %}
   </a>
 {% endmacro %}
