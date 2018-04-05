@@ -14,7 +14,8 @@
         {% else %}
           <div class="timeline__marker">{{timemarker(item.humanDate.season + ' ' + item.humanDate.year,isodate=item.date,modifier=item.org)}}</div>
           <div class="timeline__content">
-            {{teaser(item.title,item.intro,'/work/'+item.url,'Read the case study',modifier=item.org)}}
+            {% set meta = item.org | capitalize + ' project' %}
+            {{teaser(item.title,item.intro,'/work/'+item.url,'Read the case study',modifier=item.org,meta=meta)}}
           </div>
         {% endif %}
       </li>

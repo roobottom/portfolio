@@ -5,6 +5,9 @@
 {% from "_patterns/timemarker/timemarker.html" import "timemarker" %}
 {% from "_patterns/teaser/teaser.html" import "teaser" %}
 {% from "_patterns/card/card.html" import "card" %}
+{% from "_patterns/meta/meta.html" import "meta" %}
+{% from "_patterns/pagination/pagination.html" import "pagination" %}
+{% from "_patterns/breadcrumb/breadcrumb.html" import "breadcrumb" %}
 
 {% from "_components/prose/prose.html" import "prose" %}
 {% from "_components/logo/logo.html" import "logo" %}
@@ -15,10 +18,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% if page.seoTitle %}{{page.seoTitle}}{% else %}{{page.title}}{% endif %}</title>
+    <title>{% if page.seoTitle %}{{page.seoTitle}}{% else %}{{page.title}} - Jon Roobottom{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% if page.intro %}{{ page.intro }}{% else %}The portfolio of Jon Roobottom a design leader and developer based in Brighton, UK.{% endif %}">
-    <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="{{baseurl}}/styles.css" type="text/css" media="all">
   </head>
   <body class="page{% if page.page_type %} page--{{page.page_type}}{% endif %}">
 
@@ -33,6 +36,6 @@
       {% block content %}
       {% endblock %}
     </main>
-    <script src="/js/functionality.js" type="text/javascript"></script>
+    <script src="{{baseurl}}/js/functionality.js" type="text/javascript"></script>
   </body>
 </html>

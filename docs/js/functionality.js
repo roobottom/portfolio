@@ -1,17 +1,19 @@
 (function() {
 
   //maintain scroll position
-  var content = document.querySelector('.section--content')
-  var scroll = parseInt(localStorage.getItem(window.location.pathname))
+  // var content = document.querySelector('.section--content')
+  // var scroll = parseInt(localStorage.getItem(window.location.pathname))
+  // if (!isNaN(scroll)) content.scrollTop = scroll
+  //
+  //
+  // content.addEventListener("scroll", () => {
+  //   localStorage.setItem(window.location.pathname, content.scrollTop)
+  // }, {
+  //   capture: true,
+  //   passive: true
+  // });
 
-  content.addEventListener("scroll", () => {
-    localStorage.setItem(window.location.pathname, content.scrollTop)
-  }, {
-    capture: true,
-    passive: true
-  });
 
-  if (!isNaN(scroll)) content.scrollTop = scroll
 
 
   //galleries

@@ -1,0 +1,16 @@
+{% macro meta(data) %}
+  <table class="meta">
+    <tbody class="meta__body">
+    {% for key, vaule in data %}
+      <tr>
+        <th class="meta__key">
+          {{key | capitalize}}
+        </th>
+        <td class="meta__value">
+          {{vaule}}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endmacro %}

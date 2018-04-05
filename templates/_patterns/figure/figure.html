@@ -1,17 +1,21 @@
 {% macro figure(img) %}
   {% if img.set -%}
-  <figure class="figure figure--gallery{% if img.class %} {{img.class}}{% endif %}" data-gallery>
+  {% if img.gallery -%}
+  <figure class="figure figure--gallery{% if img.class %} {{img.class}}{% endif %}" data-gallery{% if img.id %} id="{{img.id}}"{% endif %}>
+  {% else -%}
+  <figure class="figure{% if img.class %} {{img.class}}{% endif %}"{% if img.id %} id="{{img.id}}"{% endif %}>
+  {%- endif %}
     <div class="figure__images figure__images--gallery">
     {% for img in img.set -%}
       <div class="figure__image" data-width="{{img.width}}" data-height="{{img.height}}" data-gallery-item >
-        <img src="{{img.src}}" />
+        <img src="{{baseurl}}{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
       </div>
     {% endfor %}
     </div>
   {% else -%}
-  <figure class="figure{% if img.class %} {{img.class}}{% endif %}">
+  <figure class="figure{% if img.class %} {{img.class}}{% endif %}"{% if img.id %} id="{{img.id}}"{% endif %}>
     <div class="figure__images">
-      <img src="{{img.src}}" />
+      <img src="{{baseurl}}{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
     </div>
   {%- endif %}
   {% if img.caption %}

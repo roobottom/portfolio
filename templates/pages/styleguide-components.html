@@ -5,7 +5,7 @@
   {% for blog in site.blogs %}
     {% if blog.name == 'components' %}
       {% for component in blog.items %}
-        <a href="{{component.url}}">{{component.title}}</a>
+        <a href="{{baseurl}}{{component.url}}">{{component.title}}</a>
       {% endfor %}
     {% endif %}
   {% endfor %}

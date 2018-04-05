@@ -1,7 +1,11 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-  <p class="breadcrumb">You're here: <a href="/work" class="breadcrumb__link">Work</a> <span class="breadcrumb__seperator">/</span></p>
+  {{ breadcrumb([{url:'/',title:'Home'},{url:'/work',title:'Work'}]) }}
   {{ title(page.title)}}
   {{ timemarker(page.humanDate.season + ' ' + page.humanDate.year,page.date,'simple') }}
+  {% if page.project %}
+  {{ meta(page.project) }}
+  {% endif %}
   {{ prose(page.content) }}
+  {{ pagination(page.prev,page.next,'work') }}
 {% endblock %}

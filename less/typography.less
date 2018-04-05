@@ -183,6 +183,17 @@ h1: 71.55 | 71.55 |106.59 |129.04
     }
   }
 
+  #style {
+    .link() {
+      color: @c_text;
+      font-weight: bold;
+      text-decoration: underline mix(@c_text,white,10%);
+      &:hover {
+        background-color: mix(@c_text,white,10%);
+      }
+    }
+  }
+
   #font {
     .sans() {
       font-family: 'alegreya-sans';

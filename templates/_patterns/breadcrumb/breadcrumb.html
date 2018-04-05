@@ -1,0 +1,3 @@
+{% macro breadcrumb(items) %}
+  <p class="breadcrumb">You're here: {% for item in items %}<a href="{{baseurl}}{{item.url}}" class="breadcrumb__link">{{item.title}}</a> <span class="breadcrumb__seperator">/</span> {% endfor %}&hellip;</p>
+{% endmacro %}

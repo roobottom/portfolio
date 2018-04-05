@@ -70,6 +70,9 @@
 @import '../templates/_patterns/timemarker/timemarker';
 @import '../templates/_patterns/teaser/teaser';
 @import '../templates/_patterns/figure/figure';
+@import '../templates/_patterns/meta/meta';
+@import '../templates/_patterns/pagination/pagination';
+@import '../templates/_patterns/breadcrumb/breadcrumb';
 
 @import '../templates/_components/logo/logo';
 @import '../templates/_components/navigation/navigation';
@@ -78,17 +81,7 @@
 
 //global layout
 .page {
-  .break-min({
-    display: grid;
-    grid-template-columns: unit((@spacing * 10)/@base,rem) auto;
-    //.space(grid-gap,7);
-  });
 
-  &--home {
-    .break-min({
-      .space(grid-gap,0);
-    });
-  }
 
 }
 
@@ -102,22 +95,25 @@
   .break-min({
     height: 100vh;
     overflow: hidden;
+    position: fixed;
+    top: 0; left: 0;
     flex-direction: column;
     justify-content: flex-start;
     .space(padding,0);
+    .space(width,11);
     align-items: center;
   })
 }
 
 .section--content {
   .space(padding,1,3);
+  overflow-x: hidden;
 
   .break-min({
-    overflow: auto;
     .space(padding,2,0,7,7);
-    @vertical-padding: unit((@spacing * 9)/@base,rem);
-    height: ~"calc(100vh - @{vertical-padding})";
+    .space(margin-left,11); //same as nav width
   });
+
 
   .page--home & {
     .space(padding,0);
@@ -179,19 +175,4 @@
 
   }
 
-}
-
-.breadcrumb {
-  #type > #size > .sm;
-  .space(margin-bottom,3);
-  &__link {
-    color: @c_primary-light;
-    text-decoration: none;
-    &:hover {
-      background-color: #F1F1F1;
-    }
-  }
-  &__seperator {
-    color: #ccc;
-  }
 }

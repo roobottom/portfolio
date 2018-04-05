@@ -1,0 +1,10 @@
+{% macro pagination(prev,next,base) %}
+  <nav class="pagination">
+    {% if prev %}
+      <p class="pagination__prev">&larr;&nbsp;Previous <a href="{{baseurl}}/{{base}}/{{prev.url}}">{{prev.title}}</a></p>
+    {% endif %}
+    {% if next %}
+      <p class="pagination__next">Next <a href="{{baseurl}}/{{base}}/{{next.url}}">{{next.title}}</a>&nbsp;&rarr;</p>
+    {% endif %}
+  </nav>
+{% endmacro %}

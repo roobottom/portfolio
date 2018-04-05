@@ -11,6 +11,9 @@
 
 
 
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +21,7 @@
     <title>How UI design patterns helped us speed up visual design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="In 2016, our visual design process at Firefly Learning was a bit of a mess.  I lead a long-term initiative to overhaul our process and tooling which lead to significant gains in our velocity and quality of output.">
-    <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/portfolio/styles.css" type="text/css" media="all">
   </head>
   <body class="page">
 
@@ -26,7 +29,7 @@
 
     <header class="section--navigation">
       
-  <a href="/" class="logo logo--">
+  <a href="/portfolio/" class="logo logo--">
     
     <svg class="logo__mark"><use xlink:href="/images/site-graphics.svg#logo__mark"></use></svg>
     
@@ -35,7 +38,7 @@
       
   <div class="navigation">
 
-    <a href="#navigation" class="navigation__trigger">
+    <a href="/portfolio#navigation" class="navigation__trigger">
   <svg class="icon icon--menu"><use xlink:href="/images/site-graphics.svg#menu"></use></svg>
 </a>
 
@@ -44,35 +47,35 @@
       <ol class="navigation__items">
 
         <li class="navigation__item">
-          <a href="/" class="navigation__link">
+          <a href="/portfolio/" class="navigation__link">
             <h3 class="navigation__title">Home</h3>
             <p class="navigation__description">Is where the heart is</p>
           </a>
         </li>
 
         <li class="navigation__item">
-          <a href="/work" class="navigation__link">
+          <a href="/portfolio/work" class="navigation__link">
             <h3 class="navigation__title">My work</h3>
             <p class="navigation__description">What <em>have</em> I been doing with my life?‍</p>
           </a>
         </li>
 
         <li class="navigation__item">
-          <a href="/articles" class="navigation__link">
+          <a href="/portfolio/articles" class="navigation__link">
             <h3 class="navigation__title">Articles</h3>
             <p class="navigation__description">Where I write about design, development 'n stuff</p>
           </a>
         </li>
 
         <li class="navigation__item">
-          <a href="/about" class="navigation__link">
+          <a href="/portfolio/about" class="navigation__link">
             <h3 class="navigation__title">About me</h3>
             <p class="navigation__description">Getting to know you 🎤</p>
           </a>
         </li>
 
         <li class="navigation__item">
-          <a href="/styleguide" class="navigation__link">
+          <a href="/portfolio/styleguide" class="navigation__link">
             <h3 class="navigation__title">Styleguide</h3>
             <p class="navigation__description">Design guidelines and patterns used on this site</p>
           </a>
@@ -86,7 +89,9 @@
     </header>
     <main class="section--content">
       
-  <p class="breadcrumb">You're here: <a href="/work" class="breadcrumb__link">Work</a> <span class="breadcrumb__seperator">/</span></p>
+  
+  <p class="breadcrumb">You're here: <a href="/portfolio/" class="breadcrumb__link">Home</a> <span class="breadcrumb__seperator">/</span> <a href="/portfolio/work" class="breadcrumb__link">Work</a> <span class="breadcrumb__seperator">/</span> &hellip;</p>
+
   
   <div class="title">
     <h1 class="title__text title__text--1">A modern Sketch pattern library</h1>
@@ -102,11 +107,11 @@
   </div>
 
   
+  
   <article class="prose">
     <p>In 2016, our visual design process at Firefly Learning was a bit of a mess.  I lead a long-term initiative to overhaul our process and tooling which lead to significant gains in our velocity and quality of output.</p>
-<hr />
-<p>Carving up an interface into reusable patterns is <em>the</em> way of developing for the web. All the cool kids are doing it. The tools and technology are readily available to front-end engineers support this workflow. Componentisation is encouraged in front-end libraries like React and Angular and is now enjoying wider standardised adoption through the <a href="https://www.w3.org/standards/techs/components#w3c_all">Web Components</a> specification. Developers also enjoy flexible working in teams using version control tools like Git.</p>
-<p>Until recently, the software to support this workflow for designers has been rubbish. However, the introduction of Sketch symbols and libraries coupled with tools like Abstract has revolutionised the way we design for the web and native apps.</p>
+<p>Carving-up any interface into reusable patterns is <em>the</em> way of developing for the web. All the cool kids are doing it. The tools and technology are readily available to front-end engineers support this workflow. Componentisation is encouraged in front-end libraries like React and Angular and is now enjoying wider standardised adoption through the <a href="https://www.w3.org/standards/techs/components#w3c_all">Web Components</a> specification. Developers also enjoy flexible working in teams using version control tools like Git.</p>
+<p>Until recently, the software to support this workflow for designers has been a bit rubbish. However, the introduction of Sketch symbols and libraries coupled with tools like Abstract has revolutionised the way we design interfaces.</p>
 <p>At Firefly Learning, I lead a project to fully utilise these new tools to introduce vastly improved standardisation and speed into our design process.</p>
 <h2>The problem</h2>
 <p>Two years ago we were using Adobe Illustrator as our primary design tool; this presented some problems:</p>
@@ -114,7 +119,6 @@
 <li>Interface elements had to be copied and pasted between designs to ensure consistency.</li>
 <li>If we updated styling for one component, we’d have to update it everywhere manually. Of course, the upshot of this is that we tended <em>not</em> to risk making changes.</li>
 <li>More than one designer working on the same file lead to those designers going temporality insane.</li>
-<li>We were using Adobe Illustrator as our primary design tool.</li>
 </ul>
 <p>During this time we also split the design and front-end teams; this meant we had to do a lot more exposition to aid the transition from design to build.</p>
 <h2>The solution, phase one</h2>
@@ -133,11 +137,22 @@
 <p>By this stage, we were using Abstract to version control our files. Although we still hadn’t figured out how to keep patterns in-sync across multiple projects. Although a couple of tools claimed to have the solution to this problem, none of them worked for us. In the end, we opted for the “manually check this is the latest version” approach. It wasn’t pretty, but it worked, and I felt reasonably sure that Sketch would release a native solution to this problem.</p>
 <hr />
 <h2>The solution, phase two</h2>
+<p>&quot;You know those four separate files you’ve spent many hours</p>
 
   </article>
 
+  
+  <nav class="pagination">
+    
+      <p class="pagination__prev">&larr;&nbsp;Previous <a href="/portfolio/work/firefly-bisc">British International School, Cairo</a></p>
+    
+    
+      <p class="pagination__next">Next <a href="/portfolio/work/firefly-learning-brand-values">Uncovering Firefly Learning’s brand values</a>&nbsp;&rarr;</p>
+    
+  </nav>
+
 
     </main>
-    <script src="/js/functionality.js" type="text/javascript"></script>
+    <script src="/portfolio/js/functionality.js" type="text/javascript"></script>
   </body>
 </html>

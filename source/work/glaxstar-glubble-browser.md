@@ -15,10 +15,10 @@ The product was sound, but the interface was an eclectic mix of styles and unsub
 
 I created a updated browser chrome that treated them with respect (and full browser controls, including url bar), but was engaging enough to make them feel special.
 
-{{ figure({src:'/images/glubble/glubble-library.png',caption:'An early design for the Glubble browser chrome UI and Glubble library explorer',class:'browser side-by-side'}) }}
+{{ figure({src:'/images/glubble/glubble-library.png',caption:'An early design for the Glubble browser chrome UI and Glubble library explorer',class:'max',frame:'browser'}) }}
 
 ## Spreading the message
 
-Kids were the target user, but parents were the customer. 
+Part of my work at Glubble was helping to increase usage of our core product. Glubble's business model was based around demonstrating growth for future funding rounds. I redesigned and rebuilt Glubble's core website, resulting in increased awareness of our product and services.
 
-{{ figure({src:'/images/glubble/glubble-homepage.png',caption:'An early design from the refreshed homepage I designed an built for Glubble.com (now defunct)',class:'browser side-by-side'}) }}
+{{ figure({src:'/images/glubble/glubble-homepage.png',caption:'The refreshed homepage I designed and built for Glubble.com (now defunct)',class:'max',frame:'browser'}) }}
