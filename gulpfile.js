@@ -3,6 +3,9 @@ const nunjucks = require('gulp-nunjucks-render');
 const connect = require('gulp-connect');
 const less = require('gulp-less');
 const pouch = require('./_pouch/pouch.js')
+const site = require('./_pouch/_site.js')
+
+console.log(site.baseurl)
 
 function server(done) {
   connect.server({
@@ -19,7 +22,11 @@ function runPouch(done) {
 
 gulp.task('less', function() {
   return gulp.src('./less/styles.less')
-  .pipe(less())
+  .pipe(less({
+    globalVars: {
+      baseurl: "'" + site.baseurl + "'"
+    }
+  }))
   .pipe(gulp.dest('./docs'))
 })
 
@@ -33,7 +40,7 @@ gulp.task('default', gulp.parallel(server,runPouch,'less','static',function(done
   done()
 }))
 
-gulp.task('build',gulp.parallel(runPouch))
+gulp.task('build',gulp.parallel(runPouch,'less','static'))
 
 function watch() {
   gulp.watch(['./source/**/*.md','./templates/**/*.html'], gulp.parallel(runPouch))

@@ -158,97 +158,97 @@ a img {
 /* sitewide typography settings */
 @font-face {
   font-family: 'alegreya';
-  src: url('/fonts/alegreya-regular.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreya-regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya';
-  src: url('/fonts/alegreya-italic.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreya-italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya';
-  src: url('/fonts/alegreya-extrabold.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreya-extrabold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya';
-  src: url('/fonts/alegreya-extrabolditalic.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreya-extrabolditalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/fonts/alegreyasc-regular.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasc-regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/fonts/alegreyasc-italic.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasc-italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/fonts/alegreyasc-black.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasc-black.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/fonts/alegreyasc-blackitalic.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasc-blackitalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/fonts/alegreyasans-regular.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasans-regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/fonts/alegreyasans-italic.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasans-italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/fonts/alegreyasans-black.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasans-black.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/fonts/alegreyasans-blackitalic.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasans-blackitalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/fonts/alegreyasanssc-regular.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasanssc-regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/fonts/alegreyasanssc-italic.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasanssc-italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/fonts/alegreyasanssc-black.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasanssc-black.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/fonts/alegreyasanssc-blackitalic.woff2') format('woff2');
+  src: url('/portfolio/fonts/alegreyasanssc-blackitalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
@@ -1469,7 +1469,7 @@ a:focus {
 }
 .prose blockquote:after {
   content: '';
-  background: url('/images/quote.svg');
+  background: url('/portfolio/images/quote.svg');
   height: 3.875rem;
   width: 3.875rem;
   position: absolute;

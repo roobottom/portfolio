@@ -19,7 +19,7 @@ nunjucks.configure(site.nunjucksPath, {
   noCache: true,
   autoescape: false
 })
-.addGlobal('baseurl',site.base)
+.addGlobal('baseurl',site.baseurl)
 
 
 //markdown

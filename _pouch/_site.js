@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/portfolio',
+  baseurl: '/portfolio',
   nunjucksPath: "./templates/",
   patterns: {
     input: "./templates/_patterns/**/*.html"
