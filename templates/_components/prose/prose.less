@@ -4,7 +4,9 @@
   h2, h3, h4, h5, h6,
   table, pre {
     #grid > .text;
+    #grid > .offset-text;
     margin-top: 1em;
+    margin: 1em auto 0 auto;
   }
 
   >p, >ol, >ul {
@@ -13,7 +15,7 @@
 
   >p:first-child {
     #type > #size > .lg;
-    //color: @c_secondary-light;
+  
   }
 
   h1 {
@@ -36,7 +38,7 @@
 
   //lists
   ul, ol {
-    margin-left: 1em;
+    padding-left: 1em;
   }
   li {
     margin-top: 0.2em;
@@ -111,9 +113,11 @@
   }
 
   hr {
-    .space(width,16);
+    #grid > .text;
     border: none;
-    .space(margin,3,0);
+    .space(margin-top,3);
+    margin-left: auto;
+    margin-right: auto;
     .space(border-bottom-width,.5);
     border-bottom-color: @c_secondary-light;
     border-bottom-style: solid;

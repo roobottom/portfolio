@@ -1,5 +1,9 @@
 .figure {
 
+  margin-left: auto;
+  margin-right: auto;
+  #grid > .text;
+  #grid > .offset-text;
   //all figures
   .space(margin-top,4);
 
@@ -16,31 +20,35 @@
   }
 
   //single image
-  &__images {
+
+
+  &.side-by-side {
+    display: flex;
+    #grid > .text-pull;
+    padding-right: 0;
+  }
+
+  &.side-by-side &__images {
+    padding-right: 0;
     #grid > .text;
   }
 
-  &.side-by-side {
-    .break-min({
-      display: inline-flex;
-    });
-  }
   &.side-by-side &__caption {
     #grid > .pull;
-    .break-min({
-      .space(padding-left,2);
-      align-self: flex-end;
-    });
+    //.space(margin-left,7);
+    align-self: flex-end;
   }
 
-  &.max &__images {
+  &.max {
     width: auto;
+    padding: 0;
+  }
 
-
-    .break-min({
-      .space(margin,0,7,0,0);
-    });
-
+  &.max &__caption {
+    margin-left: auto;
+    margin-right: auto;
+    #grid > .text;
+    #grid > .offset-text;
   }
 
   &.pull &__images {
@@ -55,6 +63,7 @@
     float: right;
     .space(margin-left,2);
     max-width: 50%;
+    padding: 0;
     & ~ *:not(p):not(ul):not(ol) {clear: both;}
   }
 

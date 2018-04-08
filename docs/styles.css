@@ -363,6 +363,8 @@ a:focus {
   height: 1.75rem;
 }
 .title {
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 56.625em) {
@@ -446,11 +448,6 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.875em) {
-  .title {
-    margin-bottom: 1rem;
-  }
-}
 .button {
   display: inline-block;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
@@ -527,6 +524,25 @@ a:focus {
 }
 .timemarker > .icon {
   align-self: center;
+}
+.timemarker--simple {
+  float: right;
+  text-align: right;
+}
+@media screen and (min-width: 56.625em) {
+  .timemarker--simple {
+    width: 46.125rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .timemarker--simple {
+    width: 49.875rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .timemarker--simple {
+    width: 63.125rem;
+  }
 }
 .timemarker--simple > .icon {
   display: none;
@@ -677,7 +693,39 @@ a:focus {
   text-decoration: none;
 }
 .figure {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 2rem;
+}
+@media screen and (min-width: 56.625em) {
+  .figure {
+    width: 37.375rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .figure {
+    width: 37.375rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .figure {
+    width: 48.125rem;
+  }
+}
+@media screen and (min-width: 56.625em) {
+  .figure {
+    padding-right: 8.75rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .figure {
+    padding-right: 12.5rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .figure {
+    padding-right: 15rem;
+  }
 }
 .figure img {
   display: block;
@@ -708,25 +756,45 @@ a:focus {
     line-height: 1.41176471;
   }
 }
+.figure.side-by-side {
+  display: flex;
+  padding-right: 0;
+}
 @media screen and (min-width: 56.625em) {
-  .figure__images {
+  .figure.side-by-side {
+    width: 46.125rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .figure.side-by-side {
+    width: 49.875rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .figure.side-by-side {
+    width: 63.125rem;
+  }
+}
+.figure.side-by-side .figure__images {
+  padding-right: 0;
+}
+@media screen and (min-width: 56.625em) {
+  .figure.side-by-side .figure__images {
     width: 37.375rem;
   }
 }
 @media screen and (min-width: 70.875em) {
-  .figure__images {
+  .figure.side-by-side .figure__images {
     width: 37.375rem;
   }
 }
 @media screen and (min-width: 81.25em) {
-  .figure__images {
+  .figure.side-by-side .figure__images {
     width: 48.125rem;
   }
 }
-@media screen and (min-width: 56.625em) {
-  .figure.side-by-side {
-    display: inline-flex;
-  }
+.figure.side-by-side .figure__caption {
+  align-self: flex-end;
 }
 @media screen and (min-width: 56.625em) {
   .figure.side-by-side .figure__caption {
@@ -743,18 +811,42 @@ a:focus {
     width: 15rem;
   }
 }
+.figure.max {
+  width: auto;
+  padding: 0;
+}
+.figure.max .figure__caption {
+  margin-left: auto;
+  margin-right: auto;
+}
 @media screen and (min-width: 56.625em) {
-  .figure.side-by-side .figure__caption {
-    padding-left: 1rem;
-    align-self: flex-end;
+  .figure.max .figure__caption {
+    width: 37.375rem;
   }
 }
-.figure.max .figure__images {
-  width: auto;
+@media screen and (min-width: 70.875em) {
+  .figure.max .figure__caption {
+    width: 37.375rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .figure.max .figure__caption {
+    width: 48.125rem;
+  }
 }
 @media screen and (min-width: 56.625em) {
-  .figure.max .figure__images {
-    margin: 0rem 3.5rem 0rem 0rem;
+  .figure.max .figure__caption {
+    padding-right: 8.75rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .figure.max .figure__caption {
+    padding-right: 12.5rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .figure.max .figure__caption {
+    padding-right: 15rem;
   }
 }
 @media screen and (min-width: 56.625em) {
@@ -791,6 +883,7 @@ a:focus {
   float: right;
   margin-left: 1rem;
   max-width: 50%;
+  padding: 0;
 }
 .figure.pull-right ~ *:not(p):not(ul):not(ol) {
   clear: both;
@@ -1000,6 +1093,8 @@ a:focus {
 .pagination {
   margin-top: 4rem;
   padding-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.0625rem;
   line-height: 1.41176471;
   position: relative;
@@ -1027,23 +1122,22 @@ a:focus {
 }
 @media screen and (min-width: 56.625em) {
   .pagination {
-    width: 37.375rem;
+    width: 46.125rem;
   }
 }
 @media screen and (min-width: 70.875em) {
   .pagination {
-    width: 37.375rem;
+    width: 49.875rem;
   }
 }
 @media screen and (min-width: 81.25em) {
   .pagination {
-    width: 48.125rem;
+    width: 63.125rem;
   }
 }
 .pagination a {
   color: #05131F;
   text-decoration: underline;
-  text-decoration-color: #5C14FF;
   transition: color 0.7s ease-out;
 }
 .pagination a:hover {
@@ -1059,9 +1153,26 @@ a:focus {
   margin-left: auto;
 }
 .breadcrumb {
+  margin-left: auto;
+  margin-right: auto;
   font-size: 0.9375rem;
   line-height: 1.06666667;
   margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 56.625em) {
+  .breadcrumb {
+    width: 46.125rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .breadcrumb {
+    width: 49.875rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .breadcrumb {
+    width: 63.125rem;
+  }
 }
 @media screen and (min-width: 56.625em) {
   .breadcrumb {
@@ -1084,7 +1195,6 @@ a:focus {
 .breadcrumb__link {
   color: #05131F;
   text-decoration: underline;
-  text-decoration-color: #5C14FF;
   transition: color 0.7s ease-out;
 }
 .breadcrumb__link:hover {
@@ -1204,6 +1314,7 @@ a:focus {
 .prose table,
 .prose pre {
   margin-top: 1em;
+  margin: 1em auto 0 auto;
 }
 @media screen and (min-width: 56.625em) {
   .prose > p,
@@ -1245,6 +1356,48 @@ a:focus {
   .prose table,
   .prose pre {
     width: 48.125rem;
+  }
+}
+@media screen and (min-width: 56.625em) {
+  .prose > p,
+  .prose > ul,
+  .prose > ol,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .prose table,
+  .prose pre {
+    padding-right: 8.75rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .prose > p,
+  .prose > ul,
+  .prose > ol,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .prose table,
+  .prose pre {
+    padding-right: 12.5rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .prose > p,
+  .prose > ul,
+  .prose > ol,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .prose table,
+  .prose pre {
+    padding-right: 15rem;
   }
 }
 .prose > p,
@@ -1402,7 +1555,7 @@ a:focus {
 }
 .prose ul,
 .prose ol {
-  margin-left: 1em;
+  padding-left: 1em;
 }
 .prose li {
   margin-top: 0.2em;
@@ -1451,7 +1604,6 @@ a:focus {
 .prose a:not([class]) {
   color: #05131F;
   text-decoration: underline;
-  text-decoration-color: #5C14FF;
   transition: color 0.7s ease-out;
 }
 .prose a:not([class]):hover {
@@ -1526,12 +1678,28 @@ a:focus {
   }
 }
 .prose hr {
-  width: 8rem;
   border: none;
-  margin: 1.5rem 0rem 1.5rem 0rem;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
   border-bottom-width: 0.25rem;
   border-bottom-color: #FF147E;
   border-bottom-style: solid;
+}
+@media screen and (min-width: 56.625em) {
+  .prose hr {
+    width: 37.375rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .prose hr {
+    width: 37.375rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .prose hr {
+    width: 48.125rem;
+  }
 }
 .prose code {
   font-family: 'code';
@@ -1573,6 +1741,25 @@ a:focus {
   padding: 0 .35em;
   margin: 0 -0.35em;
   border-radius: 1em 0;
+}
+.timeline {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 56.625em) {
+  .timeline {
+    width: 46.125rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .timeline {
+    width: 49.875rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .timeline {
+    width: 63.125rem;
+  }
 }
 @media screen and (min-width: 56.625em) {
   .timeline {
@@ -1701,7 +1888,7 @@ a:focus {
 }
 @media screen and (min-width: 56.625em) {
   .section--content {
-    padding: 1rem 0rem 3.5rem 3.5rem;
+    padding: 1rem 3.5rem 3.5rem 3.5rem;
     margin-left: 5.5rem;
   }
 }
@@ -1804,5 +1991,43 @@ a:focus {
   .homepage__content > h2 {
     font-size: 8.065rem;
     line-height: 1;
+  }
+}
+.postInfo {
+  float: right;
+  font-size: 1.0625rem;
+  line-height: 1.41176471;
+}
+@media screen and (min-width: 56.625em) {
+  .postInfo {
+    font-size: 1.1875rem;
+    line-height: 1.26315789;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .postInfo {
+    font-size: 1.4375rem;
+    line-height: 1.39130435;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .postInfo {
+    font-size: 1.4375rem;
+    line-height: 1.39130435;
+  }
+}
+@media screen and (min-width: 56.625em) {
+  .postInfo {
+    width: 8.75rem;
+  }
+}
+@media screen and (min-width: 70.875em) {
+  .postInfo {
+    width: 12.5rem;
+  }
+}
+@media screen and (min-width: 81.25em) {
+  .postInfo {
+    width: 15rem;
   }
 }

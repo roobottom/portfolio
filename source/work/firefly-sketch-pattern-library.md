@@ -24,7 +24,7 @@ During this time we also split the design and front-end teams; this meant we had
 
 ## The solution, phase one
 
-[For a bit more context, you can read about our first pattern library.](/articles/5/)
+For a bit more context, you can read about our [first pattern library](/articles/5/).
 
 In phase one we: introduced Sketch as our defacto design tool, built the first version of our pattern library and implemented version control.
 

@@ -2,7 +2,9 @@
 {% block content %}
   {{ breadcrumb([{url:'/',title:'Home'},{url:'/work',title:'Work'}]) }}
   {{ title(page.title)}}
-  {{ timemarker(page.humanDate.season + ' ' + page.humanDate.year,page.date,'simple') }}
+  <ol class="postInfo">
+    <li class="postInfo__item postInfo__item--date">{{page.humanDate.season}} {{page.humanDate.year}}</li>
+  </ol>
   {% if page.project %}
   {{ meta(page.project) }}
   {% endif %}
