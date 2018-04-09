@@ -1,33 +1,17 @@
 //breakpoint reminder:
 //min: 906, mid: 1134, max: 1300
 
-@grid-text-min: 598;
-@grid-text-mid: @grid-text-min;
-@grid-text-max: 770;
-
-@grid-pull-min: 140;
-@grid-pull-mid: 200;
-@grid-pull-max: 240;
-
-@grid-full-min: 140;
-@grid-full-mid: @grid-full-min;
-@grid-full-max: @grid-full-min;
-
-@grid-max: 1800; //never ever ever go beyond this width
-
 #grid {
-
-
-
   .g(@min,@mid,@max) {
+    outline: 1px solid green;
     .break-min({
-      width: unit(@min/@base,rem);
+      width: unit(@min*@space/@base,rem);
     });
     .break-mid({
-      width: unit(@mid/@base,rem);
+      width: unit(@mid*@space/@base,rem);
     });
     .break-max({
-      width: unit(@max/@base,rem);
+      width: unit(@max*@space/@base,rem);
     });
   }
 
@@ -37,40 +21,31 @@
   .pull() {
     .g(@grid-pull-min,@grid-pull-mid,@grid-pull-max);
   }
-  .full() { //only available beyond mid breakpoint
-    .g(@grid-full-min,@grid-full-mid,@grid-full-max);
-  }
 
-  .text-pull() {
+
+  .text-and-pull() {
     .g(
-      @grid-text-min + @grid-pull-min,
-      @grid-text-mid + @grid-pull-mid,
-      @grid-text-max + @grid-pull-max
+      @grid-text-min + @grid-gap-min + @grid-pull-min,
+      @grid-text-mid + @grid-gap-mid + @grid-pull-mid,
+      @grid-text-max + @grid-gap-max + @grid-pull-max
     );
   }
 
-  .text-full() {
-    .g(
-      @grid-text-min  + @grid-full-min,
-      @grid-text-mid + @grid-pull-mid + @grid-full-min,
-      @grid-text-max + @grid-pull-max + @grid-full-min
-    );
-  }
 
   .offset-text() {
     .break-min({
-      padding-right: unit(@grid-pull-min/@base,rem);
+      padding-right: unit((@grid-pull-min + @grid-gap-min)*@space/@base,rem);
     });
     .break-mid({
-      padding-right: unit(@grid-pull-mid/@base,rem);
+      padding-right: unit((@grid-pull-mid + @grid-gap-mid)*@space/@base,rem);
     });
     .break-max({
-      padding-right: unit(@grid-pull-max/@base,rem);
+      padding-right: unit((@grid-pull-max+ @grid-gap-max)*@space/@base,rem);
     });
   }
 
   .max() {
-    max-width: unit(@grid-max/@base,rem);
+    max-width: unit(@grid-max*@space/@base,rem);
   }
 
 }

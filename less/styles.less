@@ -5,15 +5,34 @@
 @type-m: 19;
 @type-l: 23;
 
-@spacing: 8; //spacing base
+@space: 8; //spacing base
 
 .space(@prop,@t:1,@r:q,@b:@t,@l:@r) when (isnumber(@r)) { //passing a second param
-  @{prop}: unit((@t * @spacing)/@base,rem) unit((@r * @spacing)/@base,rem) unit((@b * @spacing)/@base,rem) unit((@l * @spacing)/@base,rem);
+  @{prop}: unit((@t * @space)/@base,rem) unit((@r * @space)/@base,rem) unit((@b * @space)/@base,rem) unit((@l * @space)/@base,rem);
 }
 
 .space(@prop,@t:1,@r:q,@b:@t,@l:@r) when not (isnumber(@r)) { //NOT passing a second param
-  @{prop}: unit((@t * @spacing)/@base,rem);
+  @{prop}: unit((@t * @space)/@base,rem);
 }
+
+//grid x space values,
+//eg, grid-text-min: 74 x 8 = 592px
+
+@grid-text-min: 54;
+@grid-text-mid: @grid-text-min;
+@grid-text-max: 96;
+
+@grid-pull-min: 17;
+@grid-pull-mid: 25;
+@grid-pull-max: 30;
+
+@grid-max: 225; //never ever ever go beyond this width
+
+@grid-menu: 11; //the main menu
+
+@grid-gap-min: 3;
+@grid-gap-mid: 5;
+@grid-gap-max: 7;
 
 //colours
 @c_primary-darkest: #110241;
@@ -40,22 +59,22 @@
 @c_glaxstar: @c_tertiary;
 @c_other: @c_text;
 
-@bp-min: 906;
-@bp-mid: 1134;
-@bp-max: 1300;
+@bp-min: @grid-menu + (3 * @grid-gap-min) + @grid-text-min + @grid-pull-min;
+@bp-mid: @grid-menu + (3 * @grid-gap-mid) + @grid-text-mid + @grid-pull-mid;
+@bp-max: @grid-menu + (3 * @grid-gap-max) + @grid-text-max + @grid-pull-max;
 
 .break-min(@rule) {
-  @media screen and (min-width: (unit(@bp-min/@base,em)) ) {
+  @media screen and (min-width: (unit((@bp-min * @space)/@base,em)) ) {
     @rule();
   }
 }
 .break-mid(@rule) {
-  @media screen and (min-width: (unit(@bp-mid/@base,em)) ) {
+  @media screen and (min-width: (unit((@bp-mid * @space)/@base,em)) ) {
     @rule();
   }
 }
 .break-max(@rule) {
-  @media screen and (min-width: (unit(@bp-max/@base,em)) ) {
+  @media screen and (min-width: (unit((@bp-max * @space)/@base,em)) ) {
     @rule();
   }
 }
@@ -100,18 +119,24 @@
     flex-direction: column;
     justify-content: flex-start;
     .space(padding,0);
-    .space(width,11);
+    .space(width,@grid-menu);
     align-items: center;
   })
 }
 
 .section--content {
+
   .space(padding,1,3);
-  overflow-x: hidden;
 
   .break-min({
-    .space(padding,2,7,7,7);
-    .space(margin-left,11); //same as nav width
+    .space(padding,2,@grid-gap-min,7,@grid-gap-min);
+    .space(margin-left,@grid-menu);
+  });
+  .break-mid({
+    .space(padding,2,@grid-gap-mid,7,@grid-gap-mid);
+  });
+  .break-max({
+    .space(padding,2,@grid-gap-max,7,@grid-gap-max);
   });
 
 
@@ -128,7 +153,7 @@
 .homepage {
   &__intro {
     background-color: @c_primary-dark;
-    @nav-bar-height: unit(((@spacing * 4) + 38)/@base,rem); //38 = logo height
+    @nav-bar-height: unit(((@space * 4) + 38)/@base,rem); //38 = logo height
     height: ~"calc(100vh - @{nav-bar-height})";
     .space(padding,0,3);
 
@@ -147,7 +172,6 @@
       color: white;
       font-weight: normal;
       margin-top: auto;
-      #grid > .text-full;
     }
 
     .button {
@@ -163,7 +187,7 @@
 
     .break-min({
       .space(padding,7,0,7,7);
-      @top-padding: unit((@spacing * 14)/@base,rem);
+      @top-padding: unit((@space * 14)/@base,rem);
       min-height: ~"calc(100vh - @{top-padding})";
     });
 
@@ -180,6 +204,19 @@
 
 .postInfo {
   float: right;
+  position: relative;
   #type > #size > .p;
   #grid > .pull;
+
+  //line up top margin with intro text:
+  //large p sizes: 22.66 | 22.66 | 25.33 | 30.66
+  margin-top: unit(22.66/@base,rem);
+  .break-mid({margin-top: unit(25.33/@base,rem);});
+  .break-max({margin-top: unit(30.66/@base,rem);});
+
+  //line up left hand edge with pull position
+  @gaps: unit(((2 * @grid-gap-max) * @space)/@base,rem);
+  @text: unit((@grid-text-max * @space)/@base,rem);
+  right: ~"calc(100vw)";
+
 }

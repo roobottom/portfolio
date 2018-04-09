@@ -1,10 +1,10 @@
 .figure {
 
+  //all figures
   margin-left: auto;
   margin-right: auto;
   #grid > .text;
   #grid > .offset-text;
-  //all figures
   .space(margin-top,4);
 
   img {
@@ -19,13 +19,15 @@
     font-style: italic;
   }
 
-  //single image
-
-
+  //side by side
   &.side-by-side {
-    display: flex;
-    #grid > .text-pull;
-    padding-right: 0;
+    #grid > .text-and-pull;
+    .break-min({
+      display: flex;
+      justify-content: space-between;
+      padding-right: 0;
+    });
+
   }
 
   &.side-by-side &__images {
@@ -35,7 +37,6 @@
 
   &.side-by-side &__caption {
     #grid > .pull;
-    //.space(margin-left,7);
     align-self: flex-end;
   }
 
@@ -52,11 +53,7 @@
   }
 
   &.pull &__images {
-    #grid > .text-pull;
-  }
-
-  &.full &__images {
-    #grid > .text-full;
+    #grid > .text-and-pull;
   }
 
   &.pull-right {
@@ -82,11 +79,14 @@
   }
 
   &__images--gallery &__image {
-    .break-min({
-      .space(padding-right,4);
-    });
-    .space(padding-right,2);
+    .space(padding-right,@grid-gap-min);
     &:last-child {padding-right: 0;}
+    .break-mid({
+      .space(padding-right,@grid-gap-mid);
+    });
+    .break-max({
+      .space(padding-right,@grid-gap-max);
+    });
   }
 
   //stacked

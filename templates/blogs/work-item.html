@@ -2,9 +2,9 @@
 {% block content %}
   {{ breadcrumb([{url:'/',title:'Home'},{url:'/work',title:'Work'}]) }}
   {{ title(page.title)}}
-  <ol class="postInfo">
-    <li class="postInfo__item postInfo__item--date">{{page.humanDate.season}} {{page.humanDate.year}}</li>
-  </ol>
+  <div class="postInfo">
+    <p class="postInfo__item postInfo__item--date">{{page.humanDate.season}} {{page.humanDate.year}}</p>
+  </div>
   {% if page.project %}
   {{ meta(page.project) }}
   {% endif %}
