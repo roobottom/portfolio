@@ -201,9 +201,9 @@ h1: 71.55 | 71.55 |106.59 |129.04
     .link() {
       color: @c_text;
       text-decoration: underline;
-      transition: color .7s ease-out;
+      transition: background-color .3s ease-out;
       &:hover {
-        color: @c_primary-light;
+        background-color: mix(@c_text,white,10%);
       }
     }
   }

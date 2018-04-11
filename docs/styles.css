@@ -363,18 +363,18 @@ a:focus {
   height: 1.75rem;
 }
 .title {
-  outline: 1px solid green;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2rem;
 }
 @media screen and (min-width: 45.5em) {
   .title {
     width: 37rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .title {
-    width: 42rem;
+    width: 52rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -392,7 +392,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .title__text {
     font-size: 6.661875rem;
     line-height: 1;
@@ -414,7 +414,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .title__text--2 {
     font-size: 2.8125rem;
     line-height: 1;
@@ -436,7 +436,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .title__text--3 {
     font-size: 2.11rem;
     line-height: 1;
@@ -464,7 +464,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .button {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -510,7 +510,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .timemarker__label {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -526,7 +526,6 @@ a:focus {
   align-self: center;
 }
 .timemarker--simple {
-  outline: 1px solid green;
   float: right;
   text-align: right;
 }
@@ -535,9 +534,9 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .timemarker--simple {
-    width: 42rem;
+    width: 52rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -585,7 +584,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .teaser__title {
     font-size: 6.661875rem;
     line-height: 1;
@@ -607,7 +606,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .teaser__title--2 {
     font-size: 2.8125rem;
     line-height: 1;
@@ -629,7 +628,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .teaser__title--3 {
     font-size: 2.11rem;
     line-height: 1;
@@ -654,7 +653,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .teaser__meta {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -677,7 +676,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .teaser__content {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -696,7 +695,6 @@ a:focus {
 .figure {
   margin-left: auto;
   margin-right: auto;
-  outline: 1px solid green;
   margin-top: 2rem;
 }
 @media screen and (min-width: 45.5em) {
@@ -704,9 +702,9 @@ a:focus {
     width: 27rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure {
-    width: 27rem;
+    width: 37rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -719,7 +717,7 @@ a:focus {
     padding-right: 10rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure {
     padding-right: 15rem;
   }
@@ -732,6 +730,7 @@ a:focus {
 .figure img {
   display: block;
   max-width: 100%;
+  box-sizing: border-box;
 }
 .figure__caption {
   font-size: 0.9375rem;
@@ -746,7 +745,7 @@ a:focus {
     line-height: 1.06666667;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure__caption {
     font-size: 1rem;
     line-height: 1.5;
@@ -758,17 +757,14 @@ a:focus {
     line-height: 1.41176471;
   }
 }
-.figure.side-by-side {
-  outline: 1px solid green;
-}
 @media screen and (min-width: 45.5em) {
   .figure.side-by-side {
     width: 37rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure.side-by-side {
-    width: 42rem;
+    width: 52rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -785,16 +781,15 @@ a:focus {
 }
 .figure.side-by-side .figure__images {
   padding-right: 0;
-  outline: 1px solid green;
 }
 @media screen and (min-width: 45.5em) {
   .figure.side-by-side .figure__images {
     width: 27rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure.side-by-side .figure__images {
-    width: 27rem;
+    width: 37rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -803,7 +798,6 @@ a:focus {
   }
 }
 .figure.side-by-side .figure__caption {
-  outline: 1px solid green;
   align-self: flex-end;
 }
 @media screen and (min-width: 45.5em) {
@@ -811,7 +805,7 @@ a:focus {
     width: 8.5rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure.side-by-side .figure__caption {
     width: 12.5rem;
   }
@@ -828,16 +822,15 @@ a:focus {
 .figure.max .figure__caption {
   margin-left: auto;
   margin-right: auto;
-  outline: 1px solid green;
 }
 @media screen and (min-width: 45.5em) {
   .figure.max .figure__caption {
     width: 27rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure.max .figure__caption {
-    width: 27rem;
+    width: 37rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -850,7 +843,7 @@ a:focus {
     padding-right: 10rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure.max .figure__caption {
     padding-right: 15rem;
   }
@@ -860,17 +853,14 @@ a:focus {
     padding-right: 18.5rem;
   }
 }
-.figure.pull .figure__images {
-  outline: 1px solid green;
-}
 @media screen and (min-width: 45.5em) {
   .figure.pull .figure__images {
     width: 37rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure.pull .figure__images {
-    width: 42rem;
+    width: 52rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -906,7 +896,7 @@ a:focus {
 .figure__images--gallery .figure__image:last-child {
   padding-right: 0;
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .figure__images--gallery .figure__image {
     padding-right: 2.5rem;
   }
@@ -1014,7 +1004,6 @@ a:focus {
   margin-top: 2rem;
   border-radius: 1rem;
   border: 2px solid #5C14FF;
-  outline: 1px solid green;
   font-size: 1.0625rem;
   line-height: 1.41176471;
   position: relative;
@@ -1025,9 +1014,9 @@ a:focus {
     width: 27rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .meta {
-    width: 27rem;
+    width: 37rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -1041,7 +1030,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .meta {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1102,7 +1091,6 @@ a:focus {
   margin-right: auto;
   font-size: 1.0625rem;
   line-height: 1.41176471;
-  outline: 1px solid green;
   position: relative;
   border-top: 1px solid #ccc;
   display: flex;
@@ -1114,7 +1102,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .pagination {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1131,9 +1119,9 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .pagination {
-    width: 42rem;
+    width: 52rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -1144,22 +1132,20 @@ a:focus {
 .pagination a {
   color: #05131F;
   text-decoration: underline;
-  transition: color 0.7s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 .pagination a:hover {
-  color: #5C14FF;
+  background-color: #e6e7e9;
 }
 .pagination__prev {
   width: 50%;
 }
 .pagination__next {
   width: 50%;
-  align-self: flex-end;
   text-align: right;
   margin-left: auto;
 }
 .breadcrumb {
-  outline: 1px solid green;
   margin-left: auto;
   margin-right: auto;
   font-size: 0.9375rem;
@@ -1171,9 +1157,9 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .breadcrumb {
-    width: 42rem;
+    width: 52rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -1187,7 +1173,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .breadcrumb {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -1202,10 +1188,10 @@ a:focus {
 .breadcrumb__link {
   color: #05131F;
   text-decoration: underline;
-  transition: color 0.7s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 .breadcrumb__link:hover {
-  color: #5C14FF;
+  background-color: #e6e7e9;
 }
 .breadcrumb__seperator {
   color: #ccc;
@@ -1275,7 +1261,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .navigation__title {
     font-size: 2.11rem;
     line-height: 1;
@@ -1298,7 +1284,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .navigation__description {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -1319,10 +1305,12 @@ a:focus {
 .prose h5,
 .prose h6,
 .prose table,
-.prose pre {
-  outline: 1px solid green;
-  margin-top: 1em;
+.prose pre,
+.prose blockquote,
+.prose hr {
   margin: 1em auto 0 auto;
+  margin-top: 1rem;
+  position: relative;
 }
 @media screen and (min-width: 45.5em) {
   .prose > p,
@@ -1334,11 +1322,14 @@ a:focus {
   .prose h5,
   .prose h6,
   .prose table,
-  .prose pre {
-    width: 27rem;
+  .prose pre,
+  .prose blockquote,
+  .prose hr {
+    margin-top: 1.5rem;
+    width: 37rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose > p,
   .prose > ul,
   .prose > ol,
@@ -1348,8 +1339,11 @@ a:focus {
   .prose h5,
   .prose h6,
   .prose table,
-  .prose pre {
-    width: 27rem;
+  .prose pre,
+  .prose blockquote,
+  .prose hr {
+    width: 37rem;
+    left: -7.5rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -1362,50 +1356,11 @@ a:focus {
   .prose h5,
   .prose h6,
   .prose table,
-  .prose pre {
+  .prose pre,
+  .prose blockquote,
+  .prose hr {
     width: 48rem;
-  }
-}
-@media screen and (min-width: 45.5em) {
-  .prose > p,
-  .prose > ul,
-  .prose > ol,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6,
-  .prose table,
-  .prose pre {
-    padding-right: 10rem;
-  }
-}
-@media screen and (min-width: 52.5em) {
-  .prose > p,
-  .prose > ul,
-  .prose > ol,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6,
-  .prose table,
-  .prose pre {
-    padding-right: 15rem;
-  }
-}
-@media screen and (min-width: 79em) {
-  .prose > p,
-  .prose > ul,
-  .prose > ol,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6,
-  .prose table,
-  .prose pre {
-    padding-right: 18.5rem;
+    left: -9.25rem;
   }
 }
 .prose > p,
@@ -1422,7 +1377,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose > p,
   .prose > ol,
   .prose > ul {
@@ -1448,7 +1403,7 @@ a:focus {
     line-height: 1.41218005;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose > p:first-child {
     font-size: 1.583125rem;
     line-height: 1.26332412;
@@ -1470,7 +1425,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose h1 {
     font-size: 6.661875rem;
     line-height: 1;
@@ -1485,6 +1440,7 @@ a:focus {
 .prose h2 {
   font-size: 2.516875rem;
   line-height: 1.19195431;
+  margin-top: 2rem;
 }
 @media screen and (min-width: 45.5em) {
   .prose h2 {
@@ -1492,7 +1448,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose h2 {
     font-size: 2.8125rem;
     line-height: 1;
@@ -1504,9 +1460,15 @@ a:focus {
     line-height: 1;
   }
 }
+@media screen and (min-width: 45.5em) {
+  .prose h2 {
+    margin-top: 3rem;
+  }
+}
 .prose h3 {
   font-size: 1.888125rem;
   line-height: 1;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 45.5em) {
   .prose h3 {
@@ -1514,7 +1476,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose h3 {
     font-size: 2.11rem;
     line-height: 1;
@@ -1526,11 +1488,19 @@ a:focus {
     line-height: 1;
   }
 }
+@media screen and (min-width: 45.5em) {
+  .prose h3 {
+    margin-top: 2rem;
+  }
+}
 .prose h4,
 .prose h5,
 .prose h5 {
   font-size: 1.41625rem;
   line-height: 1;
+  font-family: 'alegreya-sans sc';
+  text-transform: lowercase;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 45.5em) {
   .prose h4,
@@ -1540,7 +1510,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose h4,
   .prose h5,
   .prose h5 {
@@ -1556,21 +1526,46 @@ a:focus {
     line-height: 1;
   }
 }
+@media screen and (min-width: 45.5em) {
+  .prose h4,
+  .prose h5,
+  .prose h5 {
+    margin-top: 2rem;
+  }
+}
 .prose abbr {
   font-family: 'alegreya-sans sc';
   text-transform: lowercase;
   text-decoration: underline dotted;
 }
-.prose ul,
-.prose ol {
-  padding-left: 1em;
+.prose li ul,
+.prose li ol {
+  margin-left: 2em;
+}
+.prose ol li {
+  list-style-position: outside;
+}
+.prose ul li {
+  list-style-position: inside;
 }
 .prose li {
   margin-top: 0.2em;
-  list-style-position: inside;
 }
-.prose li:first-child {
+.prose > ul > li:first-child,
+.prose > ol > li:first-child {
   margin-top: 0;
+}
+.prose ul li li {
+  list-style-type: circle;
+}
+.prose ul li li li {
+  list-style: square;
+}
+.prose ol li li {
+  list-style-type: lower-alpha;
+}
+.prose ol li li li {
+  list-style-type: lower-roman;
 }
 .prose table {
   font-family: 'alegreya-sans';
@@ -1586,7 +1581,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose table {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1598,10 +1593,14 @@ a:focus {
     line-height: 1.39130435;
   }
 }
+.prose thead tr {
+  border-bottom: 1px solid;
+}
 .prose td,
 .prose th {
-  padding: 0.125em 0.5em 0.25em 0.5em;
+  padding: 0.5em;
   line-height: 1;
+  vertical-align: top;
 }
 .prose th {
   font-weight: bold;
@@ -1612,33 +1611,17 @@ a:focus {
 .prose a:not([class]) {
   color: #05131F;
   text-decoration: underline;
-  transition: color 0.7s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 .prose a:not([class]):hover {
-  color: #5C14FF;
+  background-color: #e6e7e9;
 }
 .prose blockquote {
   display: block;
   margin-top: 2rem;
   border-radius: 1rem;
   border: 2px solid #5C14FF;
-  outline: 1px solid green;
   position: relative;
-}
-@media screen and (min-width: 45.5em) {
-  .prose blockquote {
-    width: 27rem;
-  }
-}
-@media screen and (min-width: 52.5em) {
-  .prose blockquote {
-    width: 27rem;
-  }
-}
-@media screen and (min-width: 79em) {
-  .prose blockquote {
-    width: 48rem;
-  }
 }
 .prose blockquote:before {
   content: '';
@@ -1674,7 +1657,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose blockquote > p {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1687,29 +1670,10 @@ a:focus {
   }
 }
 .prose hr {
-  outline: 1px solid green;
   border: none;
-  margin-top: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  border-bottom-width: 0.25rem;
+  border-bottom-width: 0.5rem;
   border-bottom-color: #FF147E;
   border-bottom-style: solid;
-}
-@media screen and (min-width: 45.5em) {
-  .prose hr {
-    width: 27rem;
-  }
-}
-@media screen and (min-width: 52.5em) {
-  .prose hr {
-    width: 27rem;
-  }
-}
-@media screen and (min-width: 79em) {
-  .prose hr {
-    width: 48rem;
-  }
 }
 .prose code {
   font-family: 'code';
@@ -1726,7 +1690,6 @@ a:focus {
   line-height: 1.41176471;
   background-color: rgba(5, 19, 31, 0.05);
   overflow: auto;
-  padding: 1rem;
 }
 @media screen and (min-width: 45.5em) {
   .prose pre {
@@ -1734,7 +1697,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .prose pre {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1746,6 +1709,10 @@ a:focus {
     line-height: 1.39130435;
   }
 }
+.prose pre > code {
+  margin: 1rem;
+  display: block;
+}
 .prose mark {
   background-image: linear-gradient(-100deg, rgba(250, 246, 133, 0.3), rgba(250, 246, 133, 0.7) 95%, rgba(250, 246, 133, 0.1));
   padding: 0 .35em;
@@ -1753,7 +1720,6 @@ a:focus {
   border-radius: 1em 0;
 }
 .timeline {
-  outline: 1px solid green;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1762,9 +1728,9 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .timeline {
-    width: 42rem;
+    width: 52rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -1787,15 +1753,12 @@ a:focus {
     margin-bottom: 4rem;
   }
 }
-.timeline__marker {
-  outline: 1px solid green;
-}
 @media screen and (min-width: 45.5em) {
   .timeline__marker {
     width: 8.5rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .timeline__marker {
     width: 12.5rem;
   }
@@ -1810,17 +1773,14 @@ a:focus {
     margin-left: -0.875rem;
   }
 }
-.timeline__content {
-  outline: 1px solid green;
-}
 @media screen and (min-width: 45.5em) {
   .timeline__content {
     width: 27rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .timeline__content {
-    width: 27rem;
+    width: 37rem;
   }
 }
 @media screen and (min-width: 79em) {
@@ -1866,7 +1826,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .timeline__eventName {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1908,7 +1868,7 @@ a:focus {
     margin-left: 5.5rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .section--content {
     padding: 1rem 2.5rem 3.5rem 2.5rem;
   }
@@ -1954,7 +1914,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .homepage__intro > h1 {
     font-size: 6.661875rem;
     line-height: 1;
@@ -1992,7 +1952,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .homepage__content > h2 {
     font-size: 6.661875rem;
     line-height: 1;
@@ -2005,30 +1965,27 @@ a:focus {
   }
 }
 .postInfo {
-  float: right;
-  position: relative;
-  font-size: 1.0625rem;
-  line-height: 1.41176471;
-  outline: 1px solid green;
-  margin-top: 1.41625rem;
-  right: calc(100vw);
+  font-size: 0.9375rem;
+  line-height: 1.06666667;
+  color: #82898f;
+  margin-top: 0.5rem;
 }
 @media screen and (min-width: 45.5em) {
+  .postInfo {
+    font-size: 1.078125rem;
+    line-height: 1.39130435;
+  }
+}
+@media screen and (min-width: 62.5em) {
   .postInfo {
     font-size: 1.1875rem;
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 52.5em) {
-  .postInfo {
-    font-size: 1.4375rem;
-    line-height: 1.39130435;
-  }
-}
 @media screen and (min-width: 79em) {
   .postInfo {
-    font-size: 1.4375rem;
-    line-height: 1.39130435;
+    font-size: 1.1875rem;
+    line-height: 1.26315789;
   }
 }
 @media screen and (min-width: 45.5em) {
@@ -2036,7 +1993,7 @@ a:focus {
     width: 8.5rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 62.5em) {
   .postInfo {
     width: 12.5rem;
   }
@@ -2046,13 +2003,20 @@ a:focus {
     width: 15rem;
   }
 }
-@media screen and (min-width: 52.5em) {
+@media screen and (min-width: 45.5em) {
   .postInfo {
-    margin-top: 1.583125rem;
+    margin-top: 1rem;
+  }
+}
+@media screen and (min-width: 62.5em) {
+  .postInfo {
+    float: right;
+    position: relative;
+    left: calc(-1 * (100% - 52rem) / 2);
   }
 }
 @media screen and (min-width: 79em) {
   .postInfo {
-    margin-top: 1.91625rem;
+    left: calc(-1 * (100% - 66.5rem) / 2);
   }
 }

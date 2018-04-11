@@ -5,17 +5,7 @@
   {% for blog in site.blogs %}
   {% if blog.name == 'articles' %}
 
-  <h2>Topics</h2>
-
-  <nav class="nav nav--inline">
-    {% for tag in blog.tags.items %}
-    <a href="{{baseurl}}/articles/tags/{{tag.url}}" class="tag">{{tag.name}} ({{tag.count}})</a>
-    {% endfor %}
-  </nav>
-
-  <h2>Recent Articles</h2>
-
-  {{timeline(blog.items)}}
+  {{timeline(blog.items,'/articles/')}}
 
   <p><a href="{{baseurl}}/articles/{{blog.pagination.links[0].url}}">See all articles</a></p>
 

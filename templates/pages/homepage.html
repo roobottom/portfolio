@@ -1,11 +1,11 @@
 {% extends "layouts/default.html" %}
 {% block content %}
   <section class="homepage__intro">
-    <h1><strong>Clear and thoughtful</strong> design leadership</h1>
-    {{button('Oh la la! Tell me more&hellip;','#tell-me-more')}}
+    <h1><strong>Clear and thoughtful</strong><br/>design leadership</h1>
+    {{button('Tell me more&hellip;','#tell-me-more')}}
   </section>
   <section class="homepage__content" id="tell-me-more">
-    <h2><strong>Design thinking;</strong><br/><em>developer</em> know-how</h2>
+    {{ title('Design thinking; developer know-how',level=2) }}
     {{ prose(page.content) }}
   </section>
 {% endblock %}

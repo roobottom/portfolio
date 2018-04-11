@@ -1,23 +1,14 @@
 {% from "_patterns/timemarker/timemarker.html" import "timemarker" %}
 {% from "_patterns/teaser/teaser.html" import "teaser" %}
 
-{% macro timeline(items) %}
+{% macro timeline(items,base='/work/') %}
   <ol class="timeline">
     {% for item in items %}
-      {% if not item.type %}{% set type = 'post' %}{% endif %}
       <li class="timeline__item timeline__item--{{item.type or type}}{% if item.org %} timeline__item--{{item.org}}{% endif %}">
-        {% if item.type == 'event' %}
-          <div class="timeline__event">
-            {{timemarker(item.humanDate.season + ' ' + item.humanDate.year,isodate=item.date,modifier=item.org)}}
-            <p class="timeline__eventName">{{item.title}}</p>
-          </div>
-        {% else %}
-          <div class="timeline__marker">{{timemarker(item.humanDate.season + ' ' + item.humanDate.year,isodate=item.date,modifier=item.org)}}</div>
-          <div class="timeline__content">
-            {% set meta = item.org | capitalize + ' project' %}
-            {{teaser(item.title,item.intro,'/work/'+item.url,'Read the case study',modifier=item.org,meta=meta)}}
-          </div>
-        {% endif %}
+        <div class="timeline__marker">{{timemarker(item.humanDate.season + ' ' + item.humanDate.year,isodate=item.date)}}</div>
+        <div class="timeline__content">
+          {{teaser(item.title,item.intro,base+item.url,'Keep reading &rarr;')}}
+        </div>
       </li>
     {% endfor %}
   </ol>

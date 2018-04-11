@@ -8,4 +8,4 @@ I help organisations succeed through design by enabling teams to work smarter. W
 
 Currently, I'm the Head of Design for [Firefly Learning](https://fireflylearning.com) where I lead a team of incredibly talented UX, visual and communication designers.
 
-{{button('Check my work, yo','/work')}}
+{{button('View case studies of my work &rarr;','/work')}}

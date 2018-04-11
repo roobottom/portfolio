@@ -16,6 +16,10 @@ Second level headings are used to introduce sections within an article. They can
 
 Third level headings are used to introduce concepts within an article section.
 
+#### Fourth (and fifth and sixth) level heading
+
+Fourth level headings are used to introduce points within a single concept. 
+
 ## Bulleted lists
 
 + The first item

@@ -2,7 +2,6 @@
 {% block content %}
   {{ breadcrumb([{url:'/',title:'Home'},{url:'/articles',title:'Articles'}]) }}
   {{ title(page.title)}}
-  {{ timemarker(page.humanDate.date,page.date,'simple') }}
   {{ prose(page.content) }}
   {{ pagination(page.prev,page.next,'articles') }}
 {% endblock %}

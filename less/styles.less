@@ -19,7 +19,7 @@
 //eg, grid-text-min: 74 x 8 = 592px
 
 @grid-text-min: 54;
-@grid-text-mid: @grid-text-min;
+@grid-text-mid: 74;
 @grid-text-max: 96;
 
 @grid-pull-min: 17;
@@ -203,20 +203,28 @@
 
 
 .postInfo {
-  float: right;
-  position: relative;
-  #type > #size > .p;
+
+  #type > #size > .sm;
+  color: mix(@c_text,white);
   #grid > .pull;
 
-  //line up top margin with intro text:
-  //large p sizes: 22.66 | 22.66 | 25.33 | 30.66
-  margin-top: unit(22.66/@base,rem);
-  .break-mid({margin-top: unit(25.33/@base,rem);});
-  .break-max({margin-top: unit(30.66/@base,rem);});
+  .space(margin-top,1);
 
-  //line up left hand edge with pull position
-  @gaps: unit(((2 * @grid-gap-max) * @space)/@base,rem);
-  @text: unit((@grid-text-max * @space)/@base,rem);
-  right: ~"calc(100vw)";
+
+  .break-min({
+    .space(margin-top,2);
+  });
+  .break-mid({
+    float: right;
+    position: relative;
+    @known-widths: unit(((@grid-gap-mid + @grid-text-mid + @grid-pull-mid) * @space) / @base, rem);
+    left: ~"calc(-1 * (100% - @{known-widths}) / 2)";
+  });
+  .break-max({
+    @known-widths: unit(((@grid-gap-max + @grid-text-max + @grid-pull-max) * @space) / @base, rem);
+    left: ~"calc(-1 * (100% - @{known-widths}) / 2)";
+  });
+
+
 
 }
