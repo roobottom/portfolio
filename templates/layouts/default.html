@@ -8,6 +8,7 @@
 {% from "_patterns/meta/meta.html" import "meta" %}
 {% from "_patterns/pagination/pagination.html" import "pagination" %}
 {% from "_patterns/breadcrumb/breadcrumb.html" import "breadcrumb" %}
+{% from "_patterns/postinfo/postinfo.html" import "postinfo" %}
 
 {% from "_components/prose/prose.html" import "prose" %}
 {% from "_components/logo/logo.html" import "logo" %}
@@ -29,13 +30,14 @@
 
     <header class="section--navigation">
       {{ logo('/') }}
-      {{ navigation() }}
+      <a href="#navigation" class="navigation__trigger" aria-label="Jump to main navigation">{{ icon('menu') }}</a>
 
     </header>
     <main class="section--content">
       {% block content %}
       {% endblock %}
     </main>
+    {{ navigation() }}
     <script src="{{baseurl}}/js/functionality.js" type="text/javascript"></script>
   </body>
 </html>

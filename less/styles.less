@@ -92,6 +92,7 @@
 @import '../templates/_patterns/meta/meta';
 @import '../templates/_patterns/pagination/pagination';
 @import '../templates/_patterns/breadcrumb/breadcrumb';
+@import '../templates/_patterns/postinfo/postinfo';
 
 @import '../templates/_components/logo/logo';
 @import '../templates/_components/navigation/navigation';
@@ -198,33 +199,5 @@
     }
 
   }
-
-}
-
-
-.postInfo {
-
-  #type > #size > .sm;
-  color: mix(@c_text,white);
-  #grid > .pull;
-
-  .space(margin-top,1);
-
-
-  .break-min({
-    .space(margin-top,2);
-  });
-  .break-mid({
-    float: right;
-    position: relative;
-    @known-widths: unit(((@grid-gap-mid + @grid-text-mid + @grid-pull-mid) * @space) / @base, rem);
-    left: ~"calc(-1 * (100% - @{known-widths}) / 2)";
-  });
-  .break-max({
-    @known-widths: unit(((@grid-gap-max + @grid-text-max + @grid-pull-max) * @space) / @base, rem);
-    left: ~"calc(-1 * (100% - @{known-widths}) / 2)";
-  });
-
-
 
 }
