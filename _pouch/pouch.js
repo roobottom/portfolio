@@ -15,11 +15,13 @@ const frontmatter = require('front-matter')
 
 //nunjucks
 const nunjucks = require('nunjucks')
+const nunjucksSlugify = require('./nunjucks.slugify.js')
 nunjucks.configure(site.nunjucksPath, {
   noCache: true,
   autoescape: false
 })
 .addGlobal('baseurl',site.baseurl)
+.addFilter('slugify',nunjucksSlugify)
 
 
 //markdown

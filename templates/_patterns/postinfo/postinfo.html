@@ -2,7 +2,7 @@
 <div class="postinfo">
   <p class="postinfo__item postinfo__item--date">{{date}}</p>
   {% if tags %}
-  <p class="postinfo__item postinfo__item--tags">{% for tag in tags %}#<a href="{{baseurl}}/{{base}}/tags/{{tag|lower}}" class="postinfo__link">{{tag}}</a> {% endfor %}</p>
+  <p class="postinfo__item postinfo__item--tags">{% for tag in tags %}#<a href="{{baseurl}}/{{base}}/tags/{{tag|slugify}}" class="postinfo__link">{{tag}}</a> {% endfor %}</p>
   {% endif %}
 </div>
 {% endmacro %}

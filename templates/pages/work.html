@@ -1,5 +1,6 @@
 {% extends "layouts/default.html" %}
 {% block content %}
+  {{ breadcrumb([{url:'/',title:'Home'}]) }}
   {{title('My work')}}
   {% for blog in site.blogs -%}
     {% if blog.name == 'work' %}

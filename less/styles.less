@@ -150,6 +150,10 @@
   }
 }
 
+.section--subnav {
+  background-color: @c_primary;
+}
+
 //specific page styling
 .homepage {
   &__intro {
@@ -166,13 +170,13 @@
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+
 
     > h1 {
       #type > #size > .h1;
       color: white;
       font-weight: normal;
-      margin-top: auto;
       .break-min({
         width: unit((@grid-text-min + @grid-gap-min + @grid-pull-min) * @space / @base,rem);
         margin-left: auto;
@@ -186,19 +190,31 @@
       });
     }
 
-    .button {
-      .space(margin-bottom,6);
-      margin-top: auto;
-    }
+  }
 
+  &__tip {
+    color: white;
+    .space(margin-top,3);
+    #type > #size > .h1;
+    .break-min({
+      width: unit((@grid-text-min + @grid-gap-min + @grid-pull-min) * @space / @base,rem);
+      margin-left: auto;
+      margin-right: auto;
+    });
+    .break-mid({
+      width: unit((@grid-text-mid + @grid-gap-mid + @grid-pull-mid) * @space / @base,rem);
+    });
+    .break-max({
+      width: unit((@grid-text-max + @grid-gap-max + @grid-pull-max) * @space / @base,rem);
+    });
   }
 
   &__content {
-    min-height: 100vh;
-    .space(padding,3);
+    //min-height: 100vh;
+    .space(padding,7,3);
 
     .break-min({
-      .space(padding,7,0,7,7);
+      .space(padding,14,0,14,7);
       @top-padding: unit((@space * 14)/@base,rem);
       min-height: ~"calc(100vh - @{top-padding})";
     });

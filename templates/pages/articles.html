@@ -1,5 +1,6 @@
 {% extends "layouts/default.html" %}
 {% block content %}
+  {{ breadcrumb([{url:'/',title:'Home'}]) }}
   {{title(page.title)}}
   {{content}}
   {% for blog in site.blogs %}
