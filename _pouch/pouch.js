@@ -25,6 +25,8 @@ nunjucks.configure(site.nunjucksPath, {
 //markdown
 var Remarkable = require('remarkable')
 const remarkableFigure = require('./remarkable.figure.js')
+const remarkableHeadings = require('./remarkable.headings.js')
+const remarkableLinks = require('./remarkable.links.js')
 const md = new Remarkable('full',{
   html: true,
   xhtmlOut: true,
@@ -33,6 +35,8 @@ const md = new Remarkable('full',{
 })
 
 md.use(remarkableFigure)
+md.use(remarkableHeadings)
+md.use(remarkableLinks)
 
 //time
 const moment = require('moment')

@@ -1,7 +1,6 @@
 .navigation {
 
-  background-color: fade(@c_primary-darkest,99%);
-
+  background-color: @c_primary-dark;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -44,14 +43,10 @@
 
   &__link {
     text-decoration: none;
-    &:hover .navigation__title:after {
-        content: '→';
-        .space(margin-left,1);
-    }
   }
 
   &__title {
-    #type > #size > .h1;
+    #type > #size > .h2;
     color: white;
     text-decoration: none;
     .space(margin-bottom,1);

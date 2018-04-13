@@ -48,48 +48,54 @@
 
   
   <div class="title">
-    <h1 class="title__text title__text--1">A modern Sketch pattern library</h1>
+    <h1 class="title__text title__text--1">Sketch pattern library</h1>
     
   </div>
 
   
 <div class="postinfo">
-  <p class="postinfo__item postinfo__item--date">Winter 2017</p>
+  <p class="postinfo__item postinfo__item--date">Friday, December 1st 2017</p>
   
 </div>
 
   
-  
   <article class="prose">
     <p>In 2016, our visual design process at Firefly Learning was a bit of a mess.  I lead a long-term initiative to overhaul our process and tooling which lead to significant gains in our velocity and quality of output.</p>
-<p>Carving-up any interface into reusable patterns is <em>the</em> way of developing for the web. All the cool kids are doing it. The tools and technology are readily available to front-end engineers support this workflow. Componentisation is encouraged in front-end libraries like React and Angular and is now enjoying wider standardised adoption through the <a href="https://www.w3.org/standards/techs/components#w3c_all">Web Components</a> specification. Developers also enjoy flexible working in teams using version control tools like Git.</p>
-<p>Until recently, the software to support this workflow for designers has been a bit rubbish. However, the introduction of Sketch symbols and libraries coupled with tools like Abstract has revolutionised the way we design interfaces.</p>
+<p>Splitting an interface into reusable parts is a common way of developing websites and apps. The technology is readily available to developers to support this workflow. Componentisation is encouraged in front-end libraries like React and Angular and is now enjoying wider standardised adoption through the <a href="https://www.w3.org/standards/techs/components#w3c_all">Web Components</a> specification. Developers also enjoy collaborative working using version control tools like Git.</p>
+<p>Until recently, the software to support this workflow for designers has been lacking. However, the introduction of Sketch symbols and libraries coupled with tools like Abstract has revolutionised the way we design interfaces.</p>
 <p>At Firefly Learning, I lead a project to fully utilise these new tools to introduce vastly improved standardisation and speed into our design process.</p>
-<h2>The problem</h2>
+<h2 id="the-problem">The problem</h2>
 <p>Two years ago we were using Adobe Illustrator as our primary design tool; this presented some problems:</p>
 <ul>
 <li>Interface elements had to be copied and pasted between designs to ensure consistency.</li>
-<li>If we updated styling for one component, we’d have to update it everywhere manually. Of course, the upshot of this is that we tended <em>not</em> to risk making changes.</li>
+<li>If we updated styling for one component, we’d have to update it everywhere manually. (As a result, we tended <em>not</em> to make changes).</li>
 <li>More than one designer working on the same file lead to those designers going temporality insane.</li>
 </ul>
-<p>During this time we also split the design and front-end teams; this meant we had to do a lot more exposition to aid the transition from design to build.</p>
-<h2>The solution, phase one</h2>
-<p>For a bit more context, you can read about our <a href="/articles/5/">first pattern library</a>.</p>
+<p>We needed a shared library of elements that could be defined once and shared everywhere; be updated centrally, with updates pushed out.</p>
+<p>We also desperately needed a way for more than one designer working on the same file at the same time.</p>
+<h2 id="the-solution-phase-one">The solution, phase one</h2>
+<p>For a bit more context, you can read about our <a href="/portfolio/articles/creating-a-pattern-library-in-sketch/">first pattern library</a>.</p>
 <p>In phase one we: introduced Sketch as our defacto design tool, built the first version of our pattern library and implemented version control.</p>
-<h3>Introducing Sketch</h3>
+<h3 id="introducing-sketch">Introducing Sketch</h3>
 <p>I was fearful when telling my team we were making the transition from Illustrator to Sketch. For all its faults, Illustrator is a tool they knew well, and we already had lots of interface elements we could copy-and-paste to save time in new projects. I knew if the transition was going to succeed, I had to prove Sketch would be a superior experience.</p>
-<p>I did two things to smooth the change. First, I created a demo project that I could use to showboat Sketch symbols; this was a big win, and the team could see immediate benefits.</p>
-<p>Second, we introduced Sketch slowly; using it over a couple of smaller projects first before making it our defacto design tool. I’m happy to say that this strategy worked too, and the team were soon merrily designing in Sketch full time.</p>
-<h3>Creating a Sketch pattern library</h3>
-<p>I’d like to say that, once we’d made the transition to Sketch, creating our pattern library was a leisurely affair. It wasn’t; honestly, it was a bit of a slog. There were a few false starts where we couldn’t agree on the best way to structure the symbols. Even when we did arrive at the <code>patterns</code> and <code>parts</code> convention, we discovered that using the symbols was painful resulting in yet another rewrite.</p>
+<p>I did two things to smooth the change: First, I created a demo project that I could use to showboat Sketch symbols; this was a big win, and the team could see immediate benefits.</p>
+<p>Second, we introduced Sketch slowly; using it over a couple of smaller projects first before making it our primary design tool. I’m happy to say that this strategy worked too, and the team were soon merrily designing in Sketch full time.</p>
+<h3 id="creating-a-sketch-pattern-library">Creating a Sketch pattern library</h3>
+<p>I’d like to say that, once we’d made the transition to Sketch, creating our pattern library was a leisurely affair. It wasn’t; honestly, it was a bit of a slog. There were a few false starts where we couldn’t agree on the best way to structure the symbols. Even when we did arrive at an agreed structure (using a <code>patterns</code> and <code>parts</code> convention), we discovered that using the symbols was somewhat painful.</p>
 <p>At this time in early 2015, the design community wasn’t saying much about <em>how</em> to use Sketch symbols to build an extensive pattern library. Sure, we felt like pioneers, but that wasn’t helping team morale. What we needed was a map.</p>
-<p>I created an overview of all the existing front-end patterns and their states and modifiers. As a team, we categorised and rationalised them; this gave us the clear direction we needed.</p>
+<p>We created an overview of all the existing front-end patterns and their states and modifiers. As a team, we categorised and rationalised them; this gave us the clear direction we needed.</p>
 <p>[Interactive map graphic?]</p>
-<h3>Sharing patterns</h3>
-<p>By this stage, we were using Abstract to version control our files. Although we still hadn’t figured out how to keep patterns in-sync across multiple projects. Although a couple of tools claimed to have the solution to this problem, none of them worked for us. In the end, we opted for the “manually check this is the latest version” approach. It wasn’t pretty, but it worked, and I felt reasonably sure that Sketch would release a native solution to this problem.</p>
+<h3 id="working-together">Working together</h3>
+<p>We were early adopters of <a href="https://www.goabstract.com/">Abstract</a>. Introducing this tool was the coup de grâcs for our old Illustrator files. Overnight we were able to work on the same file at the same time with Abstract’s git-like workflow. The fact it only works with Sketch sounding the death-knell.</p>
+<h3 id="sharing-patterns">Sharing patterns</h3>
+<p>Although Abstract gave us the ability to version our files, it didn’t allow us to share a central library of components. Although some tools claimed to have the solution, none of them worked for us. In the end, we opted for the “manually check this is the latest version” approach. It wasn’t pretty, but it worked, and <a href="/portfolio/articles/creating-a-pattern-library-in-sketch#a-native-solution">I felt reasonably sure</a> that Sketch would release a native solution to this problem.</p>
 <hr />
-<h2>The solution, phase two</h2>
-<p>&quot;You know those four separate files you’ve spent many hours</p>
+<h2 id="the-solution-phase-two">The solution, phase two</h2>
+<blockquote>
+<p>You know all those patterns you’ve built? I’d like you to throw them away and start again — Me, in early 2018</p>
+</blockquote>
+<p>What a dickhead! Between us, we’d built the majority of the patterns required for our library, but here I was asking my team to tear them up and create them all over again. Why? Because they were hard to use, and I knew they’d fall into disrepair. I really wanted our pattern library to be a useful resource, not some straw-man solution that wouldn’t solve any of our problems.</p>
+<p>So, Aegir</p>
 
   </article>
 

@@ -173,6 +173,17 @@
       color: white;
       font-weight: normal;
       margin-top: auto;
+      .break-min({
+        width: unit((@grid-text-min + @grid-gap-min + @grid-pull-min) * @space / @base,rem);
+        margin-left: auto;
+        margin-right: auto;
+      });
+      .break-mid({
+        width: unit((@grid-text-mid + @grid-gap-mid + @grid-pull-mid) * @space / @base,rem);
+      });
+      .break-max({
+        width: unit((@grid-text-max + @grid-gap-max + @grid-pull-max) * @space / @base,rem);
+      });
     }
 
     .button {
@@ -184,7 +195,7 @@
 
   &__content {
     min-height: 100vh;
-    .space(padding,0,3);
+    .space(padding,3);
 
     .break-min({
       .space(padding,7,0,7,7);

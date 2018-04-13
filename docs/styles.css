@@ -1277,7 +1277,7 @@ a:focus {
   fill: white;
 }
 .navigation {
-  background-color: rgba(17, 2, 65, 0.99);
+  background-color: #190653;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -1325,32 +1325,28 @@ a:focus {
 .navigation__link {
   text-decoration: none;
 }
-.navigation__link:hover .navigation__title:after {
-  content: '→';
-  margin-left: 0.5rem;
-}
 .navigation__title {
-  font-size: 3.355rem;
-  line-height: 1;
+  font-size: 2.516875rem;
+  line-height: 1.19195431;
   color: white;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
 @media screen and (min-width: 45.5em) {
   .navigation__title {
-    font-size: 3.355rem;
+    font-size: 2.516875rem;
     line-height: 1;
   }
 }
 @media screen and (min-width: 62.5em) {
   .navigation__title {
-    font-size: 4.998125rem;
+    font-size: 2.8125rem;
     line-height: 1;
   }
 }
 @media screen and (min-width: 79em) {
   .navigation__title {
-    font-size: 6.05rem;
+    font-size: 3.375rem;
     line-height: 1;
   }
 }
@@ -1700,6 +1696,7 @@ a:focus {
 .prose blockquote {
   display: block;
   margin-top: 2rem;
+  margin-bottom: 4rem;
   border-radius: 1rem;
   border: 2px solid #5C14FF;
   position: relative;
@@ -1752,7 +1749,7 @@ a:focus {
 }
 .prose hr {
   border: none;
-  border-bottom-width: 0.5rem;
+  border-bottom-width: 0.125rem;
   border-bottom-color: #FF147E;
   border-bottom-style: solid;
 }
@@ -1794,8 +1791,15 @@ a:focus {
   margin: 1rem;
   display: block;
 }
-.prose mark {
+.prose mark,
+.prose h2:target,
+.prose h3:target,
+.prose h4:target,
+.prose h5:target,
+.prose h6:target {
   background-image: linear-gradient(-100deg, rgba(250, 246, 133, 0.3), rgba(250, 246, 133, 0.7) 95%, rgba(250, 246, 133, 0.1));
+}
+.prose mark {
   padding: 0 .35em;
   margin: 0 -0.35em;
   border-radius: 1em 0;
@@ -2007,13 +2011,30 @@ a:focus {
     line-height: 1;
   }
 }
+@media screen and (min-width: 45.5em) {
+  .homepage__intro > h1 {
+    width: 37rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 62.5em) {
+  .homepage__intro > h1 {
+    width: 52rem;
+  }
+}
+@media screen and (min-width: 79em) {
+  .homepage__intro > h1 {
+    width: 66.5rem;
+  }
+}
 .homepage__intro .button {
   margin-bottom: 3rem;
   margin-top: auto;
 }
 .homepage__content {
   min-height: 100vh;
-  padding: 0rem 1.5rem 0rem 1.5rem;
+  padding: 1.5rem;
 }
 @media screen and (min-width: 45.5em) {
   .homepage__content {

@@ -117,6 +117,7 @@
   blockquote {
     display: block;
     .space(margin-top,4);
+    .space(margin-bottom,8);
     .space(border-radius,2);
     border: 2px solid @c_primary-light;
     position: relative;
@@ -152,7 +153,7 @@
 
   hr {
     border: none;
-    .space(border-bottom-width,1);
+    .space(border-bottom-width,.25);
     border-bottom-color: @c_secondary-light;
     border-bottom-style: solid;
   }
@@ -184,8 +185,10 @@
   }
 
   //mark
-  mark {
+  mark, h2:target, h3:target, h4:target,h5:target,h6:target {
     background-image: linear-gradient(-100deg,hsla(58,92%,75%,.3),hsla(58,92%,75%,.7) 95%,hsla(58,92%,75%,.1));
+  }
+  mark {
     padding: 0 .35em;
     margin: 0 -.35em;
     border-radius: 1em 0;
