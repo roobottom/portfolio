@@ -194,4 +194,18 @@
     border-radius: 1em 0;
   }
 
+  &__headinglink {
+    position: absolute;
+    .space(left,-3);
+    transform:scale(.5);
+    .break-mid({
+      transform:scale(.75);
+      .space(left,-4);
+    });
+    color: mix(@c_text,white,10%);
+    &:hover {
+      color: @c_text;
+    }
+  }
+
 }

@@ -502,7 +502,7 @@ a:focus {
 }
 .timemarker__label {
   font-size: 0.9375rem;
-  line-height: 1.06666667;
+  line-height: 1.33333333;
   font-family: 'alegreya-sans sc';
   text-transform: lowercase;
   color: ligten(#05131F, 30%);
@@ -645,7 +645,7 @@ a:focus {
 }
 .teaser__meta {
   font-size: 0.9375rem;
-  line-height: 1.06666667;
+  line-height: 1.33333333;
   font-style: italic;
   color: #697179;
   margin-bottom: 1rem;
@@ -737,7 +737,7 @@ a:focus {
 }
 .figure__caption {
   font-size: 0.9375rem;
-  line-height: 1.06666667;
+  line-height: 1.33333333;
   color: #82898f;
   margin-top: 1rem;
   font-style: italic;
@@ -760,6 +760,9 @@ a:focus {
     line-height: 1.26315789;
   }
 }
+.figure.side-by-side {
+  padding-right: 0;
+}
 @media screen and (min-width: 45.5em) {
   .figure.side-by-side {
     width: 37rem;
@@ -767,28 +770,20 @@ a:focus {
 }
 @media screen and (min-width: 62.5em) {
   .figure.side-by-side {
+    display: flex;
     width: 52rem;
+    justify-content: space-between;
   }
 }
 @media screen and (min-width: 79em) {
   .figure.side-by-side {
-    width: 66.5rem;
-  }
-}
-@media screen and (min-width: 45.5em) {
-  .figure.side-by-side {
     display: flex;
+    width: 66.5rem;
     justify-content: space-between;
-    padding-right: 0;
   }
 }
 .figure.side-by-side .figure__images {
   padding-right: 0;
-}
-@media screen and (min-width: 45.5em) {
-  .figure.side-by-side .figure__images {
-    width: 27rem;
-  }
 }
 @media screen and (min-width: 62.5em) {
   .figure.side-by-side .figure__images {
@@ -803,11 +798,6 @@ a:focus {
 .figure.side-by-side .figure__caption {
   align-self: flex-end;
 }
-@media screen and (min-width: 45.5em) {
-  .figure.side-by-side .figure__caption {
-    width: 8.5rem;
-  }
-}
 @media screen and (min-width: 62.5em) {
   .figure.side-by-side .figure__caption {
     width: 12.5rem;
@@ -821,6 +811,11 @@ a:focus {
 .figure.max {
   width: auto;
   padding: 0;
+}
+@media screen and (min-width: 62.5em) {
+  .figure.max {
+    margin: 4rem 0rem 4rem 0rem;
+  }
 }
 .figure.max .figure__caption {
   margin-left: auto;
@@ -1134,7 +1129,7 @@ a:focus {
 }
 .pagination a {
   color: #05131F;
-  text-decoration: underline;
+  text-decoration: underline #cdd0d2;
   transition: background-color 0.3s ease-out;
 }
 .pagination a:hover {
@@ -1152,7 +1147,7 @@ a:focus {
   margin-left: auto;
   margin-right: auto;
   font-size: 0.9375rem;
-  line-height: 1.06666667;
+  line-height: 1.33333333;
   margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 45.5em) {
@@ -1190,7 +1185,7 @@ a:focus {
 }
 .breadcrumb__link {
   color: #05131F;
-  text-decoration: underline;
+  text-decoration: underline #cdd0d2;
   transition: background-color 0.3s ease-out;
 }
 .breadcrumb__link:hover {
@@ -1199,25 +1194,25 @@ a:focus {
 .breadcrumb__seperator {
   color: #ccc;
 }
-.postinfo {
+.postinfo p {
   font-size: 0.9375rem;
-  line-height: 1.06666667;
+  line-height: 1.33333333;
   color: #82898f;
 }
 @media screen and (min-width: 45.5em) {
-  .postinfo {
+  .postinfo p {
     font-size: 1.078125rem;
     line-height: 1.39130435;
   }
 }
 @media screen and (min-width: 62.5em) {
-  .postinfo {
+  .postinfo p {
     font-size: 1.1875rem;
     line-height: 1.26315789;
   }
 }
 @media screen and (min-width: 79em) {
-  .postinfo {
+  .postinfo p {
     font-size: 1.1875rem;
     line-height: 1.26315789;
   }
@@ -1245,7 +1240,7 @@ a:focus {
 }
 .postinfo__link {
   color: #05131F;
-  text-decoration: underline;
+  text-decoration: underline #cdd0d2;
   transition: background-color 0.3s ease-out;
   color: #82898f;
 }
@@ -1687,7 +1682,7 @@ a:focus {
 }
 .prose a:not([class]) {
   color: #05131F;
-  text-decoration: underline;
+  text-decoration: underline #cdd0d2;
   transition: background-color 0.3s ease-out;
 }
 .prose a:not([class]):hover {
@@ -1803,6 +1798,21 @@ a:focus {
   padding: 0 .35em;
   margin: 0 -0.35em;
   border-radius: 1em 0;
+}
+.prose__headinglink {
+  position: absolute;
+  left: -1.5rem;
+  transform: scale(0.5);
+  color: #e6e7e9;
+}
+@media screen and (min-width: 62.5em) {
+  .prose__headinglink {
+    transform: scale(0.75);
+    left: -2rem;
+  }
+}
+.prose__headinglink:hover {
+  color: #05131F;
 }
 .timeline {
   margin-left: auto;

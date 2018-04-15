@@ -22,28 +22,50 @@
 
   //side by side
   &.side-by-side {
-    #grid > .text-and-pull;
+    padding-right: 0;
     .break-min({
+      width: unit((@grid-text-min + @grid-gap-min + @grid-pull-min) * @space / @base,rem);
+    });
+    .break-mid({
       display: flex;
+      width: unit((@grid-text-mid + @grid-gap-mid + @grid-pull-mid) * @space / @base,rem);
       justify-content: space-between;
-      padding-right: 0;
+    });
+    .break-max({
+      display: flex;
+      width: unit((@grid-text-max + @grid-gap-max + @grid-pull-max) * @space / @base,rem);
+      justify-content: space-between;
     });
 
   }
 
   &.side-by-side &__images {
     padding-right: 0;
-    #grid > .text;
+    .break-mid({
+      width: unit(@grid-text-mid * @space / @base,rem);
+    });
+    .break-max({
+      width: unit(@grid-text-max * @space / @base,rem);
+    });
   }
 
   &.side-by-side &__caption {
-    #grid > .pull;
+    .break-mid({
+      width: unit(@grid-pull-mid * @space / @base,rem);
+    });
+    .break-max({
+      width: unit(@grid-pull-max * @space / @base,rem);
+    });
     align-self: flex-end;
   }
 
   &.max {
     width: auto;
     padding: 0;
+    .break-mid({
+      .space(margin,8,0);
+    });
+
   }
 
   &.max &__caption {
@@ -52,6 +74,8 @@
     #grid > .text;
     #grid > .offset-text;
   }
+
+
 
   &.pull &__images {
     #grid > .text-and-pull;
