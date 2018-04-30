@@ -5,7 +5,7 @@
   <div class="figure__images figure__images--gallery">
   {% for img in img.set -%}
     <div class="figure__image" data-width="{{img.width}}" data-height="{{img.height}}" data-gallery-item >
-      <img src="{{baseurl}}{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
+      <img src="{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
       <span class="figure__number">{{loop.index}}</span>
     </div>
   {%- endfor %}
@@ -23,7 +23,7 @@
 
 <figure class="figure{% if img.class %} {{img.class}}{% endif %}"{% if img.id %} id="{{img.id}}"{% endif %}>
   <div class="figure__images">
-    <img src="{{baseurl}}{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
+    <img src="{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
   </div>
   {% if img.caption %}
   <figcaption class="figure__caption">
