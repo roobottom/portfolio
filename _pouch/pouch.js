@@ -433,7 +433,6 @@ function processImages(cb) {
     if (err) throw err
     async.each(files, function(file,cb) {
       let image = path.join(__dirname, '..',file)
-      console.log(image)
       let folders = path.parse(file).dir.split('/')
 
       //process jpgs (photos)
@@ -470,7 +469,13 @@ function processImages(cb) {
 
 }
 
-module.exports = function(cb) {
+module.exports = function(cb,argv) {
+  if(argv) {
+    if(argv.baseurl||argv.b) site.baseurl = argv.b||argv.baseurl
+  }
+
+  console.log('building pouch, base:',site.baseurl)
+
   createPatternsString()
   createComponentsString()
 

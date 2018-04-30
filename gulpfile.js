@@ -5,6 +5,7 @@ const less = require('gulp-less');
 const pouch = require('./_pouch/pouch.js')
 const site = require('./_site.js')
 const webpack = require('webpack-stream')
+const argv = require('yargs').argv
 
 console.log(site.baseurl)
 
@@ -18,7 +19,7 @@ function server(done) {
 function runPouch(done) {
   pouch(function() {
     done();
-  });
+  },argv);
 }
 
 gulp.task('less', function() {

@@ -26,6 +26,7 @@
     "gulp": "^4.0.0",
     "gulp-connect": "^5.2.0",
     "gulp-less": "^3.4.0",
-    "webpack-stream": "^4.0.3"
+    "webpack-stream": "^4.0.3",
+    "yargs": "^11.0.0"
   }
 }
