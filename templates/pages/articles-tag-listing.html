@@ -1,0 +1,7 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+  {{ breadcrumb([{url:'/',title:'Home'},{url:'/articles',title:'Articles'}]) }}
+  {{title(page.title)}}
+  {{content}}
+  
+{% endblock %}

@@ -6,8 +6,6 @@ function prose (w,d) {//window,document
 
     let updatedContent = `<a href="#${heading.id}" class="prose__headinglink" rel="nofollow" aria-hidden="true"><svg class="icon icon--link" aria-hidden="true"><use xlink:href="${site.baseurl}/images/site-graphics.svg#link"></use></svg></a>${heading.innerHTML}`
 
-    //heading.insertBefore(link,heading)
-
     heading.innerHTML = updatedContent
   }
 };

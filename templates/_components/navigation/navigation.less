@@ -1,16 +1,14 @@
 .navigation {
 
-  background-color: @c_primary-dark;
+  background-color: fade(@c_primary-dark,98%);
   position: fixed;
   width: 100vw;
   height: 100vh;
-  .space(top,7);
+  top: 0; left: 0;
   display: none;
   overflow-x: auto;
 
   .break-min({
-    top: 0;
-    .space(left,11);
   });
 
   &:target, .is-visible {
@@ -24,15 +22,18 @@
   &__items {
     .space(margin,3);
     .break-min({
-      width: unit( (@grid-text-min + @grid-gap-min + @grid-pull-min + 11) * @space / @base, rem);
+      @d: unit(5 * @space / @base,rem);
+      transform: ~"translateX(@{d})";
+      width: unit( (@grid-text-min + @grid-gap-min + @grid-pull-min) * @space / @base, rem);
       margin-left: auto;
       margin-right: auto;
+      .space(margin-top,4);
     });
     .break-mid({
-      width: unit( (@grid-text-mid + @grid-gap-mid + @grid-pull-mid + 11) * @space / @base, rem);
+      width: unit( (@grid-text-mid + @grid-gap-mid + @grid-pull-mid) * @space / @base, rem);
     });
     .break-max({
-      width: unit( (@grid-text-max + @grid-gap-max + @grid-pull-max + 11) * @space / @base, rem);
+      width: unit( (@grid-text-max + @grid-gap-max + @grid-pull-max) * @space / @base, rem);
     });
   }
 

@@ -1,27 +1,36 @@
 {% macro figure(img) %}
-  {% if img.set -%}
-  {% if img.gallery -%}
-  <figure class="figure figure--gallery{% if img.class %} {{img.class}}{% endif %}" data-gallery{% if img.id %} id="{{img.id}}"{% endif %}>
-  {% else -%}
-  <figure class="figure{% if img.class %} {{img.class}}{% endif %}"{% if img.id %} id="{{img.id}}"{% endif %}>
-  {%- endif %}
-    <div class="figure__images figure__images--gallery">
-    {% for img in img.set -%}
-      <div class="figure__image" data-width="{{img.width}}" data-height="{{img.height}}" data-gallery-item >
-        <img src="{{baseurl}}{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
-      </div>
-    {% endfor %}
-    </div>
-  {% else -%}
-  <figure class="figure{% if img.class %} {{img.class}}{% endif %}"{% if img.id %} id="{{img.id}}"{% endif %}>
-    <div class="figure__images">
+{% if img.set -%}{# treat this as a gallery #}
+
+<figure class="figure figure--gallery{% if img.class %} {{img.class}}{% endif %}" data-gallery{% if img.id %} id="{{img.id}}"{% endif %}>
+  <div class="figure__images figure__images--gallery">
+  {% for img in img.set -%}
+    <div class="figure__image" data-width="{{img.width}}" data-height="{{img.height}}" data-gallery-item >
       <img src="{{baseurl}}{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
+      <span class="figure__number">{{loop.index}}</span>
     </div>
-  {%- endif %}
+  {%- endfor %}
+  </div>
+  <figcaption class="figure__caption">
+  {% for img in img.set -%}
+  {% if img.caption %}
+    {{loop.index}}. {{img.caption}}{% if not loop.last %}<br/>{% endif %}
+  {% endif %}
+  {%- endfor %}
+  </figcaption>
+</figure>
+
+{%- else -%}{# this is a single image #}
+
+<figure class="figure{% if img.class %} {{img.class}}{% endif %}"{% if img.id %} id="{{img.id}}"{% endif %}>
+  <div class="figure__images">
+    <img src="{{baseurl}}{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
+  </div>
   {% if img.caption %}
   <figcaption class="figure__caption">
     {{img.caption}}
   </figcaption>
   {% endif %}
 </figure>
+
+{%- endif %}
 {% endmacro %}

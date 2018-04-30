@@ -2,7 +2,7 @@ The prose component is the wrapper for all medium and long form writing on this 
 
 A paragraph of text usually contains both **bold** and *italic* elements, and sometimes **_bold-italic_** elements. Paragraphs also sometimes contain [links](http://roobottom.com) to other interesting content.
 
-All text in Prose is written in Markdown, so is limited to the formatting options supported by [Remarkable](https://github.com/jonschlinkert/remarkable)
+All text in Prose is written in Markdown, so is limited to the formatting options supported by [Remarkable](https://github.com/jonschlinkert/remarkable) and the [custom plugins](https://github.com/roobottom/portfolio/tree/master/_pouch) I wrote. 
 
 09.12" fl fi ffi ffl. _09.12" fl fi ffi ffl_ **09.12" fl fi ffi ffl** **_09.12" fl fi ffi ffl_**
 
@@ -71,5 +71,13 @@ You may wish to redact ~~something you’ve previously said.~~
 
 You can also ==mark out some text== that may be of particular importance.
 
+## Footnotes
+
+On occasion, you may have call[^1] to expand on a point you've made that you wish to reference outside the flow[^2] of the document. This can be achieved[^3] with a footnote.
+
 *[CSS]: Cascading Style Sheets
 *[ANWIAN]: A number which is a number
+
+[^1]: Or need, a requirement or a particular hankering.
+[^2]: That is to say you wish to provide the [inquisitive reader](https://duckduckgo.com/?q=inquisitive+reader) a reference without disturbing the flow for others.
+[^3]: There are other ways too, brackets for instance, but they're sometimes not useful for the reason described above.

@@ -1,11 +1,6 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-  <section class="homepage__intro">
-    <h1><strong>Clear and thoughtful</strong><br/>design leadership</h1>
-    <p class="homepage__tip">&darr;</p>
-  </section>
-  <section class="homepage__content" id="tell-me-more">
-    {{ title('Design thinking; developer know-how',level=2) }}
-    {{ prose(page.content) }}
-  </section>
+  {{ title('<strong>Clear and thoughtful</strong><br/>design leadership',level=1,class='reverse') }}
+  {{ title('Design thinking; developer know-how',level=2,class='reverse') }}
+  {{ prose(page.content,'reverse') }}
 {% endblock %}

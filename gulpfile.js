@@ -56,6 +56,8 @@ gulp.task('default', gulp.parallel(server,runPouch,'less','static','js',function
 
 gulp.task('build',gulp.parallel(runPouch,'less','static','js'))
 
+gulp.task('pouch',gulp.parallel(runPouch))
+
 function watch() {
   gulp.watch(['./source/**/*.md','./templates/**/*.html'], gulp.parallel(runPouch))
   gulp.watch(['./less/**/*.less','./templates/_patterns/**/*.less','./templates/_components/**/*.less'], gulp.parallel('less'))

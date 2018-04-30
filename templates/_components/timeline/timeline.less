@@ -2,9 +2,7 @@
   #grid > .text-and-pull;
   margin-left: auto;
   margin-right: auto;
-  .break-min({
-    border-left: 1px solid #ccc;
-  });
+  border-left: 1px solid #ccc;
 
 
   &__item {
@@ -13,54 +11,22 @@
 
     .break-min({
       display: flex;
+      justify-content: space-between;
       .space(margin-bottom,8);
     });
   }
 
   &__marker {
     #grid > .pull;
-
-    .break-min({
-      margin-left: unit(-14/@base,rem);
-    });
+    margin-left: unit(-14/@base,rem);
   }
 
   &__content {
     #grid > .text;
-  }
-
-  &__event {
-
-    display: inline-flex;
-    border: 2px dashed @c_secondary-light;
-    align-items: center;
-    .space(border-radius,3);
-    .space(padding,2);
-    background-color: white;
-    margin-left: unit(-18/@base,rem);
-    box-shadow: 0 0 0 6px white;
-
+    .space(padding-left,3);
     .break-min({
-      .space(padding,2,2,2,0.25);
+      padding: 0;
     });
-  }
-
-  &__item--firefly &__event {
-    border-color: @c_firefly;
-  }
-  &__item--onalytica &__event {
-    border-color: @c_onalytica;
-  }
-  &__item--glaxstar &__event {
-    border-color: @c_glaxstar;
-  }
-  &__item--other &__event {
-    border-color: @c_other;
-  }
-
-  &__eventName {
-    #type > #size > .p;
-    .space(margin-left,2);
   }
 
 }

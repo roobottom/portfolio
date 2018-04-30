@@ -9,6 +9,14 @@ module.exports = {
     input: "./templates/_components/**/*.html"
   },
   /*
+    Pouch will auto process your images if you include the images
+  */
+  images: {
+    input: './source/articles/**/*.+(jpg|jpeg|png)',
+    output: './docs',//feed images back into the folder from whence they came
+    sizes: [800,1100,1600]
+  },
+  /*
     Content pages
     template: relative to nunjucksPath
   */
@@ -30,6 +38,12 @@ module.exports = {
       input: "./source/articles.md",
       output: "./docs/articles/index.html",
       template: "pages/articles.html"
+    },
+    {
+      name: "articles-tag-listing",
+      input: "./source/articles-tag-listing.md",
+      output: "./docs/articles/tags/index.html",
+      template: "pages/articles-tag-listing.html"
     },
     {
       name: "work",
@@ -62,10 +76,11 @@ module.exports = {
   blogs: [
     {
       name: "articles",
-      input: "./source/articles/*.md",
+      input: "./source/articles/**/*.md",
       output: "./docs/articles",
       template: "blogs/article.html",
       sortBy: "date",
+      permalinkBy: "folder", //defaults to filename [filename,folder]
       tags: {
         output: "./docs/articles/tags",
         template: "blogs/articles-tag.html"

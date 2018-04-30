@@ -9,6 +9,7 @@ const fs = require('fs-extra')
 
 //utils
 const _ = require('lodash')
+const async = require('async')
 
 //frontmatter
 const frontmatter = require('front-matter')
@@ -22,6 +23,9 @@ nunjucks.configure(site.nunjucksPath, {
 })
 .addGlobal('baseurl',site.baseurl)
 .addFilter('slugify',nunjucksSlugify)
+
+//images (Light Weight Image Proccessing)
+const lwip = require('lwip')
 
 
 //markdown
@@ -126,11 +130,15 @@ function addItemsToCollections(collections) {
 
         //get filename
         let filePath = path.parse(file)
+        let folders = filePath.dir.split('/')
+        let folder = folders[folders.length-1]
+
 
         //return data to the page
         let returnObj = {}
         returnObj = fm.attributes
-        returnObj.url = filePath.name
+        returnObj.url = filePath.name //this is the permalink
+        if(collection.permalinkBy == "folder") returnObj.url = folder //use parent folder as permalink?
         returnObj.content = renderedContent
         returnObj.intro = intro
 
@@ -142,6 +150,7 @@ function addItemsToCollections(collections) {
         returnObj.humanDate.year = moment(fm.attributes.date).format('YYYY');
         returnObj.humanDate.date = moment(fm.attributes.date).format('dddd, MMMM Do YYYY')
         returnObj.humanDate.season = getSeason(fm.attributes.date)
+
         objects.push(returnObj)
       }
 
@@ -268,10 +277,11 @@ function addTagsToCollections(collections) {
           }
         }
 
+
         //clean tags list
         tags = _.flatten(tags)
-        for(let tag of tags) {
-          tag = tag.toLowerCase()
+        for(let i in tags) {
+          tags[i] = tags[i].toLowerCase()
         }
 
         //count unique tags
@@ -417,6 +427,49 @@ function renderCollections(collections) {
 }
 
 
+function processImages(cb) {
+
+  glob(site.images.input,function(err, files) {
+    if (err) throw err
+    async.each(files, function(file,cb) {
+      let image = path.join(__dirname, '..',file)
+      console.log(image)
+      let folders = path.parse(file).dir.split('/')
+
+      //process jpgs (photos)
+      if(path.parse(file).ext == '.XXX') {
+        lwip.open(image, function(err, image){
+          if(image.width()>image.height()) { //landscape
+            image.resize(1600,function() {
+              console.log('landscape',path.join(__dirname,'..','/docs',folders[folders.length-2],folders[folders.length-1]))
+
+            })
+          } else { //portrait or square
+            image.resize(null,1600,function() {
+              console.log('portrait',path.join(__dirname,'..','/docs',folders[folders.length-2],folders[folders.length-1]))
+            })
+          }
+        })
+      }
+
+      //simply copy any other type of image to the images.output folder
+      else {
+        let targetImage = path.join(__dirname,'..',site.images.output,folders[folders.length-2],folders[folders.length-1],path.parse(file).base)
+        fs.copySync(image, targetImage);
+      }
+
+
+
+      cb()
+    }, function(err) {
+      console.log('done')
+      cb()
+    })
+  });
+
+
+}
+
 module.exports = function(cb) {
   createPatternsString()
   createComponentsString()
@@ -428,6 +481,10 @@ module.exports = function(cb) {
   addTagsToCollections(collections)
   renderCollections(collections)
   //debug
-  fs.writeJsonSync('./output.json',site)
-  cb()
+  //fs.writeJsonSync('./output.json',site)
+
+  //images
+  processImages(function() {
+    cb()
+  })
 }

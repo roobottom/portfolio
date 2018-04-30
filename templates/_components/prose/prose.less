@@ -1,8 +1,17 @@
 .prose {
 
+  &.reverse {
+    &, a:not([class]) {
+      color: white;
+    }
+    a:not([class]):hover {
+      background-color: fade(white,20%);
+    }
+  }
+
   >p, >ul, >ol,
   h2, h3, h4, h5, h6,
-  table, pre, blockquote, hr {
+  table, pre, blockquote, hr, .footnotes {
     margin: 1em auto 0 auto;
     .space(margin-top,2);
     position: relative;
@@ -194,6 +203,7 @@
     border-radius: 1em 0;
   }
 
+  //heading links
   &__headinglink {
     position: absolute;
     .space(left,-3);
@@ -203,8 +213,43 @@
       .space(left,-4);
     });
     color: mix(@c_text,white,10%);
+    transition: color 0.3s ease-out;
     &:hover {
       color: @c_text;
+    }
+  }
+
+  //footnotes
+  .footnotes-sep {
+    display: none;
+  }
+
+  .footnote-ref a {
+    color: mix(@c_text,white);
+  }
+
+  .footnote-item:target, .footnote-item:target a {
+    color: @c_text;
+  }
+
+  .footnotes {
+    #type > #size > .sm;
+    border-top: 1px solid mix(@c_text,white,10%);
+    color: mix(@c_text,white);
+    .space(margin-top,4);
+    &:before {
+      content: 'footnotes:';
+      #type > #font > .sans-sc;
+      .space(margin,3,0);
+      display: block;
+    }
+    a {
+      #type > #style > .link;
+      color: mix(@c_text,white);
+    }
+    li {
+      margin-top: 0.2em;
+      margin-left: 2em;
     }
   }
 
