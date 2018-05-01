@@ -15,14 +15,16 @@ const async = require('async')
 const frontmatter = require('front-matter')
 
 //nunjucks
-const nunjucks = require('nunjucks')
-const nunjucksSlugify = require('./nunjucks.slugify.js')
+var nunjucks = require('nunjucks')
+var nunjucksSlugify = require('./nunjucks.slugify.js')
+var nunjucksPath = require('./nunjucks.path.js')
 nunjucks.configure(site.nunjucksPath, {
   noCache: true,
   autoescape: false
 })
 .addGlobal('baseurl',site.baseurl)
 .addFilter('slugify',nunjucksSlugify)
+.addFilter('path',nunjucksPath)
 
 //images (Light Weight Image Proccessing)
 const lwip = require('lwip')
@@ -436,19 +438,45 @@ function processImages(cb) {
       let folders = path.parse(file).dir.split('/')
 
       //process jpgs (photos)
-      if(path.parse(file).ext == '.XXX') {
-        lwip.open(image, function(err, image){
-          if(image.width()>image.height()) { //landscape
-            image.resize(1600,function() {
-              console.log('landscape',path.join(__dirname,'..','/docs',folders[folders.length-2],folders[folders.length-1]))
+      if(path.parse(file).ext == '.jpg') {
 
+        let filename = '1600x' + path.parse(file).base
+        let filepath = path.join(__dirname,'..','/docs',folders[folders.length-2],folders[folders.length-1],filename)
+
+        fs.stat(filepath,function(err,stats) {
+          if(!stats) { //file is new, do this shit:
+
+            lwip.open(image, function(err, image){
+              if(image.width() > image.height()) { //landscape
+                let height = (image.height() / image.width())  * 1600
+                image.resize(1600,height,function() {
+                  console.log('processed landscape photo',filename)
+                  image.writeFile(filepath,{quality: 65},function(err) {
+                    if(err) throw err
+                  })
+                })
+              }
+              else {
+                let width = (image/width() / image.height()) * 1600
+                image.resize(width,1600,function() {
+                  console.log('processed portrait photo',filename)
+                  image.writeFile(filepath,{quality: 65},function(err) {
+                    if(err) throw err
+                  })
+                })
+              }
             })
-          } else { //portrait or square
-            image.resize(null,1600,function() {
-              console.log('portrait',path.join(__dirname,'..','/docs',folders[folders.length-2],folders[folders.length-1]))
-            })
-          }
+
+          }//end if stats
         })
+
+
+
+
+
+
+
+
       }
 
       //simply copy any other type of image to the images.output folder

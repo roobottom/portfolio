@@ -1,11 +1,18 @@
 {% macro figure(img) %}
-{% if img.set -%}{# treat this as a gallery #}
+{% if img.set -%}
+{# set means gallery #}
 
 <figure class="figure figure--gallery{% if img.class %} {{img.class}}{% endif %}" data-gallery{% if img.id %} id="{{img.id}}"{% endif %}>
   <div class="figure__images figure__images--gallery">
   {% for img in img.set -%}
+    {% set imgPath = img.src | path  %}
+    {% if imgPath.ext == '.jpg' -%}
+      {% set imgURL = imgPath.root + imgPath.dir + '1600x' + imgPath.base %}
+    {% else %}
+      {% set imgURL = img.src %}
+    {%- endif %}
     <div class="figure__image" data-width="{{img.width}}" data-height="{{img.height}}" data-gallery-item >
-      <img src="{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
+      <img src="{{imgURL}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
       <span class="figure__number">{{loop.index}}</span>
     </div>
   {%- endfor %}
@@ -19,11 +26,18 @@
   </figcaption>
 </figure>
 
-{%- else -%}{# this is a single image #}
+{%- else -%}
+{# this is a single image #}
+{% set imgPath = img.src | path  %}
+{% if imgPath.ext == '.jpg' -%}
+  {% set imgURL = imgPath.root + imgPath.dir + '1600x' + imgPath.base %}
+{% else %}
+  {% set imgURL = img.src %}
+{%- endif %}
 
 <figure class="figure{% if img.class %} {{img.class}}{% endif %}"{% if img.id %} id="{{img.id}}"{% endif %}>
   <div class="figure__images">
-    <img src="{{img.src}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
+    <img src="{{imgURL}}" class="{% if img.frame %}frame--{{img.frame}}{% endif %}" />
   </div>
   {% if img.caption %}
   <figcaption class="figure__caption">

@@ -7,8 +7,6 @@ const site = require('./_site.js')
 const webpack = require('webpack-stream')
 const argv = require('yargs').argv
 
-console.log(site.baseurl)
-
 function server(done) {
   connect.server({
     root: './docs'
