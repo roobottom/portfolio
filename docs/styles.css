@@ -158,109 +158,109 @@ a img {
 /* sitewide typography settings */
 @font-face {
   font-family: 'alegreya';
-  src: url('/fonts/Alegreya-Regular.woff2') format('woff2');
+  src: url('/portfolio/fonts/Alegreya-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya';
-  src: url('/fonts/Alegreya-Italic.woff2') format('woff2');
+  src: url('/portfolio/fonts/Alegreya-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya';
-  src: url('/fonts/Alegreya-ExtraBold.woff2') format('woff2');
+  src: url('/portfolio/fonts/Alegreya-ExtraBold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya';
-  src: url('/fonts/Alegreya-ExtraBoldItalic.woff2') format('woff2');
+  src: url('/portfolio/fonts/Alegreya-ExtraBoldItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/fonts/AlegreyaSC-Regular.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSC-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/fonts/AlegreyaSC-Italic.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSC-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/fonts/AlegreyaSC-black.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSC-black.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya sc';
-  src: url('/fonts/AlegreyaSC-BlackItalic.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSC-BlackItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/fonts/AlegreyaSans-Regular.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSans-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/fonts/AlegreyaSans-Italic.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSans-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/fonts/AlegreyaSans-Black.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSans-Black.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans';
-  src: url('/fonts/AlegreyaSans-BlackItalic.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSans-BlackItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/fonts/AlegreyaSansSC-Regular.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSansSC-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/fonts/AlegreyaSansSC-Italic.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSansSC-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/fonts/AlegreyaSansSC-Black.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSansSC-Black.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'alegreya-sans sc';
-  src: url('/fonts/AlegreyaSansSC-BlackItalic.woff2') format('woff2');
+  src: url('/portfolio/fonts/AlegreyaSansSC-BlackItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'code';
-  src: url('/fonts/FiraCode-Regular.woff2') format('woff2');
+  src: url('/portfolio/fonts/FiraCode-Regular.woff2') format('woff2');
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
   font-family: 'code';
-  src: url('/fonts/FiraCode-Bold.woff2') format('woff2');
+  src: url('/portfolio/fonts/FiraCode-Bold.woff2') format('woff2');
   font-style: normal;
   font-weight: bold;
 }
@@ -1748,7 +1748,7 @@ a:focus {
 }
 .prose blockquote:after {
   content: '';
-  background: url('/images/quote.svg');
+  background: url('/portfolio/images/quote.svg');
   height: 3.875rem;
   width: 3.875rem;
   position: absolute;
