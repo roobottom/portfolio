@@ -5,6 +5,10 @@
   margin-right: auto;
   .space(margin-bottom,4);
 
+  .break-mid({
+    .space(margin-bottom,6);
+  });
+
 
   &__text {
     #type > #size > .h1;
@@ -19,6 +23,13 @@
 
   &.reverse {
     color: white;
+  }
+
+  &.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
   }
 
 }

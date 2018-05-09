@@ -16,6 +16,20 @@ module.exports = {
     output: './docs',//feed images back into the folder from whence they came
     sizes: [800,1100,1600]
   },
+  navigation: [
+    {
+      name: "Home",
+      url: "/"
+    },
+    {
+      name: "Articles",
+      url: "/articles"
+    },
+    {
+      name: "About me",
+      url: "/about"
+    }
+  ],
   /*
     Content pages
     template: relative to nunjucksPath

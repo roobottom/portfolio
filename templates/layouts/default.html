@@ -31,25 +31,14 @@
     <header class="section--navigation">
       {{ logo('/') }}
       <a href="#navigation" class="navigation__trigger" aria-label="Jump to main navigation">{{ icon('menu') }}</a>
+      {{ navigation(site.navigation,'inline') }}
     </header>
-
-    {% if page.styleguide %}
-    <nav class="section--subnav" aria-labelledby="styleguide-navigation-title">
-      <h2 class="" id="styleguide-navigation-title"><a href="#styleguide-navigation">Explore the styleguide</a></h2>
-      <div class="" id="styleguide-navigation">
-        <h3>Design</h3>
-        <ul>
-          <li><a href="#">Principals</a></li>
-        </ul>
-      </div>
-    </nav>
-    {% endif %}
 
     <main class="section--content">
       {% block content %}
       {% endblock %}
     </main>
-    {{ navigation() }}
+    {{ navigation(site.navigation,'fullscreen','navigation') }}
     <script src="{{baseurl}}/js/functionality.js" type="text/javascript"></script>
     <script src="{{baseurl}}/loadlater.js" type="text/javascript"></script>
     <script src="//static.getclicky.com/js" type="text/javascript"></script>

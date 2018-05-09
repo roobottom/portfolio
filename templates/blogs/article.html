@@ -1,6 +1,5 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-  {{ breadcrumb([{url:'/',title:'Home'},{url:'/articles',title:'Articles'}]) }}
   {{ title(page.title)}}
   {{ postinfo(page.humanDate.date,page.tags,'articles') }}
   {{ prose(page.content) }}

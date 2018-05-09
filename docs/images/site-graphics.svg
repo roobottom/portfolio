@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none">
   <symbol id="logo__mark" width="30" height="36">
-    <g fill="none" fill-rule="evenodd" stroke="#FFF" stroke-width="2">
+    <g fill="none" fill-rule="evenodd" stroke="#FFF" stroke-width="2" stroke-linejoin="round">
       <path d="M14.6 8l13.6 13.6-13.6 13.6L1 21.6z"/>
       <path d="M21.4 1l6.8 6.8-13.6 13.6L1 7.8 7.8 1l6.8 6.8z"/>
     </g>

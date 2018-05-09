@@ -1,42 +1,12 @@
-{% macro navigation() %}
-<nav class="navigation" id="navigation" aria-labelledby="navigation__label" style="display:none;">
-  <h2 id="navigation__label">Main naigation</h2>
+{% macro navigation(items,class,uid) %}
+<nav class="navigation {{class}}" id="{{uid}}" aria-label="Navigation">
   <ol class="navigation__items">
 
-    <li class="navigation__item">
-      <a href="{{baseurl}}/" class="navigation__link">
-        <h3 class="navigation__title">Home</h3>
-        <p class="navigation__description">Is where the heart is</p>
-      </a>
-    </li>
-
-    <li class="navigation__item">
-      <a href="{{baseurl}}/work" class="navigation__link">
-        <h3 class="navigation__title">My work</h3>
-        <p class="navigation__description">Design leadership case studies‍</p>
-      </a>
-    </li>
-
-    <li class="navigation__item">
-      <a href="{{baseurl}}/articles" class="navigation__link">
-        <h3 class="navigation__title">Articles</h3>
-        <p class="navigation__description">Where I write about design and development</p>
-      </a>
-    </li>
-
-    <li class="navigation__item">
-      <a href="{{baseurl}}/about" class="navigation__link">
-        <h3 class="navigation__title">About me</h3>
-        <p class="navigation__description">Getting to know you 🎤</p>
-      </a>
-    </li>
-
-    <li class="navigation__item">
-      <a href="{{baseurl}}/styleguide" class="navigation__link">
-        <h3 class="navigation__title">Styleguide</h3>
-        <p class="navigation__description">Design guidelines and patterns used on this site</p>
-      </a>
-    </li>
+    {% for item in items %}
+      <li class="navigation__item">
+        <a href="{{baseurl}}{{item.url}}" class="navigation__link">{{item.name}}</a>
+      </li>
+    {% endfor %}
 
   </ol>
 </nav>

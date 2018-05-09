@@ -2,9 +2,7 @@
 title: About Me
 seoTitle: "Jon Roobottom: Creating things for the web since 2001"
 ---
-Hello, my name is Jon, and I've been designing and building things for the web [since 2001](https://web.archive.org/web/20010101*/roobottom.com). Yes, I've been at this quite a while now but don't worry: I still sport a reassuringly wankerish beard and finely quaffed hair-do.
-
-I live on England's beautiful south coast with my wife and daughter. 
+Hello, my name is Jonathan, and I've been designing and building things for the web since 2001[^first-website]. Yes, I've been at this quite a while now but don't worry: I still sport a reassuring beard and finely quaffed hair-do.
 
 ## What I do
 
@@ -30,7 +28,7 @@ I find delight in the flow-state achieved when building things. I value roles th
 
 I believe in creating systems to minimise grunt-work. I value the freedom to create these processes where they don't exist. 
 
-For example: the (extremely fast) [flat-file publishing system](#) I built to run this site.
+For example: the (extremely fast) [flat-file publishing system](https://github.com/roobottom/portfolio/tree/master/_pouch) I built to run this site.
 
 ### Learning
 
@@ -39,3 +37,5 @@ I believe that breakthrough ideas often come from outside my area of expertise. 
 ### Movement
 
 I believe that great work happens when both body and mind are fit and healthy. I value time away from my desk to exercise.
+
+[^first-website]: When I published the [first version](https://web.archive.org/web/20010101*/roobottom.com) of my [personal website](http://roobottom.com)

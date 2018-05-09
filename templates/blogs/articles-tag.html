@@ -1,6 +1,5 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-  {{ breadcrumb([{url:'/',title:'Home'},{url:'/articles',title:'Articles'},{url:'/articles/tags',title:'Tags'}]) }}
   {{title('<em>'+page.title|capitalize+'</em>')}}
   {{content}}
   {{timeline(page.items,'/articles/')}}

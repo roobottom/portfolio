@@ -31,7 +31,7 @@
 
 //the main menu
 @grid-menu-min: 11;
-@grid-menu-mid: 23;
+@grid-menu-mid: 27;
 @grid-menu-max: 34;
 
 @grid-gap-min: 3;
@@ -113,7 +113,7 @@
   background-color: @c_primary-darkest;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   .space(padding,2,3);
 
   .break-min({
@@ -122,16 +122,17 @@
     position: fixed;
     top: 0; left: 0;
     flex-direction: column;
+    padding: 0;
+    .space(width,(@grid-menu-min - @grid-gap-min));
+    border-right: 1px solid white;
     justify-content: flex-start;
-    .space(padding,0);
-    .space(width,@grid-menu-min);
-    align-items: center;
   });
   .break-mid({
-    .space(width,@grid-menu-mid);
+    .space(width,(@grid-menu-mid - @grid-gap-mid));
+    justify-content: space-between;
   });
   .break-max({
-    .space(width,@grid-menu-max);
+    .space(width,(@grid-menu-max - @grid-gap-max));
   });
 }
 
