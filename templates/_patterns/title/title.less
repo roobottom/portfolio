@@ -26,10 +26,19 @@
   }
 
   &.hero {
-    height: 100vh;
     display: flex;
     align-items: center;
     margin-bottom: 0;
+    //--- HEIGHT CALC --
+    //main section padding top+bottom = 6 units
+    //nav section padding top+bottom = 4 units
+    @reduce: unit((@space * 10)/@base,rem);
+    height: ~"calc(100vh - @{reduce})";
+    .break-min({
+      //main section padding top = 4 units
+      @reduce: unit((@space * 4)/@base,rem);
+      height: ~"calc(100vh - @{reduce})";
+    });
   }
 
 }
