@@ -25,10 +25,10 @@
     <link rel="stylesheet" href="{{baseurl}}/styles.css" type="text/css" media="all">
     <meta property="og:title" content="{% if page.seo.title %}{{page.seo.title}}{% else %}{{page.title}}{% endif %}" />
     <meta property="og:site_name" content="roodesign: design leadership thinking" />
-    {% if page.seo.image %}<meta property="og:image" content="{{page.seo.image}}"/>{% endif %}
+    {% if page.seo.image %}<meta property="og:image" content="https://roodesign.co.uk/{{page.path}}/{{page.seo.image}}"/>{% endif %}
     {% if page.date %}
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://roodesign.co.uk/{{baseurl}}/{{page.path}}" />
+    <meta property="og:url" content="https://roodesign.co.uk/{{page.path}}" />
     <meta property="article:published_time" content="{{page.isoDate}}"/>
     <meta property="article:section" content="design"/>
     {% for tag in page.tags %}
