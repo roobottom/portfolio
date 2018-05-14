@@ -135,6 +135,9 @@ function addItemsToCollections(collections) {
         let folders = filePath.dir.split('/')
         let folder = folders[folders.length-1]
 
+        //remove the first two items in folders array (`.`,`source`)
+        folders.shift()
+        folders.shift()
 
         //return data to the page
         let returnObj = {}
@@ -143,6 +146,7 @@ function addItemsToCollections(collections) {
         if(collection.permalinkBy == "folder") returnObj.url = folder //use parent folder as permalink?
         returnObj.content = renderedContent
         returnObj.intro = intro
+        returnObj.path = folders.join('/')
 
         //add human readable dates
         returnObj.humanDate = {}
@@ -152,6 +156,7 @@ function addItemsToCollections(collections) {
         returnObj.humanDate.year = moment(fm.attributes.date).format('YYYY');
         returnObj.humanDate.date = moment(fm.attributes.date).format('dddd, MMMM Do YYYY')
         returnObj.humanDate.season = getSeason(fm.attributes.date)
+        returnObj.isoDate = moment(fm.attributes.date).toISOString()
 
         objects.push(returnObj)
       }

@@ -23,6 +23,9 @@ zeplin:
       width: 2184
       height: 1548
       caption: Melody style buttons in Zeplin, note the background-colour variable in the CSS for the selected item
+seo:
+  title: 'Creating a design system in Sketch'
+  image: 'og-header.png'
 ---
 Since last time [I wrote](/articles/2017-05-02-creating-a-pattern-library-in-sketch) about our UI design library, we've made significant improvements. Sure, it's not always been smooth sailing. And, yes, I've annoyed my team along the way demanding yet another "slight tweak" to the structure. But the UI pattern library we have today is a thing of wonder; used daily and, dare I say, loved by the team. 
 
