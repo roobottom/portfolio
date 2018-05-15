@@ -4,9 +4,7 @@
   {{content}}
   {% for blog in site.blogs %}
   {% if blog.name == 'articles' %}
-
-  {{timeline(blog.items,'/articles/')}}
-
+  {{timeline(blog.items)}}
   {% endif %}
   {% endfor %}
 {% endblock %}

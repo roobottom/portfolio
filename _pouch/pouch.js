@@ -133,20 +133,30 @@ function addItemsToCollections(collections) {
         //get filename
         let filePath = path.parse(file)
         let folders = filePath.dir.split('/')
-        let folder = folders[folders.length-1]
 
         //remove the first two items in folders array (`.`,`source`)
         folders.shift()
         folders.shift()
 
+
+
         //return data to the page
         let returnObj = {}
         returnObj = fm.attributes
-        returnObj.url = filePath.name //this is the permalink
-        if(collection.permalinkBy == "folder") returnObj.url = folder //use parent folder as permalink?
         returnObj.content = renderedContent
         returnObj.intro = intro
-        returnObj.path = folders.join('/')
+
+        //return paths and url data to the page
+        if(folders.length > 0) { //this is in a sub folder
+          returnObj.section = folders[0]
+          returnObj.paths = folders
+          returnObj.url = '/' + folders.join('/') + '/' + filePath.name
+          if(collection.permalinkBy == 'folder') returnObj.url = '/' + folders.join('/')
+        }
+        else { //top level page
+          returnObj.section = filePath.name
+          returnObj.url = '/' + filePath.name
+        }
 
         //add human readable dates
         returnObj.humanDate = {}
@@ -359,7 +369,7 @@ function renderCollections(collections) {
       let template = collection.template
       for(let item of collection.items) {
 
-        let output = collection.output + '/' + item.url + '/index.html'
+        let output = './docs/' + item.url + '/index.html'
 
         //define page object
         let page = item
@@ -487,7 +497,8 @@ function processImages(cb) {
       //simply copy any other type of image to the images.output folder
       else {
         let targetImage = path.join(__dirname,'..',site.images.output,folders[folders.length-2],folders[folders.length-1],path.parse(file).base)
-        fs.copySync(image, targetImage);
+        fs.copySync(image, targetImage)
+        console.log('copied non jpg image file',path.parse(file).base)
       }
 
 

@@ -1,13 +1,13 @@
 {% from "_patterns/timemarker/timemarker.html" import "timemarker" %}
 {% from "_patterns/teaser/teaser.html" import "teaser" %}
 
-{% macro timeline(items,base='/work/') %}
+{% macro timeline(items) %}
   <ol class="timeline">
     {% for item in items %}
       <li class="timeline__item timeline__item--{{item.type or type}}{% if item.org %} timeline__item--{{item.org}}{% endif %}">
-        <div class="timeline__marker">{{timemarker(item.humanDate.day + ' ' + item.humanDate.month + ' ' + item.humanDate.year,isodate=item.date)}}</div>
+        <div class="timeline__marker">{{timemarker(item.humanDate.day + ' ' + item.humanDate.month + ' ' + item.humanDate.year,isodate=item.isoDate)}}</div>
         <div class="timeline__content">
-          {{teaser(item.title,item.intro,base+item.url,'Keep reading &rarr;')}}
+          {{teaser(item.title,item.intro,item.url,'Keep reading &rarr;')}}
         </div>
       </li>
     {% endfor %}
