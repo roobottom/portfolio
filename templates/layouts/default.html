@@ -45,14 +45,14 @@
     <header class="section--navigation">
       {{ logo('/') }}
       <a href="#navigation" class="navigation__trigger" aria-label="Jump to main navigation">{{ icon('menu') }}</a>
-      {{ navigation(site.navigation,'inline') }}
+      {{ navigation(site.navigation,'inline','inline-navigation',page.section) }}
     </header>
 
     <main class="section--content">
       {% block content %}
       {% endblock %}
     </main>
-    {{ navigation(site.navigation,'fullscreen','navigation') }}
+    {{ navigation(site.navigation,'fullscreen','navigation',page.section) }}
     <script src="{{baseurl}}/js/functionality.js" type="text/javascript"></script>
     <script src="{{baseurl}}/loadlater.js" type="text/javascript"></script>
     <script src="//static.getclicky.com/js" type="text/javascript"></script>

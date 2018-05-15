@@ -138,8 +138,6 @@ function addItemsToCollections(collections) {
         folders.shift()
         folders.shift()
 
-
-
         //return data to the page
         let returnObj = {}
         returnObj = fm.attributes
@@ -326,7 +324,8 @@ function addTagsToCollections(collections) {
             name: key,
             count: uniqueTagCount[key],
             items: itemsWithTag,
-            url: toURL(key)
+            url: toURL(key),
+            section: collection.name
           })
         }
         //push tag items back into site ob
@@ -395,6 +394,7 @@ function renderCollections(collections) {
           page.title = item.name
           page.count = item.count
           page.items = item.items
+          page.section = collection.name
 
           fs.ensureFileSync(output)
           fs.writeFileSync(output,nunjucks.render(template,{

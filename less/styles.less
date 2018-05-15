@@ -31,7 +31,7 @@
 
 //the main menu
 @grid-menu-min: 11;
-@grid-menu-mid: 27;
+@grid-menu-mid: 29;
 @grid-menu-max: 34;
 
 @grid-gap-min: 3;
@@ -129,10 +129,13 @@
   });
   .break-mid({
     .space(width,(@grid-menu-mid - @grid-gap-mid));
-    justify-content: space-between;
+    .space(padding,2,2);
+    align-items: flex-start;
+    box-sizing: border-box;
   });
   .break-max({
     .space(width,(@grid-menu-max - @grid-gap-max));
+    .space(padding,2,3);
   });
 }
 

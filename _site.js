@@ -19,15 +19,18 @@ module.exports = {
   navigation: [
     {
       name: "Home",
-      url: "/"
+      url: "/",
+      section: "homepage"
     },
     {
       name: "Articles",
-      url: "/articles"
+      url: "/articles",
+      section: "articles"
     },
     {
       name: "About me",
-      url: "/about"
+      url: "/about",
+      section: "about"
     }
   ],
   /*

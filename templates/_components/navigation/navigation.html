@@ -1,10 +1,10 @@
-{% macro navigation(items,class,uid) %}
+{% macro navigation(items,class,uid,section) %}
 <nav class="navigation {{class}}" id="{{uid}}" aria-label="Navigation">
   <ol class="navigation__items">
 
     {% for item in items %}
       <li class="navigation__item">
-        <a href="{{baseurl}}{{item.url}}" class="navigation__link">{{item.name}}</a>
+        <a href="{{baseurl}}{{item.url}}" class="navigation__link{% if item.section == section %} navigation__link--current{% endif %}">{{item.name}}</a>
       </li>
     {% endfor %}
 

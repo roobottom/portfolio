@@ -318,7 +318,7 @@ sub {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   sup,
   sub {
     font-size: 1.1875rem;
@@ -407,7 +407,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .title {
     width: 52rem;
   }
@@ -417,7 +417,7 @@ a:focus {
     width: 66.5rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .title {
     margin-bottom: 3rem;
   }
@@ -432,7 +432,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .title__text {
     font-size: 4.998125rem;
     line-height: 1;
@@ -454,7 +454,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .title__text--2 {
     font-size: 2.8125rem;
     line-height: 1;
@@ -476,7 +476,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .title__text--3 {
     font-size: 2.11rem;
     line-height: 1;
@@ -518,7 +518,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .button {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -565,7 +565,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .timemarker__label {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -589,7 +589,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .timemarker--simple {
     width: 52rem;
   }
@@ -639,7 +639,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .teaser__title {
     font-size: 4.998125rem;
     line-height: 1;
@@ -661,7 +661,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .teaser__title--2 {
     font-size: 2.8125rem;
     line-height: 1;
@@ -683,7 +683,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .teaser__title--3 {
     font-size: 2.11rem;
     line-height: 1;
@@ -708,7 +708,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .teaser__meta {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -731,7 +731,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .teaser__content {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -757,7 +757,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .figure {
     width: 37rem;
     padding-right: 15rem;
@@ -793,7 +793,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .figure__caption {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -813,7 +813,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .figure.side-by-side {
     display: flex;
     width: 52rem;
@@ -830,7 +830,7 @@ a:focus {
 .figure.side-by-side .figure__images {
   padding-right: 0;
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .figure.side-by-side .figure__images {
     width: 37rem;
   }
@@ -843,7 +843,7 @@ a:focus {
 .figure.side-by-side .figure__caption {
   align-self: flex-end;
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .figure.side-by-side .figure__caption {
     width: 12.5rem;
   }
@@ -866,7 +866,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .figure.max .figure__caption {
     width: 37rem;
     padding-right: 15rem;
@@ -883,7 +883,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .figure.pull .figure__images {
     width: 52rem;
   }
@@ -904,7 +904,7 @@ a:focus {
     margin-right: calc(1 * (100% - 37rem) / 2);
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .figure.right {
     width: 12.5rem;
     margin-right: calc(1 * (100% - 52rem) / 2);
@@ -946,7 +946,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .figure__number {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -1058,7 +1058,7 @@ a:focus {
     width: 27rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .meta {
     width: 37rem;
   }
@@ -1074,7 +1074,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .meta {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1146,7 +1146,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .pagination {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1163,7 +1163,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .pagination {
     width: 52rem;
   }
@@ -1201,7 +1201,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .breadcrumb {
     width: 52rem;
   }
@@ -1217,7 +1217,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .breadcrumb {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -1251,7 +1251,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .postinfo p {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -1270,7 +1270,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .postinfo {
     float: right;
     position: relative;
@@ -1323,12 +1323,12 @@ a:focus {
     display: none;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .logo__type {
     display: block;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .navigation__trigger {
     display: none;
   }
@@ -1350,7 +1350,7 @@ a:focus {
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .navigation.inline {
     display: block;
   }
@@ -1373,7 +1373,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .navigation__link {
     font-size: 1.583125rem;
     line-height: 1;
@@ -1385,6 +1385,9 @@ a:focus {
     line-height: 1;
   }
 }
+.navigation__link--current {
+  font-weight: bold;
+}
 .navigation.fullscreen .navigation__link {
   font-size: 3.355rem;
   line-height: 1;
@@ -1395,7 +1398,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .navigation.fullscreen .navigation__link {
     font-size: 4.998125rem;
     line-height: 1;
@@ -1449,7 +1452,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose > p,
   .prose > ul,
   .prose > ol,
@@ -1499,7 +1502,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose > p,
   .prose > ol,
   .prose > ul {
@@ -1525,7 +1528,7 @@ a:focus {
     line-height: 1.41218005;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose > p:first-child {
     font-size: 1.583125rem;
     line-height: 1.26332412;
@@ -1547,7 +1550,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose h1 {
     font-size: 4.998125rem;
     line-height: 1;
@@ -1570,7 +1573,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose h2 {
     font-size: 2.8125rem;
     line-height: 1;
@@ -1601,7 +1604,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose h3 {
     font-size: 1.583125rem;
     line-height: 1;
@@ -1635,7 +1638,7 @@ a:focus {
     line-height: 1;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose h4,
   .prose h5,
   .prose h5 {
@@ -1706,7 +1709,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose table {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1783,7 +1786,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose blockquote > p {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1823,7 +1826,7 @@ a:focus {
     line-height: 1.26315789;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose pre {
     font-size: 1.4375rem;
     line-height: 1.39130435;
@@ -1859,7 +1862,7 @@ a:focus {
   color: #e6e7e9;
   transition: color 0.3s ease-out;
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose__headinglink {
     transform: scale(0.75);
     left: -2rem;
@@ -1891,7 +1894,7 @@ a:focus {
     line-height: 1.39130435;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .prose .footnotes {
     font-size: 1.1875rem;
     line-height: 1.26315789;
@@ -1933,7 +1936,7 @@ a:focus {
     width: 37rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .timeline {
     width: 52rem;
   }
@@ -1962,7 +1965,7 @@ a:focus {
     width: 8.5rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .timeline__marker {
     width: 12.5rem;
   }
@@ -1980,7 +1983,7 @@ a:focus {
     width: 27rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .timeline__content {
     width: 37rem;
   }
@@ -2016,15 +2019,18 @@ a:focus {
     justify-content: flex-start;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .section--navigation {
-    width: 11rem;
-    justify-content: space-between;
+    width: 12rem;
+    padding: 1rem 1rem 1rem 1rem;
+    align-items: flex-start;
+    box-sizing: border-box;
   }
 }
 @media screen and (min-width: 90.5em) {
   .section--navigation {
     width: 13.5rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
   }
 }
 .section--content {
@@ -2036,9 +2042,9 @@ a:focus {
     margin-left: 5.5rem;
   }
 }
-@media screen and (min-width: 70.5em) {
+@media screen and (min-width: 71.5em) {
   .section--content {
-    margin-left: 13.5rem;
+    margin-left: 14.5rem;
   }
 }
 @media screen and (min-width: 90.5em) {
