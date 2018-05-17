@@ -29,8 +29,8 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://roodesign.co.uk/images/twitter-card.png"/>
     {% if page.seo.image -%}
-    <meta property="og:image" content="https://roodesign.co.uk/{{page.path}}/{{page.seo.image}}"/>
-    <meta name="twitter:image" content="https://roodesign.co.uk/{{page.path}}/{{page.seo.image}}"/>
+    <meta property="og:image" content="https://roodesign.co.uk{{page.url}}/{{page.seo.image}}?{{'t='|appendtime}}"/>
+    <meta name="twitter:image" content="https://roodesign.co.uk{{page.url}}/{{page.seo.image}}?{{'t='|appendtime}}"/>
     {%- endif %}
     {% if page.date %}{# if the page has a date, its a blog #}
     <meta property="og:type" content="article" />

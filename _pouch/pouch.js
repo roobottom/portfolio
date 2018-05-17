@@ -18,6 +18,7 @@ const frontmatter = require('front-matter')
 var nunjucks = require('nunjucks')
 var nunjucksSlugify = require('./nunjucks.slugify.js')
 var nunjucksPath = require('./nunjucks.path.js')
+var nunjucksAppendtime = require('./nunjucks.appendtime.js')
 nunjucks.configure(site.nunjucksPath, {
   noCache: true,
   autoescape: false
@@ -25,6 +26,7 @@ nunjucks.configure(site.nunjucksPath, {
 .addGlobal('baseurl',site.baseurl)
 .addFilter('slugify',nunjucksSlugify)
 .addFilter('path',nunjucksPath)
+.addFilter('appendtime',nunjucksAppendtime)
 
 //images (Light Weight Image Proccessing)
 const lwip = require('lwip')
