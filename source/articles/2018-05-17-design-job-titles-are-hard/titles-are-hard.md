@@ -8,7 +8,7 @@ tags:
 seo:
   image: 'seo-header.png'
 ---
-When William Shakespeare wrote the immortal line "What's in a name?" he'd obviously never tried defining roles for a design team. It turns out that a rose by any other name may not smell sweet at all. In fact: it might stink like a pile of dog dirt.
+When William Shakespeare wrote the immortal line "What's in a name?" he'd obviously never tried defining roles for a design team. It turns out that when it comes design job titles, a rose by any other name may not smell as sweet after all.
 
 For young designers entering the market, there is a slew of titles in the digital product space which makes applying for jobs somewhat confusing. Are you a UX Designer, UI Designer, Visual Designer, UI/UX Designer, Product Designer, Digital Product Designer, Visual Product UX/UI Designer?
 
