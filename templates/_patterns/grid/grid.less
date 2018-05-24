@@ -48,3 +48,24 @@
   }
 
 }
+
+.grid {
+  margin: 0 auto;
+  &--text {
+    #grid > .text;
+  }
+  &--text-and-pull {
+    #grid > .text-and-pull;
+  }
+  &--text-offset,
+  &--text-offset-spaced {
+    #grid > .text;
+    #grid > .offset-text;
+  }
+  &--text-offset-spaced &__item {
+    .space(margin-bottom,2);
+    .break-min({
+      .space(margin-bottom,6);
+    });
+  }
+}

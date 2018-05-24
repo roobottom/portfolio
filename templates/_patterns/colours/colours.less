@@ -1,0 +1,73 @@
+.colours {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__tile {
+    .space(margin-right,1);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__hex {
+    .space(padding,6);
+    #type > #size > .p;
+  }
+
+  &__name {
+    #type > #size > .sm;
+    .space(margin,1,0);
+  }
+
+  &__hex--primary-darkest {
+    background-color: @c_primary-darkest;
+    color: contrast(@c_primary-darkest);
+  }
+  &__hex--primary-dark {
+    background-color: @c_primary-dark;
+    color: contrast(@c_primary-dark);
+  }
+  &__hex--primary {
+    background-color: @c_primary;
+    color: contrast(@c_primary);
+  }
+  &__hex--primary-light {
+    background-color: @c_primary-light;
+    color: contrast(@c_primary-light);
+  }
+
+  &__hex--secondary-darkest {
+    background-color: @c_secondary-darkest;
+    color: contrast(@c_secondary-darkest);
+  }
+  &__hex--secondary-dark {
+    background-color: @c_secondary-dark;
+    color: contrast(@c_secondary-dark);
+  }
+  &__hex--secondary {
+    background-color: @c_secondary;
+    color: contrast(@c_secondary);
+  }
+  &__hex--secondary-light {
+    background-color: @c_secondary-light;
+    color: contrast(@c_secondary-light);
+  }
+
+  &__hex--tertiary-darkest {
+    background-color: @c_tertiary-darkest;
+    color: contrast(@c_tertiary-darkest);
+  }
+  &__hex--tertiary-dark {
+    background-color: @c_tertiary-dark;
+    color: contrast(@c_tertiary-dark);
+  }
+  &__hex--tertiary {
+    background-color: @c_tertiary;
+    color: contrast(@c_tertiary);
+  }
+  &__hex--tertiary-light {
+    background-color: @c_tertiary-light;
+    color: contrast(@c_tertiary-light);
+  }
+
+}

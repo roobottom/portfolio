@@ -14,9 +14,9 @@ For young designers entering the market, there is a slew of titles in the digita
 
 Oh boy.
 
-I don't think that's even an exhaustive list. What do these titles mean? Well, in that great tradition of answers to questions that designers ask: it depends. Each company will have a different list of the skills they require when creating user-centred products (User Experience Design). Each skill will sit somewhere on a spectrum ranging from research to graphic and motion design and sometimes beyond. For example, I've seen  design roles that call for front-end coding skills.
+I don't think that's even an exhaustive list. What do these titles mean? Well, in that great tradition of answers to questions that designers ask: it depends. Each company will have a different list of the skills they require when creating user-centred products (User Experience Design). Each skill will sit somewhere on a spectrum ranging from research to graphic and motion design and sometimes beyond. For example, I've seen design roles that call for front-end coding skills.
 
-At Firefly, we have the two overlapping disciplines of UX Research and UI Design, who's spectrum of UX design skills look something like the none exhaustive list in the diagram below.
+At Firefly, we have the two overlapping disciplines of UX Research and UI Design, whose spectrum of UX design skills look something like the none exhaustive list in the diagram below.
 
 {{ figure({src:'ux-skills.png',caption:'A none exhaustive spectrum of skills required by UX Researches and UI Designers at Firefly Learning',class:'pull'}) }} 
 

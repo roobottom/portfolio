@@ -97,6 +97,8 @@
 @import '../templates/_patterns/pagination/pagination';
 @import '../templates/_patterns/breadcrumb/breadcrumb';
 @import '../templates/_patterns/postinfo/postinfo';
+@import '../templates/_patterns/colours/colours';
+@import '../templates/_patterns/example/example';
 
 @import '../templates/_components/logo/logo';
 @import '../templates/_components/navigation/navigation';
@@ -118,7 +120,7 @@
 
   .break-min({
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     position: fixed;
     top: 0; left: 0;
     flex-direction: column;
@@ -155,11 +157,22 @@
   });
 }
 
-.section--subnav {
-  background-color: @c_primary;
-}
-
 //specific page styling
 .page--home {
   background-color: @c_primary-dark;
+}
+
+.temp-notice {
+  #grid > .text-and-pull;
+  background-color: @c_secondary;
+  color: contrast(@c_secondary);
+  .space(padding,3);
+  #type > #size > .p;
+  .space(margin-bottom,4);
+  .break-min({
+    margin-left: auto;
+    margin-right: auto;
+    .space(margin-top,-4);
+
+  });
 }

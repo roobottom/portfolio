@@ -1,0 +1,14 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+  {{title(page.title)}}
+  {{prose(page.content)}}
+  {% for blog in site.blogs %}
+  {% if blog.name == 'styleguide-design' %}
+  {% for item in blog.items %}
+  {{ grid([
+    teaser(item.title,item.intro,item.url,'View '+item.title+' &rarr;')
+  ],'text-offset-spaced') }}
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+{% endblock %}

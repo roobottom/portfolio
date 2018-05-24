@@ -11,7 +11,9 @@
 
   >p, >ul, >ol,
   h2, h3, h4, h5, h6,
-  table, pre, blockquote, hr, .footnotes {
+  table, pre, blockquote, hr, .footnotes,
+  //special spacing for other components caught within .prose
+  >.colours, >.teaser {
     margin: 1em auto 0 auto;
     .space(margin-top,2);
     position: relative;
@@ -29,6 +31,15 @@
     });
   }
 
+  //special table case
+  table {
+    margin-left: 0;
+    margin-right: 0;
+    .break-min({
+      margin-left: auto;
+      margin-right: auto;
+    });
+  }
 
 
   >p, >ol, >ul {
@@ -177,7 +188,8 @@
   }
 
 
-  p>code {
+  p>code,
+  li>code {
     padding: unit(3/@base,rem);
     margin: 0 unit(-3/@base,rem);
     background-color: fade(@c_text,5%);

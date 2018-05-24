@@ -14,6 +14,8 @@
 
 
 
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -42,7 +44,7 @@
 
     <header class="section--navigation">
       
-  <a href="/" class="logo logo--">
+  <a href="/" class="logo logo--" title="Return to the homepage">
     <svg class="logo__mark"><use xlink:href="/images/site-graphics.svg#logo__mark"></use></svg>
     <svg class="logo__type"><use xlink:href="/images/site-graphics.svg#logo__type"></use></svg>
   </a>
@@ -51,20 +53,28 @@
   <svg class="icon icon--menu"><use xlink:href="/images/site-graphics.svg#menu"></use></svg>
 </a>
       
-<nav class="navigation inline" id="inline-navigation" aria-label="Navigation">
-  <ol class="navigation__items">
+<nav class="navigation inline" id="inline-navigation" aria-label="Navigation" role="navigation">
+  <ol class="navigation__items" role="menu">
 
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/" class="navigation__link navigation__link--current">Home</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/articles" class="navigation__link">Articles</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/about" class="navigation__link">About me</a>
+        
+      </li>
+    
+      <li class="navigation__item" role="menuitem">
+        <a href="/styleguide" class="navigation__link">Style Guide</a>
+        
       </li>
     
 
@@ -74,6 +84,7 @@
     </header>
 
     <main class="section--content">
+      
       
   
   <div class="title reverse hero">
@@ -99,20 +110,28 @@
 
     </main>
     
-<nav class="navigation fullscreen" id="navigation" aria-label="Navigation">
-  <ol class="navigation__items">
+<nav class="navigation fullscreen" id="navigation" aria-label="Navigation" role="navigation">
+  <ol class="navigation__items" role="menu">
 
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/" class="navigation__link navigation__link--current">Home</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/articles" class="navigation__link">Articles</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/about" class="navigation__link">About me</a>
+        
+      </li>
+    
+      <li class="navigation__item" role="menuitem">
+        <a href="/styleguide" class="navigation__link">Style Guide</a>
+        
       </li>
     
 

@@ -1,10 +1,29 @@
-{% macro navigation(items,class,uid,section) %}
-<nav class="navigation {{class}}" id="{{uid}}" aria-label="Navigation">
-  <ol class="navigation__items">
+{% macro navigation(items,class,uid,section,site,page) %}
+<nav class="navigation {{class}}" id="{{uid}}" aria-label="Navigation" role="navigation">
+  <ol class="navigation__items" role="menu">
 
     {% for item in items %}
-      <li class="navigation__item">
-        <a href="{{baseurl}}{{item.url}}" class="navigation__link{% if item.section == section %} navigation__link--current{% endif %}">{{item.name}}</a>
+      <li class="navigation__item" role="menuitem">
+        <a href="{{item.url}}" class="navigation__link{% if item.section == section %} navigation__link--current{% endif %}">{{item.name}}</a>
+        {% if item.section == section and item.navigation %}
+        <ol class="navigation__items navigation__items--level-1" role="menu">
+          {% for item in item.navigation %}
+            <li class="navigation__item navigation__item--level-1{% if item.name|lower == page.name|lower or item.name|lower == page.paths|last|lower %} navigation__item--current{% endif %}"><a href="{{item.url}}" class="navigation__link navigation__link--level-1{% if item.name|lower == page.name|lower or item.name|lower == page.paths|last|lower %} navigation__link--current{% endif %}">{{item.name}}</a>
+            {% if item.bloglist and (item.name|lower == page.name or item.name|lower == page.paths|last|lower) %}
+            <ol class="navigation__items navigation__items--level-2">
+              {% for blog in site.blogs %}
+              {% if blog.name == item.bloglist %}
+                {% for item in blog.items %}
+                  <li class="navigation__item navigation__item--level-2"><a href="{{item.url}}" class="navigation__link navigation__link--level-2{% if item.name|lower == page.name|lower %} navigation__link--current{% endif %}">{{item.title}}</a>
+                {% endfor %}
+              {% endif %}
+              {% endfor %}
+            </ol>
+            {% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+        {% endif %}
       </li>
     {% endfor %}
 

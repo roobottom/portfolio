@@ -14,17 +14,19 @@
 
 
 
+
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Styleguide</title>
+    <title>Kanga</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Styleguide page">
+    <meta name="description" content="My style guide — Kanga — describes the design intention behind this site; including the core principals, brand, layouts, patterns and components that are used throughout.">
     <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
 
     <!-- open graph -->
-    <meta property="og:title" content="Styleguide" />
+    <meta property="og:title" content="Kanga" />
     <meta property="og:site_name" content="roodesign: design leadership thinking" />
     
     
@@ -42,7 +44,7 @@
 
     <header class="section--navigation">
       
-  <a href="/" class="logo logo--">
+  <a href="/" class="logo logo--" title="Return to the homepage">
     <svg class="logo__mark"><use xlink:href="/images/site-graphics.svg#logo__mark"></use></svg>
     <svg class="logo__type"><use xlink:href="/images/site-graphics.svg#logo__type"></use></svg>
   </a>
@@ -51,20 +53,44 @@
   <svg class="icon icon--menu"><use xlink:href="/images/site-graphics.svg#menu"></use></svg>
 </a>
       
-<nav class="navigation inline" id="inline-navigation" aria-label="Navigation">
-  <ol class="navigation__items">
+<nav class="navigation inline" id="inline-navigation" aria-label="Navigation" role="navigation">
+  <ol class="navigation__items" role="menu">
 
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/" class="navigation__link">Home</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/articles" class="navigation__link">Articles</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/about" class="navigation__link">About me</a>
+        
+      </li>
+    
+      <li class="navigation__item" role="menuitem">
+        <a href="/styleguide" class="navigation__link navigation__link--current">Style Guide</a>
+        
+        <ol class="navigation__items navigation__items--level-1" role="menu">
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/principals" class="navigation__link navigation__link--level-1">Principals</a>
+            
+            </li>
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/design" class="navigation__link navigation__link--level-1">Design</a>
+            
+            </li>
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/components" class="navigation__link navigation__link--level-1">Components</a>
+            
+            </li>
+          
+        </ol>
+        
       </li>
     
 
@@ -75,44 +101,67 @@
 
     <main class="section--content">
       
+      <div class="temp-notice">
+        This section may look a little odd for a while as it's developed in the open.
+      </div>
+      
+      
   
   <div class="title ">
-    <h1 class="title__text title__text--1">Styleguide</h1>
+    <h1 class="title__text title__text--1">Kanga</h1>
     
   </div>
 
-  <div class="textfiller">
-    An introduction to the styleguide
-  </div>
-  <div class="block">
-    <h3><a href="/styleguide/principals">Principals</a></h3>
-    <p>How I make design decisions on this site</p>
-  </div>
-  <div class="block">
-    <h3><a href="styleguide-design.html">Design</a></h3>
-    <p>Logo, colours, typography, layouts, motion and icons</p>
-  </div>
-  <div class="block">
-    <h3><a href="/styleguide/components">Components</a></h3>
-    <p>The building blocks of this site</p>
-  </div>
+  
+  <article class="prose ">
+    <p>My style guide — <em>Kanga</em> — describes the design intention behind this site; including the core principals, brand, layouts, patterns and components that are used throughout.</p>
+<h2 id="brand-design">Brand Design</h2>
+<h2 id="component-library">Component library</h2>
+<p>This site uses a limited set of reusable patterns, components and layouts which compose together to form pages.</p>
+
+  </article>
+
 
     </main>
     
-<nav class="navigation fullscreen" id="navigation" aria-label="Navigation">
-  <ol class="navigation__items">
+<nav class="navigation fullscreen" id="navigation" aria-label="Navigation" role="navigation">
+  <ol class="navigation__items" role="menu">
 
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/" class="navigation__link">Home</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/articles" class="navigation__link">Articles</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/about" class="navigation__link">About me</a>
+        
+      </li>
+    
+      <li class="navigation__item" role="menuitem">
+        <a href="/styleguide" class="navigation__link navigation__link--current">Style Guide</a>
+        
+        <ol class="navigation__items navigation__items--level-1" role="menu">
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/principals" class="navigation__link navigation__link--level-1">Principals</a>
+            
+            </li>
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/design" class="navigation__link navigation__link--level-1">Design</a>
+            
+            </li>
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/components" class="navigation__link navigation__link--level-1">Components</a>
+            
+            </li>
+          
+        </ol>
+        
       </li>
     
 

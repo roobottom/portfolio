@@ -1,3 +1,4 @@
+{% from "_patterns/grid/grid.html" import "grid" %}
 {%- from "_patterns/figure/figure.html" import "figure" -%}
 {% from "_patterns/title/title.html" import "title" %}
 {% from "_patterns/icon/icon.html" import "icon" %}
@@ -9,6 +10,8 @@
 {% from "_patterns/pagination/pagination.html" import "pagination" %}
 {% from "_patterns/breadcrumb/breadcrumb.html" import "breadcrumb" %}
 {% from "_patterns/postinfo/postinfo.html" import "postinfo" %}
+{% from "_patterns/colours/colours.html" import "colours" %}
+{% from "_patterns/example/example.html" import "example" %}
 
 {% from "_components/prose/prose.html" import "prose" %}
 {% from "_components/logo/logo.html" import "logo" %}
@@ -56,14 +59,19 @@
     <header class="section--navigation">
       {{ logo('/') }}
       <a href="#navigation" class="navigation__trigger" aria-label="Jump to main navigation">{{ icon('menu') }}</a>
-      {{ navigation(site.navigation,'inline','inline-navigation',page.section) }}
+      {{ navigation(site.navigation,'inline','inline-navigation',page.section,site=site,page=page) }}
     </header>
 
     <main class="section--content">
+      {% if page.section == 'styleguide'%}
+      <div class="temp-notice">
+        This section may look a little odd for a while as it's developed in the open.
+      </div>
+      {% endif %}
       {% block content %}
       {% endblock %}
     </main>
-    {{ navigation(site.navigation,'fullscreen','navigation',page.section) }}
+    {{ navigation(site.navigation,'fullscreen','navigation',page.section,site=site,page=page) }}
     <script src="{{baseurl}}/js/functionality.js" type="text/javascript"></script>
     <script src="{{baseurl}}/loadlater.js" type="text/javascript"></script>
     <script src="//static.getclicky.com/js" type="text/javascript"></script>

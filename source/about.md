@@ -6,7 +6,7 @@ Hello, my name is Jonathan, and I've been designing and building things for the 
 
 ## What I do
 
-I'm the Head of Design for Firefly Learning. I lead a team of UX, visual and communication designers. It's my job to ensure they can succeed in their roles. I'm also a member of Firefly's first team: The senior leadership crew with its hand of the tiller, navigating the company through choppy waters as we attempt to grow to 450 million users. 
+I'm the Head of Design for Firefly Learning. I lead a team of UX, visual and communication designers. It's my job to ensure they can succeed in their roles. I'm also a member of Firefly's first team: The senior leadership crew with its hand of the tiller, navigating the company through choppy waters as we grow.
 
 ## What I value
 

@@ -132,6 +132,29 @@ module.exports = {
       name: "About me",
       url: "/about",
       section: "about"
+    },
+    {
+      name: "Style Guide",
+      url: "/styleguide",
+      section: "styleguide",
+      navigation: [
+        {
+          name: "Principals",
+          url: "/styleguide/principals",
+          section: "styleguide"
+        },
+        {
+          name: "Design",
+          url: "/styleguide/design",
+          section: "styleguide",
+          bloglist: "styleguide-design"
+        },
+        {
+          name: "Components",
+          url: "/styleguide/components",
+          section: "styleguide"
+        }
+      ]
     }
   ],
   /*
@@ -173,19 +196,29 @@ module.exports = {
       name: "styleguide",
       input: "./source/styleguide.md",
       output: "./docs/styleguide/index.html",
-      template: "pages/styleguide.html"
+      template: "pages/styleguide.html",
+      section: "styleguide"
     },
     {
       name: "styleguide-principals",
       input: "./source/styleguide/principals.md",
       output: "./docs/styleguide/principals/index.html",
-      template: "pages/styleguide-principals.html"
+      template: "pages/styleguide.html",
+      section: "styleguide"
+    },
+    {
+      name: "styleguide-design",
+      input: "./source/styleguide/design.md",
+      output: "./docs/styleguide/design/index.html",
+      template: "pages/styleguide-design.html",
+      section: "styleguide"
     },
     {
       name: "styleguide-components",
       input: "./source/styleguide/components.md",
       output: "./docs/styleguide/components/index.html",
-      template: "pages/styleguide-components.html"
+      template: "pages/styleguide-components.html",
+      section: "styleguide"
     }
   ],
   /*
@@ -199,6 +232,7 @@ module.exports = {
       template: "blogs/article.html",
       sortBy: "date",
       permalinkBy: "folder", //defaults to filename [filename,folder]
+      section: "articles",
       tags: {
         output: "./docs/articles/tags",
         template: "blogs/articles-tag.html"
@@ -220,6 +254,14 @@ module.exports = {
       output: "./docs/work",
       template: "blogs/work-item.html",
       sortBy: "date"
+    },
+    {
+      name: "styleguide-design",
+      input: "./source/styleguide/design/*.md",
+      output: "./docs/styleguide/design",
+      template: "blogs/styleguide-item.html",
+      sortBy: "order",
+      sortOrder: "asc" //desc (default) or asc
     },
     {
       name: "components",

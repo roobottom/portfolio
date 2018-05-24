@@ -156,7 +156,12 @@ function addItemsToCollections(collections) {
         else { //top level page
           returnObj.section = filePath.name
           returnObj.url = '/' + filePath.name
+          returnObj.paths = []
         }
+        returnObj.name = filePath.name
+
+        //override section by folder if set in _site.js
+        if (fm.attributes.section) returnObj.section = fm.attributes.section
 
         //add human readable dates
         returnObj.humanDate = {}
@@ -188,12 +193,17 @@ function sortCollections(collections) {
       if(collection.sortBy) {
 
 
+
         //is the first item to be sorted a string or an object/number?
         let firstSortItem = collection.items[0][collection.sortBy]
         if(typeof firstSortItem === 'string') { //if a string
           collection.items.sort(function(a, b) {
             var stringA = a[collection.sortBy].toUpperCase();
             var stringB = b[collection.sortBy].toUpperCase();
+            if(collection.sortOrder == 'asc') {
+              stringA = b[collection.sortBy].toUpperCase();
+              stringB = a[collection.sortBy].toUpperCase();
+            }
             if (stringA < stringB) {
               return -1;
             }
@@ -204,6 +214,7 @@ function sortCollections(collections) {
           })
         } else { //if not a string sorting is easier
           collection.items.sort((a,b) => {
+            if(collection.sortOrder == 'asc') return a[collection.sortBy] - b[collection.sortBy]
             return b[collection.sortBy] - a[collection.sortBy]
           })
         }
@@ -219,6 +230,11 @@ function sortCollections(collections) {
       for(let key in collection.items) {
         let next = parseInt(key)-1;
         let prev = parseInt(key)+1;
+        if(collection.sortOrder == 'asc') {
+          next = parseInt(key)+1;
+          prev = parseInt(key)-1;
+        }
+
 
         if(next in collection.items) {
           collection.items[key].next = {};

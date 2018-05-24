@@ -14,6 +14,8 @@
 
 
 
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -42,7 +44,7 @@
 
     <header class="section--navigation">
       
-  <a href="/" class="logo logo--">
+  <a href="/" class="logo logo--" title="Return to the homepage">
     <svg class="logo__mark"><use xlink:href="/images/site-graphics.svg#logo__mark"></use></svg>
     <svg class="logo__type"><use xlink:href="/images/site-graphics.svg#logo__type"></use></svg>
   </a>
@@ -51,20 +53,44 @@
   <svg class="icon icon--menu"><use xlink:href="/images/site-graphics.svg#menu"></use></svg>
 </a>
       
-<nav class="navigation inline" id="inline-navigation" aria-label="Navigation">
-  <ol class="navigation__items">
+<nav class="navigation inline" id="inline-navigation" aria-label="Navigation" role="navigation">
+  <ol class="navigation__items" role="menu">
 
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/" class="navigation__link">Home</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/articles" class="navigation__link">Articles</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/about" class="navigation__link">About me</a>
+        
+      </li>
+    
+      <li class="navigation__item" role="menuitem">
+        <a href="/styleguide" class="navigation__link navigation__link--current">Style Guide</a>
+        
+        <ol class="navigation__items navigation__items--level-1" role="menu">
+          
+            <li class="navigation__item navigation__item--level-1 navigation__item--current"><a href="/styleguide/principals" class="navigation__link navigation__link--level-1 navigation__link--current">Principals</a>
+            
+            </li>
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/design" class="navigation__link navigation__link--level-1">Design</a>
+            
+            </li>
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/components" class="navigation__link navigation__link--level-1">Components</a>
+            
+            </li>
+          
+        </ol>
+        
       </li>
     
 
@@ -75,33 +101,72 @@
 
     <main class="section--content">
       
-  <h1>Design Principals</h1>
-  <h2 id="a-pleasurable-reading-experience">A pleasurable reading experience</h2>
+      <div class="temp-notice">
+        This section may look a little odd for a while as it's developed in the open.
+      </div>
+      
+      
+  
+  <div class="title ">
+    <h1 class="title__text title__text--1">Design Principals</h1>
+    
+  </div>
+
+  
+  <article class="prose ">
+    <h2 id="a-pleasurable-reading-experience">A pleasurable reading experience</h2>
 <p>Communication <em>via</em> the written word is one of life’s great pleasures. It’s essential that the reading experience on this site is delightful. Good typography is crucial and careful attention should be paid to the smallest detail.</p>
 <h2 id="be-bold-but-concise">Be bold but concise</h2>
-<p>In copy, use plain English and always put the most reverent details first. Use confident visual elements, bold typography and bright colours.</p>
-<h2 id="tactile">Tactile</h2>
-<p>This site should <em>feel</em> pleasing to navigate. Interactions should be as satisfying as interacting with real-world objects. Objects should flow from one state to another.</p>
+<p>In copy, use plain English and always put the most relevant details first. Use confident visual elements, bold typography and bright colours.</p>
+<h2 id="design-for-development">Design for development</h2>
+<h2 id="consider-everyone">Consider everyone</h2>
+<p>WCAG colour guidelines. Screen readers.</p>
 <h2 id="irreverent">Irreverent</h2>
-<p>Design and copywriting should not be taken too seriously; Fun but not offensive or cheesy.</p>
+<p>Design and copywriting should not be taken too seriously; Fun but never offensive or cheesy.</p>
+
+  </article>
 
 
     </main>
     
-<nav class="navigation fullscreen" id="navigation" aria-label="Navigation">
-  <ol class="navigation__items">
+<nav class="navigation fullscreen" id="navigation" aria-label="Navigation" role="navigation">
+  <ol class="navigation__items" role="menu">
 
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/" class="navigation__link">Home</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/articles" class="navigation__link">Articles</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/about" class="navigation__link">About me</a>
+        
+      </li>
+    
+      <li class="navigation__item" role="menuitem">
+        <a href="/styleguide" class="navigation__link navigation__link--current">Style Guide</a>
+        
+        <ol class="navigation__items navigation__items--level-1" role="menu">
+          
+            <li class="navigation__item navigation__item--level-1 navigation__item--current"><a href="/styleguide/principals" class="navigation__link navigation__link--level-1 navigation__link--current">Principals</a>
+            
+            </li>
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/design" class="navigation__link navigation__link--level-1">Design</a>
+            
+            </li>
+          
+            <li class="navigation__item navigation__item--level-1"><a href="/styleguide/components" class="navigation__link navigation__link--level-1">Components</a>
+            
+            </li>
+          
+        </ol>
+        
       </li>
     
 

@@ -14,6 +14,8 @@
 
 
 
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -42,7 +44,7 @@
 
     <header class="section--navigation">
       
-  <a href="/" class="logo logo--">
+  <a href="/" class="logo logo--" title="Return to the homepage">
     <svg class="logo__mark"><use xlink:href="/images/site-graphics.svg#logo__mark"></use></svg>
     <svg class="logo__type"><use xlink:href="/images/site-graphics.svg#logo__type"></use></svg>
   </a>
@@ -51,20 +53,28 @@
   <svg class="icon icon--menu"><use xlink:href="/images/site-graphics.svg#menu"></use></svg>
 </a>
       
-<nav class="navigation inline" id="inline-navigation" aria-label="Navigation">
-  <ol class="navigation__items">
+<nav class="navigation inline" id="inline-navigation" aria-label="Navigation" role="navigation">
+  <ol class="navigation__items" role="menu">
 
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/" class="navigation__link">Home</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/articles" class="navigation__link">Articles</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/about" class="navigation__link navigation__link--current">About me</a>
+        
+      </li>
+    
+      <li class="navigation__item" role="menuitem">
+        <a href="/styleguide" class="navigation__link">Style Guide</a>
+        
       </li>
     
 
@@ -74,6 +84,7 @@
     </header>
 
     <main class="section--content">
+      
       
   
   <div class="title ">
@@ -85,7 +96,7 @@
   <article class="prose ">
     <p>Hello, my name is Jonathan, and I’ve been designing and building things for the web since 2001<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Yes, I’ve been at this quite a while now but don’t worry: I still sport a reassuring beard and finely quaffed hair-do.</p>
 <h2 id="what-i-do">What I do</h2>
-<p>I’m the Head of Design for Firefly Learning. I lead a team of UX, visual and communication designers. It’s my job to ensure they can succeed in their roles. I’m also a member of Firefly’s first team: The senior leadership crew with its hand of the tiller, navigating the company through choppy waters as we attempt to grow to 450 million users.</p>
+<p>I’m the Head of Design for Firefly Learning. I lead a team of UX, visual and communication designers. It’s my job to ensure they can succeed in their roles. I’m also a member of Firefly’s first team: The senior leadership crew with its hand of the tiller, navigating the company through choppy waters as we grow.</p>
 <h2 id="what-i-value">What I value</h2>
 <p>I’ve thought long and hard about what I value at work. Acknowledging why I enjoy some roles and not others enable me to identify where I’ll thrive and where I’ll give my best. My values are the pruning sheers of my professional life.</p>
 <h3 id="storytelling">Storytelling</h3>
@@ -114,20 +125,28 @@
 
     </main>
     
-<nav class="navigation fullscreen" id="navigation" aria-label="Navigation">
-  <ol class="navigation__items">
+<nav class="navigation fullscreen" id="navigation" aria-label="Navigation" role="navigation">
+  <ol class="navigation__items" role="menu">
 
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/" class="navigation__link">Home</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/articles" class="navigation__link">Articles</a>
+        
       </li>
     
-      <li class="navigation__item">
+      <li class="navigation__item" role="menuitem">
         <a href="/about" class="navigation__link navigation__link--current">About me</a>
+        
+      </li>
+    
+      <li class="navigation__item" role="menuitem">
+        <a href="/styleguide" class="navigation__link">Style Guide</a>
+        
       </li>
     
 

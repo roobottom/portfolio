@@ -7,12 +7,14 @@ Communication *via* the written word is one of life's great pleasures. It's esse
 
 ## Be bold but concise
 
-In copy, use plain English and always put the most reverent details first. Use confident visual elements, bold typography and bright colours.
+In copy, use plain English and always put the most relevant details first. Use confident visual elements, bold typography and bright colours.
 
-## Tactile
+## Design for development
 
-This site should _feel_ pleasing to navigate. Interactions should be as satisfying as interacting with real-world objects. Objects should flow from one state to another. 
+## Consider everyone
+
+WCAG colour guidelines. Screen readers. 
 
 ## Irreverent
 
-Design and copywriting should not be taken too seriously; Fun but not offensive or cheesy. 
+Design and copywriting should not be taken too seriously; Fun but never offensive or cheesy. 
