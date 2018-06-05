@@ -1,5 +1,5 @@
 ---
-title: Design Principals
+title: Design principles
 ---
 ## A pleasurable reading experience
 
@@ -13,8 +13,8 @@ In copy, use plain English and always put the most relevant details first. Use c
 
 ## Consider everyone
 
-WCAG colour guidelines. Screen readers. 
+WCAG colour guidelines. Screen readers.
 
 ## Irreverent
 
-Design and copywriting should not be taken too seriously; Fun but never offensive or cheesy. 
+Design and copywriting should not be taken too seriously; Fun but never offensive or cheesy.

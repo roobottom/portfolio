@@ -139,8 +139,8 @@ module.exports = {
       section: "styleguide",
       navigation: [
         {
-          name: "Principals",
-          url: "/styleguide/principals",
+          name: "Principles",
+          url: "/styleguide/principles",
           section: "styleguide"
         },
         {
@@ -200,9 +200,9 @@ module.exports = {
       section: "styleguide"
     },
     {
-      name: "styleguide-principals",
-      input: "./source/styleguide/principals.md",
-      output: "./docs/styleguide/principals/index.html",
+      name: "styleguide-principles",
+      input: "./source/styleguide/principles.md",
+      output: "./docs/styleguide/principles/index.html",
       template: "pages/styleguide.html",
       section: "styleguide"
     },
