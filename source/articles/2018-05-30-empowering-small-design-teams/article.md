@@ -5,6 +5,8 @@ tags:
   - firefly
   - career progression
 date: 2018-05-30
+seo:
+  image: 'cover.png'
 ---
 How do you reward growth when your design team isn't large enough to offer promotion? Recently, we've been experimenting with other ways to recognise the achievements of the UI Designers on our team. 
 
@@ -14,30 +16,28 @@ We've been encountering both these problems and have therefore been striving to 
 
 ## Design leads and owners
 
-In addition to the core role of UI Designer, we've introduced a group of new add-on roles to recognise seniority. These roles are assigned to the designer who has the most experience in an area. One person can assume multiple roles at once.
+In addition to the core role of UI Designer, we've introduced a group of new add-on roles to recognise seniority. These roles are assigned to the designer who has the most experience in an area. 
+
+One person can assume multiple roles at once and these roles could pass from person to person as we grow.
+
+Currently, we have 6 new _power-up_ roles:
+
+* **Themes Lead** (TL) has ownership over vision and responsibility for [Firefly's four core themes](https://themes.fireflylearning.com).
+* **Product Copy Lead** (PCL) has ownership over the product copy guidelines.
+* **Web Design System Owner** (WSO) owns and defines best practice for our Web Design System.
+* **Mobile Design Systems Owner** (MSO) owns and defines best practice for our two Mobile Design Systems.
+* **Motion Design Lead** (ML) has ownership over the Motion Design guidelines.
+* **Product Design Evangelist** (E) leads our efforts to socialise design thinking internally and externally. 
 
 
+{{ figure({src: 'role-powerups.png',caption:'Currently, we have two UI Designers, each with 3 power-up roles.',class:'side-by-side'}) }}
 
-### Themes Lead
+## How this fits with reporting lines
 
-The role of the Themes Lead is to ensure our four themes (Melody, Folio, Storybook and Nautilus) and our Help Site theme are delightful to use and offer a consistent, high-quality user experience while maintaining their distinctive character.
+As we grow, and people move around the structure the _power-up_ roles become another stream to recognise seniority. As our teams grow, and we find the need to add-in a new layer of people management, the _power ups_ are a way to recognise seniority in an area that's _in addition_ to reporting lines. 
 
-### Product Copy Lead
+{{ figure({src: 'reporting-lines.png',caption:'In the future, when we may need to add a Design Lead to manage our UI Designers; the power up roles may get redistributed. Design Leads can still carry extra power-up roles in addition to their core role duties.',class:'full'}) }}
 
-The role of the Product Copy Lead is to make the labelling and instructions within Firefly the product as clear as possible so users know what choices are available.
+## Where next?
 
-### Web Design System Owner
-
-The role of the Web Design System Owner is to be responsible for the development of a pattern library and style guide that are practical tools for designing and documenting web UI within Firefly. This person is responsible for defining the vision and best practice for the system.
-
-### Mobile Design Systems Owner
-
-The role of the Mobile Design Systems Owner is to be responsible for the development of  pattern libraries and style guides for iOS and Android that are practical tools for designing and documenting mobile UI for Firefly. This person is responsible for defining the vision and best practice for these systems.
-
-### Motion Design Lead
-
-The role of the Motion Design Lead is to own the way in which motion is used throughout Firefly on the web and mobile apps and to provide useable guidelines and tools for UI designers and developers. 
-
-### Product Design Evangelist
-
-The role of the Product Design Evangelist is to lead our efforts to socialise design thinking internally and externally. This includes helping others understand how design helps us succeed, why design thinking is important and how everyone can use design thinking in their role.
+As a team, we're experimenting with these new _power-up_ roles. It's our intention to iterate and improve them over time. As we discover more about what works and what doesn't, they could become just one of a whole arsenal of ways we choose to recognise achievement and seniority in design at Firefly. 

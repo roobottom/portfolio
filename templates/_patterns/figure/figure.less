@@ -80,12 +80,14 @@
     align-self: flex-end;
   }
 
-  &.max {
+  &.max,
+  &.full {
     width: auto;
     padding: 0;
   }
 
-  &.max &__caption {
+  &.max &__caption,
+  &.full &__caption {
     margin-left: auto;
     margin-right: auto;
     #figure > .space;
