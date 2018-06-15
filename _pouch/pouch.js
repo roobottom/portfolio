@@ -469,12 +469,16 @@ function processImages(cb) {
     async.each(files, function(file,cb) {
       let image = path.join(__dirname, '..',file)
       let folders = path.parse(file).dir.split('/')
+      let unwantedFolders = ['.','source']
+      folders = folders.filter(val => !unwantedFolders.includes(val));
+
 
       //process jpgs (photos)
       if(path.parse(file).ext == '.jpg') {
 
         let filename = '1600x' + path.parse(file).base
-        let filepath = path.join(__dirname,'..','/docs',folders[folders.length-2],folders[folders.length-1],filename)
+        let filepath = path.join(__dirname,'..','/docs',folders.join('/'),filename)
+
 
         fs.stat(filepath,function(err,stats) {
           if(!stats) { //file is new, do this shit:

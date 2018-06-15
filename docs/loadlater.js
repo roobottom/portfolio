@@ -113,7 +113,7 @@ module.exports = {
     Pouch will auto process your images if you include the images
   */
   images: {
-    input: './source/articles/**/*.+(jpg|jpeg|png)',
+    input: './source/**/*.+(jpg|jpeg|png)',
     output: './docs',//feed images back into the folder from whence they came
     sizes: [800,1100,1600]
   },
@@ -170,7 +170,7 @@ module.exports = {
     },
     {
       name: "about",
-      input: "./source/about.md",
+      input: "./source/about/about.md",
       output: "./docs/about/index.html",
       template: "pages/about.html"
     },
